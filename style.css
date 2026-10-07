@@ -180,3 +180,6 @@ body{font-size:18px}.inner{--accent:inherit}.lede,.card p,.step p{font-size:18px
 @media(max-width:1100px) and (min-width:1001px){header{gap:12px}.brand{max-width:230px}nav{gap:0 12px}}
 @media(max-width:1000px){header{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px}header nav{grid-column:1/-1;grid-row:2}header .brand{gap:8px}header .brand span{font-size:16px;line-height:1.2}header .header-call{grid-column:2;grid-row:1;padding:8px 10px}.reviews-grid{grid-template-columns:1fr}.client-reviews{padding:20px}.hero-contact{margin:16px 0;max-width:none}.hero .home-actions{margin-top:16px}.hero .hero-contact-hours{font-size:18px}.hero .hero-body{gap:16px}.hero{height:auto;min-height:calc(100svh - var(--header))}}
 @media(max-width:380px){header .brand-logo{width:42px;height:42px}header .brand span{font-size:14px}header .header-call{font-size:18px;padding:8px}.hero-messengers{gap:5px}.hero-messengers a{padding:10px 3px;font-size:17px}}
+
+/* Keep messenger labels centered on one line at phone widths. */
+.hero-messengers a{min-width:0;text-align:center;white-space:nowrap;line-height:1.25;gap:0;align-items:center;justify-content:center}
