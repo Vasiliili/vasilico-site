@@ -28,3 +28,15 @@ index.html — главная; style.css — оформление; app.js — с
 Внешние переходы оставлены только по назначению, например в мессенджеры. Секретов, учётных данных и служебной конфигурации Sites в архиве нет.
 
 Инструкция GitHub: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+
+## Обновление цен и страниц
+
+Все суммы прайса находятся в `pricing-data.js`. После изменения цен, статей или шаблонов выполните:
+
+```
+node scripts/build-static.mjs
+```
+
+Опубликуйте изменённые исходники вместе с обновлёнными HTML. Скрипт обновляет статические цены, состав работ и разметку для поисковиков из тех же данных, которые использует калькулятор. Зависимости устанавливать не требуется.
+
+Отдельный калькулятор: `/kalkulyator/`. Пример готового выбора: `/kalkulyator/?service=zamena-unitaza`. Страница стоимости: `/cena-zamena-unitaza/`. Старый `/ceny/#calculator` сохранён.

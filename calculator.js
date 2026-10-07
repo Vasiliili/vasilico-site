@@ -25,6 +25,19 @@ function toggleEstimateJobs(ids,checked){ids.forEach(id=>{if(!allPriceJobs.some(
 function currentEstimate(){const rows=allPriceJobs.filter(job=>selectedJobs.has(job.id));return {rows,total:rows.reduce((sum,job)=>sum+job.amount,0),from:rows.some(job=>job.from)};}
 const taskInput=document.querySelector('#estimate-task');
 if(taskInput){
+ const panel=document.querySelector('#calculator');
+ const params=new URLSearchParams(location.search);
+ const preset=panel.dataset.defaultService||params.get('service')||'';
+ const initial=presetJobs(preset);
+ if(params.has('jobs')){
+  const valid=params.get('jobs').split(',').filter(id=>allPriceJobs.some(j=>j.id===id));
+  toggleEstimateJobs(valid,true);
+ }else toggleEstimateJobs(initial.map(j=>j.id),true);
+ if(preset==='zamena-unitaza')taskInput.value='Замена унитаза';
+ else if(preset==='zamena-smesitelya')taskInput.value='Замена смесителя';
+ else if(initial.length===1)taskInput.value=initial[0].name;
+ document.querySelector('#estimate-selected').replaceChildren();
+
  const options=document.querySelector('#estimate-options'),count=document.querySelector('#estimate-match-count'),basket=document.querySelector('#estimate-selected'),empty=document.querySelector('#estimate-empty'),result=document.querySelector('#estimate-result'),clear=document.querySelector('#estimate-clear');
  const seenJobs=new Set(),basketNodes=new Map();
  const tripId=allPriceJobs.at(-1).id;
@@ -65,6 +78,9 @@ if(taskInput){
   empty.hidden=seenJobs.size>0;
   result.replaceChildren();const total=document.createElement('p');total.className='estimate-total';total.textContent=estimate.rows.length?'Предварительно: '+(estimate.from?'от ':'')+money(estimate.total):'Выберите работы для расчёта';result.append(total);
   clear.disabled=selectedJobs.size===0;
+  const full=document.querySelector('.estimate-full-link');
+  if(full){full.hidden=path==='kalkulyator';const url=new URL('/kalkulyator/',location.origin);if(preset)url.searchParams.set('service',preset);url.searchParams.set('jobs',[...selectedJobs].join(','));full.href=url.pathname+url.search;}
+
   updateSelectionButtons();
   document.querySelectorAll('[data-price-group]').forEach(group=>{
    const link=group.querySelector('.price-to-calc');const included=estimate.rows.some(job=>job.group===Number(group.dataset.priceGroup));link.hidden=!included;
