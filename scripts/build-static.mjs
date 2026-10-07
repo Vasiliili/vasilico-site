@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=f=>fs.readFileSync(path.join(root,f),'utf8');
@@ -43,3 +44,14 @@ for(const file of walk(root)){
 }
 let sitemap=read('sitemap.xml');for(const route of paths){if(!sitemap.includes('https://vasilico.ru/'+route+'/'))sitemap=sitemap.replace('</urlset>','<url><loc>https://vasilico.ru/'+route+'/</loc></url>\n</urlset>');}fs.writeFileSync(path.join(root,'sitemap.xml'),sitemap);
 console.log('Static HTML rebuilt from shared renderers and pricing-data.js.');
+
+// Fingerprint local assets so previously cached scripts cannot mix old/new logic.
+function allHtml(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()&&!e.name.startsWith('.')?allHtml(path.join(dir,e.name)):e.isFile()&&e.name.endsWith('.html')?[path.join(dir,e.name)]:[]);}
+for(const file of allHtml(root)){
+ let html=fs.readFileSync(file,'utf8');
+ html=html.replace(/(src|href)="\/([^"?]+\.(?:js|css))(?:\?v=[^" ]+)?"/g,(match,attr,asset)=>{
+  const local=path.join(root,asset);if(!fs.existsSync(local))return match;
+  const digest=crypto.createHash('sha256').update(fs.readFileSync(local)).digest('hex').slice(0,12);
+  return `${attr}="/${asset}?v=${digest}"`;
+ });fs.writeFileSync(file,html);
+}
