@@ -40,6 +40,17 @@ for(const file of walk(root)){
   const data={'@context':'https://schema.org','@graph':[entity,crumbs]};
   page=page.replace('</head>','<script type="application/ld+json" id="price-structured-data">'+JSON.stringify(data).replaceAll('<','\\u003c')+'</script></head>');
  }
+
+ page=page.replace(/<script type="application\/ld\+json" id="master-structured-data">[\s\S]*?<\/script>/,'');
+ if(['','kontakty','o-mastere'].includes(route)){
+ const master={'@context':'https://schema.org','@type':'Plumber','@id':'https://vasilico.ru/#master',name:'Сантехник Василий Владимирович',url:'https://vasilico.ru/',image:'https://vasilico.ru/vasiliy-wrench.webp',telephone:'+79182468852',address:{'@type':'PostalAddress',streetAddress:'ул. Почтовая, 59/1',addressLocality:'Новотитаровская',addressRegion:'Краснодарский край',addressCountry:'RU'},areaServed:'Новотитаровская',openingHoursSpecification:{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],opens:'08:00',closes:'18:00'},contactPoint:{'@type':'ContactPoint',telephone:'+79182468852',contactType:'Запись и вопросы по работе',availableLanguage:'ru',hoursAvailable:{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],opens:'08:00',closes:'20:00'}},sameAs:['https://www.avito.ru/user/05e5eca675ab265a5fbeb65a1a3f96a5/profile']};
+ page=page.replace('</head>','<script type="application/ld+json" id="master-structured-data">'+JSON.stringify(master)+'</script></head>');
+ }
+ if(/^uslugi\/[1-9]$/.test(route)){
+ const labels=['Смесители','Унитазы','Раковины и сифоны','Канализация','Насосы и водоснабжение','Фильтры','Водонагреватели','Отопление','Закупка и доставка'];const label=labels[Number(route.split('/')[1])-1];
+ page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>'+label+' в Новотитаровской — сантехник Василий Владимирович</title>');
+ page=page.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+label+' в Новотитаровской. Работы частного сантехника Василия Владимировича, цены по прайсу, предварительный калькулятор и связь с мастером. Стоимость согласуем до начала работы.">');
+ }
  fs.writeFileSync(file,page);
 }
 let sitemap=read('sitemap.xml');for(const route of paths){if(!sitemap.includes('https://vasilico.ru/'+route+'/'))sitemap=sitemap.replace('</urlset>','<url><loc>https://vasilico.ru/'+route+'/</loc></url>\n</urlset>');}fs.writeFileSync(path.join(root,'sitemap.xml'),sitemap);
