@@ -183,3 +183,5 @@ body{font-size:18px}.inner{--accent:inherit}.lede,.card p,.step p{font-size:18px
 
 /* Keep messenger labels centered on one line at phone widths. */
 .hero-messengers a{min-width:0;text-align:center;white-space:nowrap;line-height:1.25;gap:0;align-items:center;justify-content:center}
+
+.basin-photo{margin:26px 0}.basin-photo img{display:block;width:100%;max-height:720px;object-fit:contain;height:auto;border-radius:8px;background:#eeeae1}.basin-photo figcaption{font-size:18px;line-height:1.5;margin-top:12px;color:var(--muted)}
