@@ -14,7 +14,7 @@ function serviceTokens(value){
   return word.replace(/(ами|ями|ого|ему|ому|ов|ей|ый|ий|ая|ое|ые|ую|а|я|ы|и|у|ю|е|ь)$/,'');
  }).filter(word=>!['нужн','надо','мне','хочу','в','на','для','и','к','с'].includes(word));
 }
-const calculatorChoices=[...replacementJobs,...allPriceJobs.slice(0,-1).map(job=>({id:'single-'+job.id,name:job.name,jobs:[job.id]}))];
+const calculatorChoices=[...replacementJobs,...allPriceJobs.filter(job=>job.id!==tripPriceJob.id).map(job=>({id:'single-'+job.id,name:job.name,jobs:[job.id]}))];
 function searchServiceChoices(query){
  const tokens=serviceTokens(query);
  if(!tokens.length)return replacementJobs;
@@ -40,7 +40,7 @@ if(taskInput){
 
  const options=document.querySelector('#estimate-options'),count=document.querySelector('#estimate-match-count'),basket=document.querySelector('#estimate-selected'),empty=document.querySelector('#estimate-empty'),result=document.querySelector('#estimate-result'),clear=document.querySelector('#estimate-clear');
  const seenJobs=new Set(),basketNodes=new Map();
- const tripId=allPriceJobs.at(-1).id;
+ const tripId=tripPriceJob.id;
  const money=value=>value.toLocaleString('ru-RU')+' ₽';
  function updateSelectionButtons(){
   document.querySelectorAll('.prices-page input[type=checkbox]').forEach(input=>{
