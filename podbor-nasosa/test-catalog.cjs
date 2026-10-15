@@ -1,5 +1,5 @@
-const assert=require('node:assert/strict');require('./data.js');require('./catalog.js');const E=require('./engine.js'),C=PUMP_DATA;
-assert.equal(C.pumps.length,9);assert.equal(new Set(C.pumps.map(p=>p.id)).size,9);
+const assert=require('node:assert/strict');require('./data.js');require('./catalog.js');require('./stations.js');const E=require('./engine.js'),C=PUMP_DATA;
+assert.equal(C.pumps.length,12);assert.equal(new Set(C.pumps.map(p=>p.id)).size,12);
 let checks=0;
 for(const p of C.pumps){assert.equal(p.summary.length,5);assert(p.sources.length);for(const inlet of C.inletOptions){for(let mask=0;mask<32;mask++){
  const c=structuredClone(C);c.inletBar=inlet;const active=c.fixtures.filter((_,i)=>mask&(1<<i)).map(f=>f.id),state={pump:p.id,active,hot:true,hotTarget:'kitchen',setpoint:2.5};

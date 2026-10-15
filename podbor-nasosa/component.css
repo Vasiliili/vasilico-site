@@ -5,3 +5,14 @@
 body>main.pump-demo{margin:var(--header) auto 0;padding-top:28px;height:auto;overflow:visible}#pump-demo .fixture svg{width:64px;height:64px;stroke-width:2}#pump-demo .pump-contact{padding:24px;border:2px solid #246d6b;border-radius:12px;margin:28px 0}#pump-demo .pump-contact .button{display:block;text-align:center;white-space:normal;background:#e4efeb;color:#246d6b}#pump-demo .verdict-list>div{padding:14px 0;border-bottom:1px solid #d8d7ce}#pump-demo .verdict-list dt{font-weight:bold;color:#365c7b}#pump-demo .verdict-list dd{margin:5px 0 0}#pump-demo .hero-messengers{margin-top:18px}#pump-demo .hero-messengers a{font-size:18px;padding:14px 5px;text-align:center}#pump-demo .review-grid{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}#pump-demo .table-wrap{max-width:100%}@media(max-width:700px){#pump-demo .pump-contact,#pump-demo .assessment{padding:16px}#pump-demo h1{font-size:32px;overflow-wrap:break-word}}
 /* Long model names must fit the same mobile frame and select. */
 #pump-demo .setup label{min-width:0}#pump-demo .pump-frame{min-width:0}#pump-demo .pump-frame figcaption{overflow-wrap:anywhere}#pump-demo #pump-model{max-width:100%;min-width:0}#pump-demo #catalog-state{margin-bottom:0}#pump-demo #photo-source{overflow-wrap:anywhere}
+
+/* Comparison and reference catalogue use the existing palette. */
+#pump-demo .comparison{margin:28px 0;padding:20px 0;border-top:2px solid #365c7b}
+#pump-demo .comparison small{display:block;color:#616864;font-size:14px;margin-top:5px}
+#pump-demo .comparison button{border:1px solid #365c7b;border-radius:7px;background:#e8eef2;text-align:left;padding:10px;min-height:44px;font-weight:bold;font-size:16px;overflow-wrap:anywhere}
+#pump-demo .selected-pump{background:#e4eee5}
+#pump-demo .reference-card{padding:20px 0;border-bottom:1px solid #c9cec7;overflow-wrap:anywhere}
+#pump-demo .reference-card img{width:100%;height:180px;object-fit:contain;background:white;border-radius:10px}
+#pump-demo .reference-card h3{font-size:22px}#pump-demo .reference-card dt{font-weight:bold}#pump-demo .reference-card dd{margin:4px 0 16px}
+#pump-demo .scale-range{position:absolute;top:-5px;height:7px;background:#ae6b30;border:1px solid #27343b}
+@media(max-width:700px){#pump-demo .result-heading{flex-wrap:wrap}#pump-demo .gauge-box strong{font-size:15px;overflow-wrap:anywhere}#pump-demo .comparison table{font-size:14px}#pump-demo .comparison button{font-size:14px;padding:8px 5px}#pump-demo .comparison td{vertical-align:top}#pump-demo .metrics strong{font-size:20px}}

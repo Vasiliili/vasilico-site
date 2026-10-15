@@ -67,3 +67,34 @@ Interpolation is piecewise linear, not exact factory test data. TEMA's earlier P
 Six models are catalogue-only. No borrowed curve from a similarly named brand, no invented control thresholds, no estimated output gauge or gas-heater result. All models share five summary headings. Missing reliability/noise/dimension data is stated rather than scored. Photographs are unmodified originals supplied by the owner and can be opened at full resolution.
 
 Run `node podbor-nasosa/test-engine.cjs` and `node podbor-nasosa/test-catalog.cjs`. DOM switching checked separately with linkedom; actual mobile browser rendering has not been inspected in this environment.
+
+## Comparison update — 2026-10-15
+
+Active selector: Wilo PB-201EA, Aquario TEMA 400, Aquario AC 159-160A,
+DAB Esybox Mini 3, Grundfos SCALA2 3-45, Wilo PW-175EA.
+Six incomplete models remain in a collapsed reference catalogue, excluded from calculation.
+
+New data are isolated in `stations.js`; source URLs, curve provenance and five review
+headings are stored per model. DAB uses the manufacturer's tabulated Q/H points.
+SCALA2 uses an approximate digitization of the upper performance curve, restricted
+ to the digitized domain. Settings are quantized to each product's increment;
+SCALA2's inlet-relative setpoint cap follows the cited installation manual.
+
+PW-175EA uses the Wilo-PW passport revised 2024-11-18: page 6 gives 350 W input,
+125 W output and 1.1/1.8 kgf/cm² switching thresholds. Values are converted to bar
+with 0.980665. Page 11 supplies the PW-175/175EA curve; no extrapolation beyond
+34 L/min. The supplier's illustrative photograph shows a different 400/170 W
+execution: this discrepancy is disclosed, and its plate is NOT used for calculation.
+The curve is not used as a constant pressure gain. If the full-speed operating
+point exceeds cut-out, show the relay pressure/fixture-flow interval. The needle
+marks its lower bound; an arc and scale strip show the interval. Cycle duration,
+vessel dynamics, switching delay and transients are not simulated. If inlet
+pressure already exceeds cut-in, no restart is assumed in this idealized network
+(the pressure loss across an idle pump is unknown and omitted).
+
+Validation: `node podbor-nasosa/test-engine.cjs`, `test-catalog.cjs` (1536
+model/inlet/load combinations), and `test-stations.cjs` (setpoint limits,
+capacity shortfall, relay cycling/continuous/passive operation, gas-flow routing).
+A separate LinkeDOM harness exercised model and inlet changes, slider events,
+reference/active model counts, relay displays, close-all and reset. This is DOM
+verification, not visual verification on a physical mobile device.
