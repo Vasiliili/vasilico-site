@@ -53,3 +53,17 @@
 ## Редакция 2
 Начальное входное давление 1 бар — условие примера, не замер. Пресеты в inletOptions: 0.5, 0.7, 1, 1.5 бар. Смена насоса сохраняет выбранное давление и приборы. Границы комфорта 2–3 бар сохранены. H(Q) не менялась.
 Оценка опыта и отзывы находятся отдельно в assessment; числовой рейтинг надёжности не выводится. limitNote показывает расхождения документов по допустимым давлениям: необходим паспорт конкретного исполнения. Зелёная зона не означает подтверждённую допустимость монтажа.
+
+## Local-store catalogue — 2026-10-15
+
+`catalog.js` extends the base dataset with eight models from the owner's photos. Ballu water heater excluded. ADB-60 nameplate and assembly photos describe one item; its 16,380 RUB price is for the photographed assembly. COMFORT ZP15-9-160: 5,720 RUB; Aquario AC159-160A: 8,500 RUB. These are photo prices, not live offers.
+
+Aquario curves are the numeric `data-praph` series from official product pages, retrieved 2026-10-15:
+- https://aquario.ru/tema-400ea : `0:20;20:16;40:12;60:6;70:2`
+- https://aquario.ru/catalog/povysitelnye-nasosy/ac159-160a : `0:9;10:7.3;20:4.5;26:0.8` (usable limit 25 L/min per catalogue).
+
+Interpolation is piecewise linear, not exact factory test data. TEMA's earlier PDF curve differs slightly; the page's numeric series is explicitly identified. Both manuals specify start at 2 L/min and stopping on cessation of draw; offFlow=0 models this cessation, not a measured hysteresis threshold. Transients and very-low-flow cycling are not modeled.
+
+Six models are catalogue-only. No borrowed curve from a similarly named brand, no invented control thresholds, no estimated output gauge or gas-heater result. All models share five summary headings. Missing reliability/noise/dimension data is stated rather than scored. Photographs are unmodified originals supplied by the owner and can be opened at full resolution.
+
+Run `node podbor-nasosa/test-engine.cjs` and `node podbor-nasosa/test-catalog.cjs`. DOM switching checked separately with linkedom; actual mobile browser rendering has not been inspected in this environment.

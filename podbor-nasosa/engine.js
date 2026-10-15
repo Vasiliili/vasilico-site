@@ -41,9 +41,10 @@
   const off=demand(config,state,inlet),need=config.fixtures.filter(x=>state.active.includes(x.id)).reduce((s,x)=>s+x.referenceFlow,0);
   let result={...off,pressure:inlet,boost:0,need,running:false,limited:false,reason:need?'Без повышения давления':'Все точки закрыты; насос остановлен'};
   if(!pump&&state.pump!=='none')return {...result,limited:true,reason:'Модель насоса не найдена',heater:heaterState(config,state,result)};
+  if(pump?.catalogOnly)return {...result,limited:true,reason:'Модель в каталоге — расчёт пока недоступен',heater:{kind:'unknown',text:'Оценка колонки недоступна без расчётных данных выбранного насоса'}};
   if(pump&&need){
    if(pump.type!=='flow-switch'&&pump.type!=='constant-pressure')return {...result,limited:true,reason:'Алгоритм этой автоматики ещё не подтверждён',heater:heaterState(config,state,result)};
-   const canStart=off.total>=pump.auto.onFlow;
+   const canStart=off.total>=pump.auto.onFlow&&inlet>=(pump.minInletBar||0);
    if(!canStart){result.reason='Естественный проток ниже порога запуска насоса';}
    else if(!pump.curve?.length){result.limited=true;result.reason='Нет проверенной характеристики H(Q)';}
    else{
