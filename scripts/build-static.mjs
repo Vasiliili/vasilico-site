@@ -22,7 +22,11 @@ for(const file of walk(root)){
  for(const f of ['knowledge.js','pricing-data.js','pricing-pages.js'])vm.runInContext(read(f),ctx,{filename:f});
  vm.runInContext(app,ctx,{filename:'app.js'});
  if(!nodes.main.innerHTML.includes('<h1'))throw Error('Missing heading '+route);
- page=page.replace(/<main id="main">[\s\S]*?<\/main>/,'<main id="main">'+nodes.main.innerHTML+'</main>');
+ // Retain the crawlable local shop recommendation also inserted by app.js at runtime.
+ const localBuy=page.match(/<aside class="local-buy-link"[\s\S]*?<\/aside>/)?.[0]||'';
+ let rendered=nodes.main.innerHTML;
+ if(localBuy&&!rendered.includes('local-buy-link')){const footer=rendered.search(/<(?:div|footer)[^>]*class="footer"/);rendered=footer<0?rendered+localBuy:rendered.slice(0,footer)+localBuy+rendered.slice(footer);}
+ page=page.replace(/<main id="main">[\s\S]*?<\/main>/,'<main id="main">'+rendered+'</main>');
  page=page.replace(/<nav aria-label="Основные разделы">[\s\S]*?<\/nav>/,'<nav aria-label="Основные разделы">'+nodes.nav.innerHTML+'</nav>');
  // Keep existing titles for existing routes; new routes have explicit metadata.
  if(paths.includes(route)){
