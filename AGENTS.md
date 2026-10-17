@@ -7,3 +7,4 @@
 - Keep `/ceny/#calculator` working. Keep verification files and Google ownership meta tags intact.
 - Before publishing, check JS syntax and exercise calculator presets, add/remove, optional trip, and mobile layout. Never invent rates for tasks missing from the price list.
 - Deploy through this GitHub Pages repository. Do not move the site back to chatgpt.site.
+- In real-work stories, mention the confirmed locality naturally in the introduction. Use the full name «Новотитаровская» for local jobs; avoid repetitive place-name stuffing. Do not invent streets, house types or job locations that the owner has not confirmed. General advice must not be presented as a specific completed local job.

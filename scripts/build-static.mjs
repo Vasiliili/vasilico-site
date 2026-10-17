@@ -28,6 +28,8 @@ for(const file of walk(root)){
  if(localBuy&&!rendered.includes('local-buy-link')){const footer=rendered.search(/<(?:div|footer)[^>]*class="footer"/);rendered=footer<0?rendered+localBuy:rendered.slice(0,footer)+localBuy+rendered.slice(footer);}
  page=page.replace(/<main id="main">[\s\S]*?<\/main>/,'<main id="main">'+rendered+'</main>');
  page=page.replace(/<nav aria-label="Основные разделы">[\s\S]*?<\/nav>/,'<nav aria-label="Основные разделы">'+nodes.nav.innerHTML+'</nav>');
+ const completedArticle=vm.runInContext('activeArticle?.completedWork ? activeArticle : null',ctx);
+ if(completedArticle)page=page.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+escape(completedArticle.description)+'">');
  // Keep existing titles for existing routes; new routes have explicit metadata.
  if(paths.includes(route)){
   page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>'+escape(document.title)+'</title>');
