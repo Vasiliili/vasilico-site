@@ -13,7 +13,7 @@
   else if(old){q=old.flow;h=old.head;basis='Номинальная паспортная точка '+old.name;}
   else return incomplete('Записали старый насос. Для автоматического сравнения нужно точное обозначение из базы или рабочие подача и напор из паспорта. Памятку с известными сведениями уже можно показать продавцу.');
  }else{
-  q=s.flow;if(s.unknownLevel)return incomplete('Чтобы подобрать насос по напору, нужен уровень воды во время откачки. Пока можно подготовить памятку с задачей и уточнить уровень у мастера.');
+  q=s.flow;if(s.unknownLevel)return incomplete('Чтобы подобрать насос по напору, нужна глубина зеркала воды при работающем насосе — от верха скважины до поверхности воды. Пока можно подготовить памятку с задачей и уточнить зеркало у мастера.');
   if(['level','setting','distance','pipe','height','pressure','localK'].some(k=>!Number.isFinite(s[k])))return incomplete('Заполните параметры скважины и труб или отметьте неизвестный уровень воды.');
   if(s.level<0||s.setting<=s.level||s.distance<0||s.pipe<=0||s.height<0||s.pressure<0||s.localK<0)return incomplete('Проверьте условия: насос должен быть ниже рабочего уровня воды, а размеры труб, давление и высота — допустимыми.');
   h=s.level+s.height+s.pressure/d.physics.barPerMetre+loss(q,s.setting+s.distance,s.pipe,s.localK,d.physics);basis='Предварительный расчёт по указанным условиям';pumpDepthKnown=true;

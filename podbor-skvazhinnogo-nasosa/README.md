@@ -34,7 +34,7 @@ Sources checked2026-10-17. No price, availability, guaranteed lifespan, noise ra
 
 ## Calculation
 
-For first selection, TDH = dynamic water level below wellhead + consumer elevation above wellhead + required pressure /0.0980665 + friction. Friction length is pump setting depth + outside pipe length; pump setting depth is NOT added again as static head. Assume wellhead at ground reference, smooth plastic pipe, water about20°C. Darcy–Weisbach; laminar64/Re, Haaland turbulent approximation. Local K=4 is a visible example. No aquifer, well drawdown or automatic control simulation.
+For first selection, TDH = dynamic water level below wellhead + consumer elevation above wellhead + required pressure /0.0980665 + friction. Friction length is pump setting depth + outside pipe length; pump setting depth is NOT added again as static head. All levels share the top-of-borehole datum; assume smooth plastic pipe and water about20°C. Darcy–Weisbach; laminar64/Re, Haaland turbulent approximation. Local K=4 is a visible example. No aquifer, well drawdown or automatic control simulation.
 
 Candidate head uses interpolation only inside published nodes; check required duty, known diameter, yield and (when setting is known) submergence. Nominal flow ranges, unknown cooling/diameter, high excess head and small head reserve prompt review. Sort candidates by least excess head; this is not a quality score or a guaranteed plug-in replacement. If no candidate, provide specification for seller/owner instead of inventing data. Replacement duty is not reduced or re-augmented with first-selection geometry.
 
@@ -43,3 +43,8 @@ Candidate head uses interpolation only inside published nodes; check required du
 Run node podbor-skvazhinnogo-nasosa/test-engine.cjs and JS syntax checks; node scripts/build-static.mjs after shared navigation/search edits. Native JSDOM UI checks covered both modes, exact and unknown names, changed conditions, manual point, safe free text, presets, unknown dimensions, seller expansion/copy/share/print, and URL restore. Existing price calculator presets, add/remove, trip and clear regression-tested. Mobile CSS uses single-column fields at600px, >=48px controls, min-width:0 and the site's fixed-header offset. Real mobile browser visual QA unavailable in this environment; do not claim phone screenshots/tests.
 
 No circulation pump selection; reserve tank sizing and purchase checklists remain later phases.
+
+
+## Terminology clarification
+
+Owner uses «зеркало воды». Level field now explicitly means distance from top of borehole to water surface while pumping, with a 5m →5 example beside input. Pump setting depth and consumer elevation use the same top-of-borehole datum (not a mix of ground and casing top). Geometry calculation unchanged. Static (pump-off) mirror may be higher and is not silently substituted for pumping mirror. Seller brief and unknown-level status use the same wording.
