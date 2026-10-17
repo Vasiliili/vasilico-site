@@ -2,10 +2,10 @@
 (function(root){
  const ids=['lift','flow','pressure','height','suctionLength','suctionDiameter','deliveryLength','deliveryDiameter','suctionK','deliveryK','yield'];
  function loss(q,length,diameter,k,p){const d=diameter/1000,v=(q/60000)/(Math.PI*d*d/4),re=v*d/p.viscosity;const f=re===0?0:re<2300?64/re:1/Math.pow(-1.8*Math.log10(Math.pow(p.roughness/d/3.7,1.11)+6.9/re),2);return(f*length/d+k)*v*v/(2*p.g);}
- function head(curve,q){if(q<curve[0][0]||q>curve[curve.length-1][0])return null;for(let i=1;i<curve.length;i++){const[a,h]=curve[i-1],[b,j]=curve[i];if(q<=b)return h+(j-h)*(q-a)/(b-a);}return curve[curve.length-1][1];}
+ function head(curve,q){if(!Number.isFinite(q))return null;if(q<curve[0][0]||q>curve[curve.length-1][0])return null;for(let i=1;i<curve.length;i++){const[a,h]=curve[i-1],[b,j]=curve[i];if(q<=b)return h+(j-h)*(q-a)/(b-a);}return curve[curve.length-1][1];}
  function calculate(s,data){
- if(ids.some(k=>!Number.isFinite(s[k])))return{error:'Заполните все числовые поля.'};
- if(s.flow<=0||s.pressure<0||s.height<0||s.suctionLength<=0||s.deliveryLength<0||s.suctionDiameter<=0||s.deliveryDiameter<=0||s.suctionK<0||s.deliveryK<0||s.yield<=0)return{error:'Проверьте расход, размеры труб и давление: значения не должны быть отрицательными или нулевыми там, где нужна величина.'};
+ if(ids.some(k=>!(k==='yield'&&s.unknownYield)&&!(k==='lift'&&s.unknownLevel)&&!Number.isFinite(s[k])))return{error:'Заполните все числовые поля.'};
+ if(s.flow<=0||s.pressure<0||s.height<0||s.suctionLength<=0||s.deliveryLength<0||s.suctionDiameter<=0||s.deliveryDiameter<=0||s.suctionK<0||s.deliveryK<0||(!s.unknownYield&&s.yield<=0))return{error:'Проверьте расход, размеры труб и давление: значения не должны быть отрицательными или нулевыми там, где нужна величина.'};
  if(s.unknownLevel)return{error:'Для подбора нужен уровень воды во время откачки. Уточните его или обратитесь к мастеру — по общей глубине колодца насос не подбирают.'};
  if(s.suctionLength<Math.max(0,s.lift))return{error:'Длина трубы до насоса не может быть меньше высоты подъёма воды.'};
  if(s.deliveryLength<s.height)return{error:'Длина трубы после насоса не может быть меньше подъёма до крана.'};
@@ -19,5 +19,9 @@
  if(!s.unknownYield&&s.flow>s.yield){state='bad';verdict='Запрошенный расход превышает указанную подачу источника. Более мощный насос проблему не решает.';}
  return{model:m,head:h,margin,state,verdict,pressure:h===null?null:Math.max(0,(h-s.lift-s.height-suctionLoss-deliveryLoss)*p.barPerMetre)};})};
  }
- root.SurfaceEngine={loss,head,calculate};
+ function alternatives(s,data,required){
+ if(s.unknownLevel||!Number.isFinite(required))return [];
+ return (data.alternatives||[]).map(m=>({model:m,head:head(m.curve,s.flow)})).filter(x=>x.head!==null&&x.head-required>=data.alternativeRules.minimumMarginM&&s.lift<=x.model.maxLift&&!(!s.unknownYield&&s.flow>s.yield)).sort((a,b)=>(a.head-required)-(b.head-required)).slice(0,data.alternativeRules.maximumShown);
+ }
+ root.SurfaceEngine={loss,head,calculate,alternatives};
 })(typeof window==='undefined'?globalThis:window);
