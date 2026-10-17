@@ -1,15 +1,21 @@
 (function(){
+ try{
  const D=HEATER_DATA,E=HeaterEngine,$=id=>document.getElementById(id),n=(v,d=1)=>Number(v).toLocaleString('ru-RU',{maximumFractionDigits:d}),time=v=>{const m=Math.ceil(Math.max(0,v));return m<60?m+' мин':Math.floor(m/60)+' ч '+m%60+' мин';};
- let state=structuredClone(D.defaults);
+ let state=structuredClone(D.defaults),customVolume=false;
  $('volume-preset').innerHTML=D.volumes.map(v=>`<option value="${v}">${v} л</option>`).join('')+'<option value="custom">Свой объём</option>';
  $('scheme').insertAdjacentHTML('beforeend',D.fixtures.map(f=>`<button type="button" class="fixture" data-fixture="${f.id}" aria-pressed="false"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="${f.icon}"/></svg><b>${f.name}</b><small>Не подключено</small></button>`).join(''));
  function sync(){document.querySelectorAll('[data-value]').forEach(el=>el.value=state[el.dataset.value]);$('during').checked=state.during;$('flow-preset').value=[6,8,12].includes(state.showerFlow)?String(state.showerFlow):'custom';}
  function measure(){const l=Number($('measure-litres').value),s=Number($('measure-seconds').value),valid=$('measure-litres').validity.valid&&$('measure-seconds').validity.valid&&l>0&&s>0;$('measure-result').textContent=valid?'Ваш расход: '+n(l*60/s)+' л/мин':'Введите объём и время.';$('apply-flow').disabled=!valid||l*60/s<1||l*60/s>25;return valid?l*60/s:null;}
  function update(){
   for(const f of D.fixtures){const on=state.active.includes(f.id);$(f.id+'-fields').hidden=!on;const b=document.querySelector('[data-fixture="'+f.id+'"]');b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));b.querySelector('small').textContent=on?'Подключено':'Не подключено';}
-  $('volume-preset').value=D.volumes.includes(state.volume)?String(state.volume):'custom';
+  $('volume-preset').value=customVolume||!D.volumes.includes(state.volume)?'custom':String(state.volume);$('custom-volume-wrap').hidden=!customVolume&&!(!D.volumes.includes(state.volume));
   const invalid=[...document.querySelectorAll('[data-value]')].some(x=>x.value===''||!x.validity.valid),r=E.solve(state),error=invalid?'Проверьте значения: они должны находиться в указанных диапазонах.':r.error;
-  $('error').hidden=!error;$('error').textContent=error||'';$('results').hidden=!!error;if(error)return;
+  $('error').hidden=!error;$('error').textContent=error||'';$('results').hidden=!!error;if(error){$('quick-result').textContent='Проверьте настройки';$('quick-verdict').textContent=error;return;}
+  $('tool-status').hidden=true;document.documentElement.dataset.heaterReady='true';
+  $('temperature-summary').textContent=`бак ${n(state.stored,0)} °C · холодная ${n(state.cold,0)} °C · купание ${n(state.mixed,0)} °C`;
+  $('quick-result').textContent=`${n(state.volume,0)} л в баке → ≈ ${n(r.mixedLitres,0)} л при ${n(state.mixed,0)} °C`;
+  document.querySelector('.live-summary').classList.toggle('short',!r.allFit);
+  const firstShort=r.rows.find(x=>!x.ok);$('quick-verdict').textContent=!r.rows.length?'Выберите, где нужна горячая вода.':r.allFit?'По расчёту хватает на выбранный сценарий.':`${firstShort.name}: ≈ ${n(firstShort.servedMinutes)} из ${n(firstShort.duration)} мин при заданном расходе.`;
   $('tank-litres').textContent=n(state.volume,0)+' л';$('tank-temp').textContent=n(state.stored,0)+' °C';$('mix-label').textContent='В кране '+n(state.mixed,0)+' °C';
   $('mixed-output').textContent='≈ '+n(r.mixedLitres,0)+' л';$('shower-output').textContent=Number.isFinite(r.showerMinutes)?'≈ '+n(r.showerMinutes)+' мин':'ТЭН покрывает расход в модели';$('heat-output').textContent='≥ '+time(r.fullHeatMinutes);
   $('mix-explanation').textContent=`${n(state.volume,0)} л при ${n(state.stored,0)} °C + холодная вода ${n(state.cold,0)} °C → теоретически ${n(r.mixedLitres,0)} л при ${n(state.mixed,0)} °C. Доля горячей воды в смеси: ${n(r.hotShare*100,0)}%. Это запас без догрева. Душ ${n(state.showerFlow)} л/мин; время душа ${state.during?'учитывает идеальный догрев':'показано без догрева'}.`;
@@ -25,11 +31,13 @@
  }
  document.querySelectorAll('[data-value]').forEach(el=>el.addEventListener('input',()=>{state[el.dataset.value]=el.value===''?NaN:Number(el.value);if(el.id==='showerFlow')$('flow-preset').value=[6,8,12].includes(state.showerFlow)?String(state.showerFlow):'custom';update();}));
  $('scheme').addEventListener('click',e=>{const b=e.target.closest('[data-fixture]');if(!b)return;const id=b.dataset.fixture;state.active=state.active.includes(id)?state.active.filter(x=>x!==id):[...state.active,id];update();});
- $('volume-preset').addEventListener('change',e=>{if(e.target.value==='custom'){$('volume').focus();return;}state.volume=Number(e.target.value);$('volume').value=state.volume;update();});
+ $('volume-preset').addEventListener('change',e=>{if(e.target.value==='custom'){customVolume=true;$('custom-volume-wrap').hidden=false;$('volume').focus();return;}customVolume=false;state.volume=Number(e.target.value);$('volume').value=state.volume;update();});
  $('flow-preset').addEventListener('change',e=>{if(e.target.value==='custom'){$('showerFlow').focus();return;}state.showerFlow=Number(e.target.value);$('showerFlow').value=state.showerFlow;update();});
  $('during').addEventListener('change',e=>{state.during=e.target.checked;update();});
  document.querySelectorAll('[data-scenario]').forEach(b=>b.addEventListener('click',()=>{Object.assign(state,{people:2,minutes:8,showerFlow:8,pause:0});state.active=b.dataset.scenario==='two'?['shower']:b.dataset.scenario==='kitchen'?['shower','kitchen']:['shower','bath'];sync();update();}));
+ document.querySelectorAll('a[href="#results"],a[href="#measure-flow"],a[href="#heater-start"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const target=$(a.getAttribute('href').slice(1));if(target.tagName==='DETAILS')target.open=true;if(!target.hidden)target.scrollIntoView?.({block:'start',behavior:'auto'});else $('error').scrollIntoView?.({block:'center'});}));
  for(const id of ['measure-litres','measure-seconds'])$(id).addEventListener('input',measure);
  $('apply-flow').addEventListener('click',()=>{const q=measure();if(q==null||$('apply-flow').disabled)return;state.showerFlow=Math.round(q*10)/10;if(!state.active.includes('shower'))state.active.push('shower');sync();update();});
- $('reset').addEventListener('click',()=>{state=structuredClone(D.defaults);sync();update();});sync();measure();update();
+ $('reset').addEventListener('click',()=>{state=structuredClone(D.defaults);customVolume=false;sync();update();});sync();measure();update();
+ }catch(error){const status=document.getElementById('tool-status');if(status){status.hidden=false;status.textContent='Не удалось запустить расчёт. Обновите страницу. Если проблема остаётся, напишите мастеру через контакты ниже.';}console.error('Heater calculator failed:',error);}
 })();

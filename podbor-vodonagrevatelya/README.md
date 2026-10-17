@@ -40,3 +40,20 @@ syntax, canonical URL, one h1 and sitemap were checked separately. Browser QA
 was unavailable in this managed environment, so mobile layout was not visually
 verified on a physical browser; responsive rules and inherited header spacing
 were inspected in source. No preview server or browser was installed.
+
+## Mobile usability correction — 2026-10-17
+
+The user's screenshot exposed an invisible CTA label: the component's generic
+anchor colour overrode the site's light button text, matching its blue background.
+Primary anchors now have explicit contrasting colours. Main settings show volume
+and power; exact custom volume appears only on request. Temperature and secondary
+settings are folded. A short live result appears immediately after tank settings,
+and explicit links scroll to the detailed result or measurement helper with
+header clearance. The contact section links back to the actual calculator.
+
+Initialization reports loading/failure instead of leaving silent blank outputs.
+A native JSDOM test (without mocking input validity) checked default initialization,
+invalid temperature recovery, native preset/custom controls, fixtures, measurements,
+pauses, heating, reset, scrolling targets, computed button contrast and the shared
+knowledge/discovery scripts. The thermal regression suite still passes. This is
+DOM/CSS verification, not a physical mobile-browser screenshot test.
