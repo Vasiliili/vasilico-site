@@ -1,7 +1,7 @@
 (function(){
  const $=id=>document.getElementById(id),form=$('surface-form'),status=$('result-status'),results=$('surface-results'),n=x=>x.toLocaleString('ru-RU',{maximumFractionDigits:1});
  const numeric=['lift','count','flow','pressure','height','suctionLength','suctionDiameter','deliveryLength','deliveryDiameter','suctionK','deliveryK','yield'];
- let purpose='garden',brief='';const sourceNames={bore:'скважина',well:'колодец',tank:'ёмкость'};
+ let purpose='garden',brief='';const sellerTrigger=$('shopping-text').querySelector('summary'),sellerSheet=window.SellerSheet?.mount({trigger:sellerTrigger,panel:$('shopping-text')});if(sellerSheet)sellerTrigger.addEventListener('click',e=>{e.preventDefault();sellerSheet.open();});const sourceNames={bore:'скважина',well:'колодец',tank:'ёмкость'};
  function demand(){return SurfaceData.demands[purpose==='house'?'house':$('job').value];}
  function defaults(){const d=demand(),count=Number($('count').value)||1;$('flow').value=Math.round(d.unitFlow*count*10)/10;$('pressure').value=d.pressure;}
  function sync(){const mains=purpose==='mains';$('mains-route').hidden=!mains;$('source-controls').hidden=mains;$('selection').hidden=mains;document.querySelectorAll('[data-purpose]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.purpose===purpose)));$('job-wrap').hidden=purpose==='house';const d=demand();$('count').parentElement.firstChild.textContent=d.countLabel;$('demand-hint').textContent=d.note;}
