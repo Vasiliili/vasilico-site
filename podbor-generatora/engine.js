@@ -16,6 +16,15 @@
   if(!unknownStart)startingVA=state.startMode==='together'?rows.reduce((s,l)=>s+Math.max(l.startVA,l.watts/l.pf),0):Math.max(runningVA,...rows.map(l=>runningVA-l.watts/l.pf+Math.max(l.startVA,l.watts/l.pf)));
   return {errors:[],rows,runningW,runningVA,startingVA,unknownStart,unconfirmed,requiredW:runningW*(1+state.reserve/100),requiredVA:runningVA*(1+state.reserve/100),hasMotor:rows.some(l=>l.motor),blocked:state.building!=='house'||state.phase!=='single',empty:!rows.length};
  }
+ function ownVariant(input){
+  const errors=[];
+  if(!String(input.name||'').trim())errors.push('Введите марку и модель.');
+  if(!finite(input.watts,1,30000))errors.push('Укажите номинальную мощность от 1 до 30 000 Вт.');
+  if(!finite(input.va,1,150000))errors.push('Укажите номинальную полную мощность в ВА. Если она неизвестна, уточните паспорт.');
+  if(finite(input.watts,1,30000)&&finite(input.va,1,150000)&&input.va<input.watts)errors.push('Полная мощность в ВА не может быть меньше активной в Вт. Проверьте единицы.');
+  if(errors.length)return {errors,variant:null};
+  return {errors:[],variant:{key:'own',fuel:'own',rating:{watts:input.watts,va:input.va,maximum:null},model:{id:'own',name:String(input.name).trim().slice(0,80),technology:input.technology==='inverter'?'inverter':'standard',note:'Данные введены посетителем. Сайт не подтверждает паспорт и исполнение генератора.'}}};
+ }
  function variants(data,filters){return data.models.flatMap(model=>Object.entries(model.ratings).map(([fuel,rating])=>({model,fuel,rating,key:model.id+':'+fuel}))).filter(v=>(filters.fuel==='any'||v.fuel===filters.fuel)&&(filters.technology==='any'||v.model.technology===filters.technology)&&(filters.start!=='electric'||v.model.electric)&&(!filters.automatic||v.model.automatic));}
  function assess(variant,result){
   if(result.errors.length||result.empty||result.blocked)return {status:'blocked'};
@@ -24,5 +33,5 @@
   return {working,reserve,startWithinContinuous,loadPercent:Math.max(result.runningW/r.watts,result.runningVA/r.va)*100,status:!working?'overload':!reserve?'little-reserve':'working'};
  }
  function shortlist(options,result){return options.filter(v=>{const a=assess(v,result);return a.reserve;}).sort((a,b)=>{const aa=assess(a,result),bb=assess(b,result);return Number(bb.startWithinContinuous===true)-Number(aa.startWithinContinuous===true)||a.rating.watts-b.rating.watts;});}
- root.GeneratorEngine={calculate,variants,assess,shortlist};if(typeof module==='object')module.exports=root.GeneratorEngine;
+ root.GeneratorEngine={calculate,variants,assess,shortlist,ownVariant};if(typeof module==='object')module.exports=root.GeneratorEngine;
 })(typeof window!=='undefined'?window:globalThis);
