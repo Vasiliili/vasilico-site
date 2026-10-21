@@ -8,3 +8,7 @@
 #g-own{border-left:3px solid var(--g-green);padding:0 0 6px 18px;margin:20px 0}
 .generator-tool .g-presets button{border:0;border-radius:0;background:transparent;padding:8px 0;min-height:48px;color:var(--g-green);text-align:left;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
 .generator-tool .g-presets{column-gap:24px;row-gap:2px}
+
+#kvartira{scroll-margin-top:calc(var(--header,180px) + 20px)}
+#kvartira li{margin:14px 0}
+#kvartira a{text-decoration:underline;text-underline-offset:3px}
