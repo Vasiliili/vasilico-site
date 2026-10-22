@@ -15,6 +15,7 @@ const replacementChoices=[
  ['Замена унитаза',['Демонтаж унитаза','Установка унитаза']],
  ['Замена ванны',['Демонтаж ванны','Установка ванны']]
 ];
+priceGroups.find(([name])=>name==='Насосы, фильтры и техника')[1].push(['Демонтаж фильтра воды',500,false],['Монтаж фильтра для глубокой очистки воды',1500,false]);
 const allPriceJobs=priceGroups.flatMap(([,rows],group)=>rows.map(([name,amount,from=true],index)=>({id:`${group}-${index}`,name,amount,from,group})));
 const replacementJobs=replacementChoices.map(([name,parts],index)=>({id:`replacement-${index}`,name,jobs:parts.map(part=>allPriceJobs.find(job=>job.name===part).id)}));
 
