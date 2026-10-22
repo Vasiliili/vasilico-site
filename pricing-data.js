@@ -21,3 +21,6 @@ const replacementJobs=replacementChoices.map(([name,parts],index)=>({id:`replace
 
 const tripPriceJob=allPriceJobs.find(j=>j.name==='Поездка в местные магазины за материалами и доставка');
 const diagnosisPriceJob=allPriceJobs.find(j=>j.name==='Диагностика неочевидной неисправности');
+
+// Historical receipt: amounts remain fixed when the current price list changes.
+completedCasePrices["sovety/zamena-filtra-pitevoy-vody-pomoshch-roditelyam"]=(()=>{const rows=[["Установка шарового крана",500],["Демонтаж фильтра воды",500],["Монтаж фильтра для глубокой очистки воды",1500],["Поездка в местные магазины за материалами и доставка",300]],discount=500;return {rows,discount,amount:rows.reduce((sum,row)=>sum+row[1],0)-discount};})();

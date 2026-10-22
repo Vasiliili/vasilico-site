@@ -192,3 +192,8 @@ body{font-size:18px}.inner{--accent:inherit}.lede,.card p,.step p{font-size:18px
 
 /* Keep unopened calculator suggestions and empty receipt controls out of view. */
 .estimate [hidden]{display:none!important}
+
+/* Real work: aligned before/after photographs and an optional inspection clip. */
+.case-photo-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:28px 0}.case-photo-pair .basin-photo{margin:0}.case-photo-pair .basin-photo img{height:440px;max-height:none;object-fit:contain}.case-video video{display:block;width:100%;max-width:460px;max-height:75vh;height:auto;margin:0 auto;border-radius:8px;background:#eeeae1}.case-receipt-summary{padding:22px;border:1px solid var(--line);border-radius:8px;background:#fffcf4}.case-receipt-summary dl{margin:0}.case-receipt-summary dl>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:19px;line-height:1.5}.case-receipt-summary dd{margin:0;white-space:nowrap;font-weight:700}.case-receipt-summary .case-receipt-total{font-size:23px;font-weight:700}.case-receipt-summary p{font-size:17px}.filter-family-story .article-index a{line-height:1.5}.filter-family-story ol{padding-left:25px}.filter-family-story ol li{padding-left:6px;margin:12px 0;font-size:20px;line-height:1.7}@media(max-width:600px){.case-photo-pair{grid-template-columns:1fr;gap:26px}.case-photo-pair .basin-photo img{height:auto;max-height:650px}.case-receipt-summary{padding:16px}.case-receipt-summary dl>div{grid-template-columns:1fr;gap:4px}.case-receipt-summary dd{text-align:right}.filter-family-story .section-title{overflow-wrap:anywhere}}
+
+.filter-family-story section[id]{scroll-margin-top:calc(var(--header,100px) + 20px)}
