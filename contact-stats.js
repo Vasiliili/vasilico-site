@@ -12,11 +12,13 @@
  if(!session){session=crypto.randomUUID();safeStorage.set('vasilico-visit',session);}
  let source=safeStorage.get('vasilico-source');
  if(!source){
-  const utm=new URLSearchParams(location.search).get('utm_source');
+  const params=new URLSearchParams(location.search),utm=params.get('utm_source');
   if(['avito','whatsapp','telegram','max','google','yandex'].includes(utm))source=utm;
   else {try{const r=new URL(document.referrer);source=channelFor(r.href)||(r.hostname.endsWith('google.com')||r.hostname.endsWith('google.ru')?'google':r.hostname==='yandex.ru'||r.hostname==='ya.ru'?'yandex':r.hostname===location.hostname?'direct':'other');}catch{source='direct';}}
   safeStorage.set('vasilico-source',source);
  }
+ if(new URLSearchParams(location.search).get('qr')==='car'){source='car_qr';safeStorage.set('vasilico-source',source);}
+ if(/^\/t3\/?$/.test(location.pathname)){let excluded=false;try{excluded=localStorage.getItem('vasilico-stats-exclude')==='1';}catch{}if(!excluded){try{window.vasilicoStatsRequest({action:'visit',id:crypto.randomUUID(),session,page:location.pathname,source}).catch(()=>{});}catch{}}}
  const last={};
  document.addEventListener('click',event=>{
   const link=event.target.closest?.('a[href]'); if(!link)return;

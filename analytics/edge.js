@@ -1,6 +1,6 @@
 const origins = new Set(['https://vasilico.ru','https://www.vasilico.ru']);
 const channels = new Set(['phone','whatsapp','telegram','max','avito']);
-const sources = new Set(['direct','avito','whatsapp','telegram','max','google','yandex','other']);
+const sources = new Set(['direct','avito','whatsapp','telegram','max','google','yandex','other','car_qr']);
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const api = Deno.env.get('SUPABASE_URL') + '/rest/v1/';
 const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
@@ -32,7 +32,13 @@ Deno.serve(async req => {
    let diff=hash.length ^ expected.length; for(let i=0;i<hash.length;i++) diff|=hash.charCodeAt(i)^(expected.charCodeAt(i)||0);
    if(diff) return respond({error:'unauthorized'},401);
    if(![1,7,30,90].includes(body.days)) return respond({error:'days'},400);
-   return respond(await db('rpc/vasilico_click_report',{p_days:body.days}));
+   const report=await db('rpc/vasilico_click_report',{p_days:body.days});
+   report.t3=await db('rpc/vasilico_t3_report',{p_days:body.days});
+   return respond(report);
+  }
+  if(body.action==='visit'){
+   if(!sources.has(body.source)||!uuid.test(body.id)||!uuid.test(body.session)||!['/t3','/t3/'].includes(body.page))return respond({error:'invalid'},400);
+   return respond({ok:true,recorded:await db('rpc/vasilico_record_t3_visit',{p_id:body.id,p_session:body.session,p_source:body.source})});
   }
   if(body.action!=='click'||!channels.has(body.channel)||!sources.has(body.source)||!uuid.test(body.id)||!uuid.test(body.session)||typeof body.page!=='string'||!/^\/[a-z0-9/_-]{0,179}$/.test(body.page)) return respond({error:'invalid'},400);
   const recorded=await db('rpc/vasilico_record_click',{p_id:body.id,p_channel:body.channel,p_page:body.page,p_source:body.source,p_session:body.session});
