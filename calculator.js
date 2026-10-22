@@ -40,7 +40,8 @@ if(taskInput){
  document.querySelector('#estimate-selected').replaceChildren();
 
  const options=document.querySelector('#estimate-options'),count=document.querySelector('#estimate-match-count'),basket=document.querySelector('#estimate-selected'),empty=document.querySelector('#estimate-empty'),result=document.querySelector('#estimate-result'),clear=document.querySelector('#estimate-clear');
- const seenJobs=new Set(),basketNodes=new Map();
+ const basketNodes=new Map();
+ let showChoices=false;
  const discountInput=document.querySelector('#estimate-discount'),completedInput=document.querySelector('#estimate-completed'),discountStatus=document.querySelector('#estimate-discount-status');
  const receipt=window.PriceReceipt?.mount({panel:document.querySelector('#estimate-receipt-panel'),paper:document.querySelector('#estimate-receipt-paper'),trigger:document.querySelector('#estimate-receipt-open')});
  const initialDiscount=Number(params.get('discount'));
@@ -56,7 +57,9 @@ if(taskInput){
   });
  }
  function renderOptions(){
-  options.replaceChildren();const choices=searchServiceChoices(taskInput.value);
+  options.replaceChildren();
+  const show=showChoices;options.hidden=!show;count.hidden=!show;
+  const choices=show?searchServiceChoices(taskInput.value):[];
   count.textContent=taskInput.value.trim()?(choices.length?'Подходящих вариантов: '+choices.length:'Ничего не найдено. Попробуйте другое слово или выберите работу в прайсе выше.'):'Частые задачи';
   choices.forEach(choice=>{
    const label=document.createElement('label');label.className='estimate-option';
@@ -72,8 +75,8 @@ if(taskInput){
   if(estimateDiscount>estimate.total){estimateDiscount=estimate.total;discountInput.value=estimateDiscount||'';discountStatus.textContent='Скидка уменьшена до суммы выбранных работ.';estimate=currentEstimate();}
   discountInput.max=String(estimate.total);discountInput.disabled=!estimate.rows.length;completedInput.disabled=!estimate.rows.length;
   if(!estimate.rows.length)completedInput.checked=false;
-  estimate.rows.forEach(job=>{if(job.id!==tripId)seenJobs.add(job.id);});
-  seenJobs.forEach(id=>{
+  basketNodes.forEach((label,id)=>{if(!selectedJobs.has(id)){label.remove();basketNodes.delete(id);}});
+  estimate.rows.filter(job=>job.id!==tripId).forEach(({id})=>{
    if(basketNodes.has(id))return;
    const job=allPriceJobs.find(job=>job.id===id),label=document.createElement('label'),checkbox=document.createElement('input'),name=document.createElement('span'),amount=document.createElement('strong');
    label.className='estimate-selected-row';checkbox.type='checkbox';checkbox.dataset.job=id;name.textContent=job.name;amount.textContent=(job.from?'от ':'')+money(job.amount);label.append(checkbox,name,amount);basket.append(label);basketNodes.set(id,label);
@@ -83,8 +86,8 @@ if(taskInput){
    const choice=calculatorChoices.find(item=>item.id===input.dataset.choice);if(!choice)return;
    const n=choice.jobs.filter(id=>selectedJobs.has(id)).length;input.checked=n===choice.jobs.length;input.indeterminate=n>0&&n<choice.jobs.length;
   });
-  basketNodes.forEach((label,id)=>label.classList.toggle('not-included',!selectedJobs.has(id)));
-  empty.hidden=seenJobs.size>0;
+  empty.hidden=basketNodes.size>0;
+  document.querySelector('.receipt-builder').hidden=!estimate.rows.length;
   result.replaceChildren();const total=document.createElement('p');total.className='estimate-total';total.textContent=estimate.rows.length?(completedInput.checked?'Итого за работы: ':'Предварительно: ')+(estimate.from&&!completedInput.checked?'от ':'')+money(estimate.payable):'Выберите работы для расчёта';if(estimate.discount){const deduction=document.createElement('p');deduction.className='receipt-discount-summary';deduction.textContent='По прайсу: '+money(estimate.total)+' · Скидка: −'+money(estimate.discount);result.append(deduction);}result.append(total);receipt?.update({...estimate,completed:completedInput.checked});
   clear.disabled=selectedJobs.size===0;
   const full=document.querySelector('.estimate-full-link');
@@ -103,11 +106,13 @@ if(taskInput){
   else return;
   syncEstimate();
  });
- taskInput.addEventListener('input',renderOptions);
- taskInput.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();options.querySelector('input')?.focus();}});
+ taskInput.addEventListener('focus',()=>{showChoices=true;renderOptions();});
+ taskInput.addEventListener('input',()=>{showChoices=true;renderOptions();});
+ taskInput.addEventListener('click',()=>{if(!showChoices){showChoices=true;renderOptions();}});
+ taskInput.addEventListener('keydown',event=>{if(event.key==='Escape'){showChoices=false;renderOptions();}if(event.key==='Enter'){event.preventDefault();options.querySelector('input')?.focus();}});
  discountInput.addEventListener('input',()=>{const raw=discountInput.value.trim(),value=raw===''?0:Number(raw);estimateDiscount=Number.isFinite(value)&&value>=0?Math.round(value*100)/100:0;discountStatus.textContent=Number.isFinite(value)&&value>=0?'':'Укажите неотрицательную сумму скидки.';syncEstimate();});
  completedInput.addEventListener('change',syncEstimate);
- clear.addEventListener('click',()=>{selectedJobs.clear();estimateDiscount=0;discountInput.value='';discountStatus.textContent='';completedInput.checked=false;syncEstimate();});
+ clear.addEventListener('click',()=>{selectedJobs.clear();estimateDiscount=0;discountInput.value='';discountStatus.textContent='';completedInput.checked=false;taskInput.value='';showChoices=false;renderOptions();syncEstimate();});
  renderOptions();syncEstimate();
 }
 const siteHeader=document.querySelector('header');
