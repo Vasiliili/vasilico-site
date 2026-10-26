@@ -28,15 +28,15 @@ const taskInput=document.querySelector('#estimate-task');
 if(taskInput){
  const panel=document.querySelector('#calculator');
  const params=new URLSearchParams(location.search);
- const preset=panel.dataset.defaultService||params.get('service')||'';
- const initial=presetJobs(preset);
- if(params.has('jobs')){
+ // A service hint in an article or URL is not a user selection.
+ // Only an explicitly shared calculation (?jobs=...) may restore its items.
+ const preset='';
+ const hasSharedEstimate=params.has('jobs')&&params.get('jobs').trim()!=='';
+ if(hasSharedEstimate){
   const valid=params.get('jobs').split(',').filter(id=>allPriceJobs.some(j=>j.id===id));
   toggleEstimateJobs(valid,true);
- }else toggleEstimateJobs(initial.map(j=>j.id),true);
- if(preset==='zamena-unitaza')taskInput.value='Замена унитаза';
- else if(preset==='zamena-smesitelya')taskInput.value='Замена смесителя';
- else if(initial.length===1)taskInput.value=initial[0].name;
+ }
+ taskInput.value='';
  document.querySelector('#estimate-selected').replaceChildren();
 
  const options=document.querySelector('#estimate-options'),count=document.querySelector('#estimate-match-count'),basket=document.querySelector('#estimate-selected'),empty=document.querySelector('#estimate-empty'),result=document.querySelector('#estimate-result'),clear=document.querySelector('#estimate-clear');
@@ -45,8 +45,8 @@ if(taskInput){
  const discountInput=document.querySelector('#estimate-discount'),completedInput=document.querySelector('#estimate-completed'),discountStatus=document.querySelector('#estimate-discount-status');
  const receipt=window.PriceReceipt?.mount({panel:document.querySelector('#estimate-receipt-panel'),paper:document.querySelector('#estimate-receipt-paper'),trigger:document.querySelector('#estimate-receipt-open')});
  const initialDiscount=Number(params.get('discount'));
- if(Number.isFinite(initialDiscount)&&initialDiscount>=0){estimateDiscount=Math.round(initialDiscount*100)/100;discountInput.value=estimateDiscount||'';}
- completedInput.checked=params.get('completed')==='1';
+ if(hasSharedEstimate&&Number.isFinite(initialDiscount)&&initialDiscount>=0){estimateDiscount=Math.round(initialDiscount*100)/100;discountInput.value=estimateDiscount||'';}
+ completedInput.checked=hasSharedEstimate&&params.get('completed')==='1';
  const tripId=tripPriceJob.id;
  const money=value=>value.toLocaleString('ru-RU')+' ₽';
  function updateSelectionButtons(){
