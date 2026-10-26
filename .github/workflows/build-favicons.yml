@@ -1,0 +1,83 @@
+name: Build favicon assets
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-favicons.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow
+      - name: Generate icons and references
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          import io, re, json
+          source = Path('icon-vasilico.png')
+          if not source.is_file():
+              raise SystemExit('Missing source icon: icon-vasilico.png')
+          im = Image.open(source).convert('RGBA')
+          if im.width < 192 or im.height < 192:
+              raise SystemExit('Source image too small for 192x192')
+          if im.width != im.height:
+              side=min(im.size)
+              left=(im.width-side)//2; top=(im.height-side)//2
+              im=im.crop((left,top,left+side,top+side))
+          resampling=Image.Resampling.LANCZOS
+          sizes=[16,32,48,120,180,192,512]
+          for size in sizes:
+              name = ('apple-touch-icon.png' if size==180 else
+                      'android-chrome-'+str(size)+'x'+str(size)+'.png' if size in (192,512) else
+                      'favicon-'+str(size)+'x'+str(size)+'.png')
+              im.resize((size,size),resampling).save(name,'PNG',optimize=True)
+          im.save('favicon.ico',format='ICO',sizes=[(16,16),(32,32),(48,48)])
+          tags=''.join([
+              '<link rel="icon" href="/favicon.ico" sizes="any">',
+              '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">',
+              '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">',
+              '<link rel="icon" type="image/png" sizes="120x120" href="/favicon-120x120.png">',
+              '<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">',
+              '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">',
+              '<link rel="manifest" href="/site.webmanifest">'
+          ])
+          manifest={
+            'name':'Сантехник в Новотитаровской — Василий Владимирович',
+            'short_name':'Частный мастер',
+            'icons':[{'src':'/android-chrome-192x192.png','sizes':'192x192','type':'image/png'},
+                     {'src':'/android-chrome-512x512.png','sizes':'512x512','type':'image/png'}],
+            'theme_color':'#f6f3ec','background_color':'#f6f3ec','display':'browser',
+            'start_url':'/'
+          }
+          Path('site.webmanifest').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          count=0
+          for path in Path('.').rglob('*.html'):
+              if '.git' in path.parts or 'node_modules' in path.parts: continue
+              html=path.read_text(encoding='utf-8')
+              if '<head' not in html.lower(): continue
+              original=html
+              html=re.sub(r'<link\b(?=[^>]*\brel=["\'](?:shortcut icon|icon|apple-touch-icon|manifest)["\'])[^>]*>', '',html, flags=re.I)
+              html=re.sub(r'(<head\b[^>]*>)',lambda match:match.group(1)+tags,html,count=1,flags=re.I)
+              if html!=original:
+                  path.write_text(html,encoding='utf-8')
+                  count+=1
+          print('Updated HTML pages:',count,'Generated sizes:',sizes)
+          PY
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html' favicon.ico 'favicon-*.png' apple-touch-icon.png android-chrome-*.png site.webmanifest
+          if ! git diff --cached --quiet; then
+            git commit -m "Add full favicon set for search engines and devices"
+            git push
+          fi
