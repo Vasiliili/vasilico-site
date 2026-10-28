@@ -32,8 +32,11 @@ jobs:
       - run: node scripts/build-static.mjs
         env:
           SITE_BASELINE_FILE: .reports/build/published-catalog.json
+      - run: npm ci --ignore-scripts
       - name: Verify the exact published content versions and real HTTP status codes
         run: node scripts/seo/live.mjs
+      - name: Verify the published Avito button after its actual JavaScript
+        run: node scripts/seo/avito-live.cjs
       - name: Notify IndexNow about changed and removed public URLs
         run: node scripts/seo/indexnow.mjs
         env:

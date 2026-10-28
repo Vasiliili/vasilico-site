@@ -30,7 +30,7 @@
 
 «Золотые руки. Мастер! Все неисправности починил, объяснил. Быстро, грамотно.»Надежда · 23 марта 2025 · Авито
 
-[Читать отзывы на Авито ↗](https://www.avito.ru/user/05e5eca675ab265a5fbeb65a1a3f96a5/profile)[Моя карточка в Google ↗](https://www.google.com/maps?cid=18139848815102143497)
+[Читать отзывы на Авито ↗](https://m.avito.ru/novotitarovskaya/predlozheniya_uslug/santehnik_v_novotitarovskoy_uslugi_mastera_2392043500?context=H4sIAAAAAAAA_0SSwY7bMAxE_0X3ACYpyQ71D0UPvS9cR2so664XlrtJEeTfC9IQc_MLRzMjKiMHflQGYres07j83Mq6lf2fS7-5S5Uxsqt5-y5TrqevrUz5tJS6n7bx8yNfXBrZ9_wo3KXC1HmKFFNhaAQ-FUYhpDN2vXwZDamwN6WcC41QzkQjce8bgaiG5gKiPBuJH3SGIgVrg4rY0MsAqCFJAlghUrE1IkkEq-QlEvoWhIqDTcUFzg2DZKCtKIgpWqsgYny1UrG1CjJAaxUVrVWUL7RWUUzRNhWkEFqrKDp8tTp0NtVIsBtpXWt1HLO3002SNxRnXdiBGvnalaK18upsD3hktBcEL3hICMKgN9eHOlBcVHKguHgyFBfvG-rdfDAUFx8NKT0rE7u6TS5Vhp5d_cr58ra-v7W_vA6A3a1c5rz_KvuSXfohP7K7y5CA3cf-Hbv7Os9w6_rhz7Rf6T1Oef6EK_i_V5ee_wcAIiMIsGYDAAA)[Моя карточка в Google ↗](https://www.google.com/maps?cid=18139848815102143497)
 
 Василий ВладимировичСантехник · НовотитаровскаяГарантия на выполненную работу
 
