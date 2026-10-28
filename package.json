@@ -1,0 +1,10 @@
+{
+  "name": "vasilico-site",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-static.mjs",
+    "check": "node scripts/seo/check.mjs && node scripts/seo/runtime.cjs",
+    "test": "node scripts/seo/calculator.cjs && node podbor-nasosa/test-engine.cjs && node podbor-nasosa/test-catalog.cjs && node podbor-nasosa/test-stations.cjs && node podbor-generatora/test.cjs && node podbor-vodonagrevatelya/test-engine.cjs && node podbor-poverhnostnogo-nasosa/test-engine.cjs && node podbor-skvazhinnogo-nasosa/test-engine.cjs"
+  },
+  "devDependencies": {"jsdom": "26.1.0"}
+}

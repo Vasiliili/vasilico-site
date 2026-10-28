@@ -1,4 +1,113 @@
+# Search access; training policy unchanged from the previous User-agent: * Allow: /.
+# GPTBot and ClaudeBot retain wildcard access to public pages.
 User-agent: *
 Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: Googlebot
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: YandexBot
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: Bingbot
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
+
+User-agent: Claude-User
+Allow: /
+Disallow: /statistika/
+Disallow: /chek/
+Disallow: /analytics/
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /index%20
+Disallow: /index (
+Disallow: /404.html
 
 Sitemap: https://vasilico.ru/sitemap.xml

@@ -8,30 +8,36 @@ import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+await import('./seo/static-index.mjs');
 const app=read('app.js').split('initializeKnowledgeSearch();')[0];
-const paths=['kalkulyator','cena-zamena-unitaza'];
+const articleContext=vm.createContext({});vm.runInContext(read('knowledge.js'),articleContext);
+const paths=['kalkulyator','cena-zamena-unitaza',...vm.runInContext('knowledgeArticles.map(a=>a.path)',articleContext)];
 const skeleton=read('index.html').replace(/<main id="main">[\s\S]*?<\/main>/,'<main id="main"></main>');
 for(const route of paths){const dir=path.join(root,route);fs.mkdirSync(dir,{recursive:true});if(!fs.existsSync(path.join(dir,'index.html')))fs.writeFileSync(path.join(dir,'index.html'),skeleton);}
 function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()&&!e.name.startsWith('.')?walk(path.join(dir,e.name)):e.isFile()&&e.name==='index.html'?[path.join(dir,e.name)]:[]);}
 for(const file of walk(root)){
- let page=fs.readFileSync(file,'utf8');if(!page.includes('/app.js'))continue;
+ let page=fs.readFileSync(file,'utf8');
+ if(page.includes('/knowledge.js')&&!page.includes('/knowledge-static.js')){page=page.replace(/(<script src="\/knowledge\.js)/,'<script src="/knowledge-static.js" defer></script>$1');fs.writeFileSync(file,page);}
+ if(!page.includes('/app.js'))continue;
  const route=path.relative(root,path.dirname(file)).split(path.sep).join('/');
  const nodes={nav:{innerHTML:''},main:{innerHTML:''}};
  const document={title:'',documentElement:{style:{setProperty(){}}},querySelector:s=>nodes[s]||null,querySelectorAll:()=>[]};
  const ctx=vm.createContext({document,location:{pathname:'/'+(route?route+'/':''),search:'',origin:'https://vasilico.ru'},URLSearchParams,URL,console});
- for(const f of ['knowledge.js','pricing-data.js','pricing-pages.js'])vm.runInContext(read(f),ctx,{filename:f});
+ for(const f of ['knowledge-static.js','knowledge.js','pricing-data.js','pricing-pages.js'])vm.runInContext(read(f),ctx,{filename:f});
  vm.runInContext(app,ctx,{filename:'app.js'});
  if(!nodes.main.innerHTML.includes('<h1'))throw Error('Missing heading '+route);
  // Retain the crawlable local shop recommendation also inserted by app.js at runtime.
  const localBuy=page.match(/<aside class="local-buy-link"[\s\S]*?<\/aside>/)?.[0]||'';
  let rendered=nodes.main.innerHTML;
+ if(route==='sovety'){const cards=vm.runInContext("findKnowledge('').map(knowledgeCard).join('')",ctx);rendered=rendered.replace(/(<div[^>]*id="knowledge-results"[^>]*>)[\s\S]*?(<\/div>)/,'$1'+cards+'$2');}
  if(localBuy&&!rendered.includes('local-buy-link')){const footer=rendered.search(/<(?:div|footer)[^>]*class="footer"/);rendered=footer<0?rendered+localBuy:rendered.slice(0,footer)+localBuy+rendered.slice(footer);}
  page=page.replace(/<main id="main">[\s\S]*?<\/main>/,'<main id="main">'+rendered+'</main>');
  page=page.replace(/<nav aria-label="Основные разделы">[\s\S]*?<\/nav>/,'<nav aria-label="Основные разделы">'+nodes.nav.innerHTML+'</nav>');
  const completedArticle=vm.runInContext('activeArticle?.completedWork ? activeArticle : null',ctx);
  if(completedArticle)page=page.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+escape(completedArticle.description)+'">');
  // Keep existing titles for existing routes; new routes have explicit metadata.
- if(paths.includes(route)){
+ if(['kalkulyator','cena-zamena-unitaza'].includes(route)){
+  page=page.replace(/<script type="application\/ld\+json" id="site-structured-data">[\s\S]*?<\/script>/,'');
   page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>'+escape(document.title)+'</title>');
   const description=route==='kalkulyator'?'Калькулятор работ по прайсу сантехника Василия Владимировича в Новотитаровской. Выберите услуги, добавьте поездку в магазин и получите предварительную стоимость.':'Стоимость замены напольного унитаза по прайсу сантехника Василия Владимировича в Новотитаровской: демонтаж, установка и предварительный расчёт на одной странице.';
   page=page.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+description+'">');
@@ -72,3 +78,6 @@ for(const file of allHtml(root)){
   return `${attr}="/${asset}?v=${digest}"`;
  });fs.writeFileSync(file,html);
 }
+
+// One entry point for both manual editing and continuous publication.
+await import('./seo/build.mjs');

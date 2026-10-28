@@ -8,3 +8,9 @@
 - Before publishing, check JS syntax and exercise calculator presets, add/remove, optional trip, and mobile layout. Never invent rates for tasks missing from the price list.
 - Deploy through this GitHub Pages repository. Do not move the site back to chatgpt.site.
 - In real-work stories, mention the confirmed locality naturally in the introduction. Use the full name «Новотитаровская» for local jobs; avoid repetitive place-name stuffing. Do not invent streets, house types or job locations that the owner has not confirmed. General advice must not be presented as a specific completed local job.
+
+## Search and publication automation
+- Run `npm run build`, `npm run check`, `npm test` after content/price/metadata edits. Commit generated HTML, Markdown, sitemap.xml, llms.txt, api/public/v1.json and scripts/seo/content-state.json together with source changes.
+- Preserve explicit training-bot policies; GPTBot and ClaudeBot are separate from search bots. Do not change training permissions without owner approval.
+- See scripts/seo/README.md for the one-time GitHub Pages Actions setting, safe drafting/publication workflow, live checks and IndexNow. Do not publish drafts without owner approval.
+- Never invent publication dates, ratings, addresses, prices or completed jobs. Exclude technical/noindex pages from public feeds and sitemap.

@@ -1,0 +1,66 @@
+name: Check and publish site
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: checked-pages-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      actions_pages: ${{ steps.mode.outputs.actions_pages }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+      - run: npm run check
+      - run: npm test
+      - name: Check JavaScript syntax
+        run: find . -path './node_modules' -prune -o -path './.git' -prune -o -name '*.js' -type f -print0 | xargs -0 -r -n1 node --check
+      - run: node scripts/seo/stage.mjs
+      - name: Detect Pages publishing mode
+        id: mode
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
+          if [ "$mode" = workflow ]; then
+            echo 'actions_pages=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'actions_pages=false' >> "$GITHUB_OUTPUT"
+            echo 'Checks passed. To make these checks a mandatory deployment gate and publish generated files automatically, select Settings > Pages > Source > GitHub Actions. Current legacy publication is retained.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: technical-checks
+          path: .reports/
+  deploy:
+    if: github.ref == 'refs/heads/main' && needs.build.outputs.actions_pages == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Publish checked artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,48 @@
+name: Verify live publication and notify IndexNow
+on:
+  workflow_run:
+    workflows: ['pages build and deployment', 'Check and publish site']
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+  pages: read
+concurrency:
+  group: live-publication-check
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.event != 'pull_request')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Select the actual deployment workflow
+        id: mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TRIGGER_WORKFLOW: ${{ github.event.workflow_run.name }}
+        run: |
+          mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
+          if [ "$mode" = legacy ] && [ "$TRIGGER_WORKFLOW" = 'Check and publish site' ]; then
+            echo 'skip=true' >> "$GITHUB_OUTPUT"
+          fi
+      - run: node scripts/build-static.mjs
+        if: steps.mode.outputs.skip != 'true'
+      - name: Check deployed pages, sitemap, robots, Markdown, JSON and real 404
+        if: steps.mode.outputs.skip != 'true'
+        run: node scripts/seo/live.mjs
+      - name: Notify IndexNow about changed and removed public URLs
+        if: steps.mode.outputs.skip != 'true'
+        run: node scripts/seo/indexnow.mjs
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.mode.outputs.skip != 'true'
+        with:
+          name: live-publication-report
+          path: .reports/
