@@ -59,6 +59,7 @@ jobs:
         with:
           name: technical-checks
           path: .reports/
+          include-hidden-files: true
   deploy:
     if: github.ref == 'refs/heads/main' && needs.build.outputs.actions_pages == 'true'
     needs: build

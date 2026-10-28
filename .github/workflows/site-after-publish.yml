@@ -43,3 +43,4 @@ jobs:
         with:
           name: live-publication-report
           path: .reports/
+          include-hidden-files: true
