@@ -25,7 +25,14 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --ignore-scripts
+      - name: Read the last published content state
+        run: |
+          mkdir -p .reports
+          curl --fail --silent --show-error --max-time 25 https://vasilico.ru/api/public/v1.json -o .reports/published-catalog.json || true
       - run: npm run build
+        env:
+          SITE_BASELINE_FILE: .reports/published-catalog.json
+      - run: node scripts/seo/changes.mjs
       - run: npm run check
       - run: npm test
       - name: Check JavaScript syntax

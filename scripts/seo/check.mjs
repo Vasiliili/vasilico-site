@@ -11,6 +11,7 @@ const titles=new Set(),descs=new Set();let resources=0,links=0;
 const fileFor=url=>{const p=decodeURIComponent(new URL(url,origin).pathname);return path.join(root,p.endsWith('/')?p+'index.html':p);};
 for(const p of catalogue.pages){
  const html=fs.readFileSync(fileFor(p.url),'utf8');
+ check(meta(html,'site-content-hash')===p.contentHash,'Content version '+p.path);
  check(sitemapUrls.includes(p.url),'Missing sitemap entry '+p.path);
  check(!/noindex/i.test(meta(html,'robots')),'noindex in sitemap '+p.path);
  check(/<html[^>]*lang="ru"/i.test(html),'Russian language '+p.path);check(!!meta(html,'viewport'),'Viewport '+p.path);

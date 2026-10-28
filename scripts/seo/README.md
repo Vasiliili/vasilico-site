@@ -51,3 +51,5 @@ Sources checked 2026-10-28:
 - https://llmstxt.org/
 
 llms.txt/Markdown/JSON are supplemental access methods. They are generated from the same real HTML, not separate editorial copies. No special AI indexing/citation guarantee exists.
+
+The CI build also reads the last public catalogue's content fingerprints before generating new files. This preserves lastmod even when a source edit did not commit generated files. Its technical-checks artifact retains the pending changed/deleted URL list and prior public catalogue. The post-publication workflow downloads that artifact, checks each page's exact `site-content-hash` rather than merely HTTP 200, and only then uses the retained URL list for IndexNow. Legacy publishing is still not blocked by failed checks until the one-time Pages setting is changed.

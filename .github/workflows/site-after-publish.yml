@@ -1,7 +1,7 @@
 name: Verify live publication and notify IndexNow
 on:
   workflow_run:
-    workflows: ['pages build and deployment', 'Check and publish site']
+    workflows: ['Check and publish site']
     types: [completed]
   workflow_dispatch:
 permissions:
@@ -23,26 +23,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Select the actual deployment workflow
-        id: mode
+      - name: Retrieve the checked build and prior published state
+        if: github.event_name == 'workflow_run'
         env:
           GH_TOKEN: ${{ github.token }}
-          TRIGGER_WORKFLOW: ${{ github.event.workflow_run.name }}
-        run: |
-          mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
-          if [ "$mode" = legacy ] && [ "$TRIGGER_WORKFLOW" = 'Check and publish site' ]; then
-            echo 'skip=true' >> "$GITHUB_OUTPUT"
-          fi
+          BUILD_RUN_ID: ${{ github.event.workflow_run.id }}
+        run: gh run download "$BUILD_RUN_ID" --repo "$GITHUB_REPOSITORY" --name technical-checks --dir .reports/build
       - run: node scripts/build-static.mjs
-        if: steps.mode.outputs.skip != 'true'
-      - name: Check deployed pages, sitemap, robots, Markdown, JSON and real 404
-        if: steps.mode.outputs.skip != 'true'
+        env:
+          SITE_BASELINE_FILE: .reports/build/published-catalog.json
+      - name: Verify the exact published content versions and real HTTP status codes
         run: node scripts/seo/live.mjs
       - name: Notify IndexNow about changed and removed public URLs
-        if: steps.mode.outputs.skip != 'true'
         run: node scripts/seo/indexnow.mjs
+        env:
+          INDEXNOW_PENDING_FILE: .reports/build/indexnow-pending.json
       - uses: actions/upload-artifact@v4
-        if: always() && steps.mode.outputs.skip != 'true'
+        if: always()
         with:
           name: live-publication-report
           path: .reports/

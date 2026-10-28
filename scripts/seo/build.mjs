@@ -7,7 +7,8 @@ const read=f=>fs.readFileSync(path.join(root,f),'utf8'),write=(f,s)=>{fs.mkdirSy
 const cfg=JSON.parse(read('scripts/seo/config.json'));
 const ctx=vm.createContext({});for(const f of ['knowledge.js','pricing-data.js'])vm.runInContext(read(f),ctx);
 const articles=vm.runInContext('knowledgeArticles',ctx),prices=JSON.parse(vm.runInContext('JSON.stringify(allPriceJobs)',ctx));
-const stateFile='scripts/seo/content-state.json';const previous=fs.existsSync(path.join(root,stateFile))?JSON.parse(read(stateFile)):{};
+const stateFile='scripts/seo/content-state.json';let previous=fs.existsSync(path.join(root,stateFile))?JSON.parse(read(stateFile)):{};
+if(process.env.SITE_BASELINE_FILE&&fs.existsSync(process.env.SITE_BASELINE_FILE)){try{const published=JSON.parse(fs.readFileSync(process.env.SITE_BASELINE_FILE,'utf8'));if(published.pages?.every(p=>p.contentHash&&p.lastmod))previous=Object.fromEntries(published.pages.map(p=>[p.path,{hash:p.contentHash,lastmod:p.lastmod}]));}catch{}}
 const today=new Date(Number(process.env.SOURCE_DATE_EPOCH||Date.now()/1000)*1000).toISOString().slice(0,10);
 const state={},pages=[];
 const oldCatalogue=fs.existsSync(path.join(root,'api/public/v1.json'))?JSON.parse(read('api/public/v1.json')).pages:[];
@@ -33,7 +34,7 @@ for(const file of walk(root).filter(f=>f.endsWith('/index.html')||f===path.join(
  // Existing truthful app/service schemas are kept; overlapping article/business/page schemas are unified.
  const retained=oldLd.filter(n=>!(n['@type']==='Service'&&/^\/uslugi\/[1-9]\/$/.test(route))&&!['Plumber','LocalBusiness','Article','BlogPosting','BreadcrumbList','WebPage','CollectionPage','WebSite','Person','ImageObject','OfferCatalog'].includes(n['@type']));
  const normalized=JSON.stringify({title,description,body:body.replace(/\?v=[^"'\s<>]+/g,'?v=ASSET'),retained});
- const hash=crypto.createHash('sha256').update(normalized).digest('hex');const lastmod=previous[route]?.hash===hash?previous[route].lastmod:today;state[route]={hash,lastmod};
+ const hash=crypto.createHash('sha256').update(normalized).digest('hex');const lastmod=previous[route]?.hash===hash?previous[route].lastmod:today;state[route]={hash,lastmod};html=setMeta(html,'site-content-hash',hash);
  const master={'@type':'Plumber','@id':origin+'/#master',name:'Сантехник Василий Владимирович',url:origin+'/',telephone:'+79182468852',areaServed:{'@type':'Place',name:cfg.serviceArea},openingHoursSpecification:{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],opens:'08:00',closes:'18:00'},contactPoint:{'@type':'ContactPoint',telephone:'+79182468852',contactType:'Связь с мастером',availableLanguage:'ru',hoursAvailable:{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],opens:'08:00',closes:'20:00'}},sameAs:['https://www.avito.ru/user/05e5eca675ab265a5fbeb65a1a3f96a5/profile','https://www.google.com/maps?cid=18139848815102143497']};
  // Include the exact visible address only where it is actually printed, without invented coordinates.
  if(/Почтовая, 59\/1/.test(text(body)))master.address={'@type':'PostalAddress',streetAddress:'ул. Почтовая, 59/1',addressLocality:'Новотитаровская',addressRegion:'Краснодарский край',addressCountry:'RU'};
@@ -49,7 +50,7 @@ for(const file of walk(root).filter(f=>f.endsWith('/index.html')||f===path.join(
  if(html.includes('/app.js'))html=setMeta(html,'site-title',title);
  fs.writeFileSync(file,html);
  const kind=isArticle?'article':route.startsWith('/uslugi/')?'service':route.startsWith('/podbor-')||route==='/kalkulyator/'?'calculator':'page';
- pages.push({url,path:route,title,heading:h1,description,kind,completedWork:!!article?.completedWork||route.startsWith('/raboty/')&&route!='/raboty/',lastmod,images,links:[...body.matchAll(/<a\b[^>]*>/gi)].map(m=>attrs(m[0]).href).filter(Boolean).map(h=>new URL(h,url).href),text:text(body),markdown:url+'index.md'});
+ pages.push({url,path:route,title,heading:h1,description,kind,contentHash:hash,completedWork:!!article?.completedWork||route.startsWith('/raboty/')&&route!='/raboty/',lastmod,images,links:[...body.matchAll(/<a\b[^>]*>/gi)].map(m=>attrs(m[0]).href).filter(Boolean).map(h=>new URL(h,url).href),text:text(body),markdown:url+'index.md'});
  write(rel.replace(/index\.html$/,'index.md'),'# '+h1+'\n\n'+description+'\n\nИсточник: '+url+'\n\n'+markdown(body)+'\n');
 }
 pages.sort((a,b)=>a.url.localeCompare(b.url));
