@@ -28,7 +28,7 @@ Deleted HTML is excluded on the next build. Also remove its incoming links and i
 
 ## GitHub Pages one-time setting
 
-The current site uses branch-based Pages publishing. Select **repository Settings → Pages → Build and deployment → Source → GitHub Actions** once to enable deployment only after passing all checks. The workflow detects the current mode: while still in legacy mode it runs checks and prepares the artifact but preserves the existing deployment. It cannot make branch-based publication wait for an unrelated workflow. This is an explicit remaining setup step, not a claim that a mandatory gate already exists.
+The site currently publishes with **GitHub Pages → GitHub Actions**. The checked `_site` artifact is deployed only after the build and tests pass. The workflow still detects the configured mode and retains legacy branch-based publishing if the owner explicitly switches back; it never changes the Pages setting itself.
 
 `site-quality.yml` builds, tests, stages only public assets, and deploys the checked artifact when Actions publishing is selected. `site-after-publish.yml` verifies actual public URLs and sends IndexNow notifications only after successful deployment and live checks. Reports are private workflow artifacts (subject to repository artifact access), not site pages. In legacy mode source tooling is still retrievable because the repository root is deployed; it contains no secrets. In Actions mode SQL/tooling/tests/reports are excluded from the deployed artifact.
 
@@ -52,4 +52,8 @@ Sources checked 2026-10-28:
 
 llms.txt/Markdown/JSON are supplemental access methods. They are generated from the same real HTML, not separate editorial copies. No special AI indexing/citation guarantee exists.
 
-The CI build also reads the last public catalogue's content fingerprints before generating new files. This preserves lastmod even when a source edit did not commit generated files. Its technical-checks artifact retains the pending changed/deleted URL list and prior public catalogue. The post-publication workflow downloads that artifact, checks each page's exact `site-content-hash` rather than merely HTTP 200, and only then uses the retained URL list for IndexNow. Legacy publishing is still not blocked by failed checks until the one-time Pages setting is changed.
+The CI build also reads the last public catalogue's content fingerprints before generating new files. This preserves lastmod even when a source edit did not commit generated files. Its technical-checks artifact retains the pending changed/deleted URL list and prior public catalogue. The post-publication workflow downloads that artifact, checks each page's exact `site-content-hash` rather than merely HTTP 200, and only then uses the retained URL list for IndexNow. Legacy publishing, if selected again by the owner, cannot be blocked by these checks.
+
+## Artifact diagnostics
+
+The `technical-checks` upload explicitly includes the hidden `.reports` directory and fails when no files are found. `build-manifest.json` records the repository, source SHA, build run ID and publishing mode. The live workflow downloads from the triggering build ID, checks its successful conclusion, matching source SHA, successful Pages deployment (when Actions publishing is selected), artifact existence/expiry, manifest and required JSON reports. A manual verification selects a successful build of the exact checked-out SHA, never an arbitrary latest build. Missing or invalid artifacts stop verification and IndexNow, with the failing reason recorded in `live-publication-report/retrieve-build.json` and the Actions step summary. Site content is never modified by this retrieval step.

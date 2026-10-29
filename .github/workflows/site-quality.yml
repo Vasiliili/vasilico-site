@@ -53,6 +53,19 @@ jobs:
             echo 'actions_pages=false' >> "$GITHUB_OUTPUT"
             echo 'Checks passed. To make these checks a mandatory deployment gate and publish generated files automatically, select Settings > Pages > Source > GitHub Actions. Current legacy publication is retained.' >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Record checked build identity
+        env:
+          ACTIONS_PAGES: ${{ steps.mode.outputs.actions_pages }}
+        run: |
+          node --input-type=module - <<'JS'
+          import fs from 'node:fs';
+          const manifest = {runId: process.env.GITHUB_RUN_ID, sha: process.env.GITHUB_SHA, repository: process.env.GITHUB_REPOSITORY, actionsPages: process.env.ACTIONS_PAGES === 'true'};
+          for (const name of ['seo-check.json', 'indexnow-pending.json']) {
+            JSON.parse(fs.readFileSync('.reports/' + name, 'utf8'));
+          }
+          fs.writeFileSync('.reports/build-manifest.json', JSON.stringify(manifest, null, 2));
+          console.log('Checked build identity:', manifest);
+          JS
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -62,6 +75,7 @@ jobs:
           name: technical-checks
           path: .reports/
           include-hidden-files: true
+          if-no-files-found: error
   deploy:
     if: github.ref == 'refs/heads/main' && needs.build.outputs.actions_pages == 'true'
     needs: build

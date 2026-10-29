@@ -24,11 +24,10 @@ jobs:
         with:
           node-version: '24'
       - name: Retrieve the checked build and prior published state
-        if: github.event_name == 'workflow_run'
         env:
           GH_TOKEN: ${{ github.token }}
           BUILD_RUN_ID: ${{ github.event.workflow_run.id }}
-        run: gh run download "$BUILD_RUN_ID" --repo "$GITHUB_REPOSITORY" --name technical-checks --dir .reports/build
+        run: node scripts/seo/retrieve-build.mjs
       - run: node scripts/build-static.mjs
         env:
           SITE_BASELINE_FILE: .reports/build/published-catalog.json
@@ -47,3 +46,4 @@ jobs:
           name: live-publication-report
           path: .reports/
           include-hidden-files: true
+          if-no-files-found: error
