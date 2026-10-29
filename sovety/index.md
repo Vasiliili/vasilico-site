@@ -4,7 +4,7 @@
 
 Источник: https://vasilico.ru/sovety/
 
-[Новая работа · 22 октября Заменил фильтр у мамы заказчика из другого города Фотографии до и после, уличный кран и чек со скидкой. Читать ↗](https://vasilico.ru/sovety/zamena-filtra-pitevoy-vody-pomoshch-roditelyam/)Советы
+[Новая работа · 29 октября Вода и канализация для домашней парикмахерской Новые выводы через стены, сохранённое подключение стиральной машины и фотографии. Читать ↗](https://vasilico.ru/sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy/)Советы
 
 # Что у вас случилось?
 
@@ -153,6 +153,14 @@
 Сын заказал работу для мамы в Новотитаровской: заменил фильтр и уличный кран, прислал фотографии и расчёт со скидкой.
 
 [Посмотреть случай ↗](https://vasilico.ru/sovety/zamena-filtra-pitevoy-vody-pomoshch-roditelyam/)
+
+ПРАКТИКА
+
+## [Вода и канализация для домашней парикмахерской](https://vasilico.ru/sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy/)
+
+Четыре прохода через стены, горячая и холодная вода, отдельный слив. Стиральная машина остаётся подключённой. Фотографии и фактическая цена работы.
+
+[Посмотреть случай ↗](https://vasilico.ru/sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy/)
 
 РАЗБОР
 

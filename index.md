@@ -22,7 +22,7 @@
 
 Нажмите на поиск: сразу откроется список материалов. Можно выбрать нужное или написать свою проблему.
 
-[Новая работа: фильтр для мамы — заказ из другого города ↗](https://vasilico.ru/sovety/zamena-filtra-pitevoy-vody-pomoshch-roditelyam/)
+[Новая работа: вода и слив для домашней парикмахерской ↗](https://vasilico.ru/sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy/)
 
 ![Композиция с дорожным знаком Новотитаровская, разводным ключом, смесителем, насосом и медными трубами](https://vasilico.ru/hero.webp)
 
@@ -32,7 +32,7 @@
 
 ## Чтобы дома всё работало.
 
-[01 Смесители ↗](https://vasilico.ru/uslugi/1/)[02 Унитазы ↗](https://vasilico.ru/uslugi/2/)[03 Раковины и сифоны ↗](https://vasilico.ru/uslugi/3/)[04 Канализация ↗](https://vasilico.ru/uslugi/4/)[05 Насосы и водоснабжение ↗](https://vasilico.ru/uslugi/5/)[06 Фильтры ↗](https://vasilico.ru/uslugi/6/)[07 Водонагреватели ↗](https://vasilico.ru/uslugi/7/)[08 Отопление ↗](https://vasilico.ru/uslugi/8/)[09 Закупка и доставка ↗](https://vasilico.ru/uslugi/9/)
+[01 Смесители ↗](https://vasilico.ru/uslugi/1/)[02 Унитазы ↗](https://vasilico.ru/uslugi/2/)[03 Раковины и сифоны ↗](https://vasilico.ru/uslugi/3/)[04 Канализация ↗](https://vasilico.ru/uslugi/4/)[05 Насосы и водоснабжение ↗](https://vasilico.ru/uslugi/5/)[06 Фильтры ↗](https://vasilico.ru/uslugi/6/)[07 Водонагреватели ↗](https://vasilico.ru/uslugi/7/)[09 Закупка и доставка ↗](https://vasilico.ru/uslugi/9/)
 
 [Все услуги ↗](https://vasilico.ru/uslugi/)02 / 03
 

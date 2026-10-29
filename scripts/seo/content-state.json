@@ -1,23 +1,23 @@
 {
   "/cena-zamena-unitaza/": {
-    "hash": "c4bb4f8ffe29d59d2decc357290ce9a9d1d1edb439f41af52161a3b92e31ff95",
-    "lastmod": "2026-10-28"
+    "hash": "a5a2abb11351490b31da94ed7b22c68aa454b62497143fcf7a85c395f13ba49c",
+    "lastmod": "2026-10-29"
   },
   "/ceny/": {
-    "hash": "f3966e9ac1f70cd3aa5d21e626e17cdefcdbc60431022bc9a66ffda2f2b102f7",
-    "lastmod": "2026-10-28"
+    "hash": "57a08d5b624dd3ad24d46137fae2fea3c29208e5957a5206e05cc7aae12fcf5c",
+    "lastmod": "2026-10-29"
   },
   "/gde-kupit-santehniku/": {
     "hash": "b62a5e3b41fb511432f60ec343bc41256ca8c44ee33a71b89cbb564d5affe58d",
     "lastmod": "2026-10-28"
   },
   "/": {
-    "hash": "b7f03d4fbe1d66936dda5d9b406790eb9cdf38c3fa892cd2edcf2de8e72553af",
-    "lastmod": "2026-10-28"
+    "hash": "2304e2268339101a59fbcb1802d5131a6219cbb68c344c013363febf79cef0d1",
+    "lastmod": "2026-10-29"
   },
   "/kalkulyator/": {
-    "hash": "dbc2995028dc8f5bf5ff306fff35dbb30ec9952f82a9b10796e9bf5c46175783",
-    "lastmod": "2026-10-28"
+    "hash": "058bddc9eadb995e59eea5e86d5a572648f29f74b9a6185eabeb1afd33a1b00a",
+    "lastmod": "2026-10-29"
   },
   "/kontakty/": {
     "hash": "908169789f0e3faa770756f0b489dfa170bd122ab7b77f13229fdcf1b308d6db",
@@ -48,8 +48,8 @@
     "lastmod": "2026-10-28"
   },
   "/raboty/": {
-    "hash": "70ceedf257255d82a337176ad8740e087ce95d2baf0b9e528e327cfd52f79517",
-    "lastmod": "2026-10-28"
+    "hash": "b258839db98d5761eda0604b22b374a1a50846b4e0c00ea6aabe651c9cfcf127",
+    "lastmod": "2026-10-29"
   },
   "/raboty/skvazhinnyy-nasos-ne-otklyuchaetsya/": {
     "hash": "2e93e5dfbe1e998a1e6485d84c5fe69d4d5df8032f91e4de505625e8d22402ad",
@@ -64,8 +64,8 @@
     "lastmod": "2026-10-28"
   },
   "/sovety/": {
-    "hash": "ce5872a82853875907818e79fb996fd11c8ba8bf8c2a28419a95642d02462215",
-    "lastmod": "2026-10-28"
+    "hash": "f843de4f922f4eaffbaae2763413e9d11622a29a67d4469b66a1057068960a46",
+    "lastmod": "2026-10-29"
   },
   "/sovety/invertornaya-nasosnaya-stanciya-rabotaet-ryvkami/": {
     "hash": "37e00d1b25afeea91198a7249473a7acb49e6541f8e2f3f32ff3dd1e87e76bd4",
@@ -82,6 +82,10 @@
   "/sovety/temperatura-boylera-i-zapah-vody/": {
     "hash": "c1a77ab24ff17e13a346d108a326add878fd93b298a1ab9c6622d88bc309e1b5",
     "lastmod": "2026-10-28"
+  },
+  "/sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy/": {
+    "hash": "a1656be12d490ecacaa24561d36edd1a7c0539f6e173e13577012ca949515645",
+    "lastmod": "2026-10-29"
   },
   "/sovety/vvodnoy-kran-v-kolodce-ulichnyy-otvod/": {
     "hash": "08d218e620dfe05853c0016de6556e612307eb607fb8382d9f70d8246242e59e",
@@ -100,8 +104,8 @@
     "lastmod": "2026-10-28"
   },
   "/sovety/zamena-unitaza/": {
-    "hash": "db0f05b4f19590bb995f3a1d7861dc41345b14ff2fb2233df2baaf37f499fde5",
-    "lastmod": "2026-10-28"
+    "hash": "f3df16665a65cf8ed818b65799b7a00460dbc66af3c5f024f90eab8ea59f83d5",
+    "lastmod": "2026-10-29"
   },
   "/t3/": {
     "hash": "8e61a5bc47d19752f13d8bf9cbc64c514600077c030e9b38aeebc4b6bf8fbed5",
@@ -135,16 +139,12 @@
     "hash": "e3049b7ec1269af164fbee5d8a6c9256adb337b16ed001f4438ecebfcb9624a0",
     "lastmod": "2026-10-28"
   },
-  "/uslugi/8/": {
-    "hash": "725ce14b105c90447b71d6968fdd85e6d205fa1f161002020c19b2d36f46dcef",
-    "lastmod": "2026-10-28"
-  },
   "/uslugi/9/": {
-    "hash": "0575bb5a3d671c03896f913e2dd7a5650836d70c5124a68f3f9a443431ec8781",
-    "lastmod": "2026-10-28"
+    "hash": "bb3561a562329a580f46f4a49ac765c0df424b63618a6bf1163ccfc94c3e0251",
+    "lastmod": "2026-10-29"
   },
   "/uslugi/": {
-    "hash": "abd4386b096c496027c1e56e4b681059cbd803e6a40900e5721d75a9d833d98e",
-    "lastmod": "2026-10-28"
+    "hash": "ebcec564b58664955f9e8411c95627eeba1b90e14a2fb9bea2fda1e6a57bd427",
+    "lastmod": "2026-10-29"
   }
 }

@@ -2,7 +2,14 @@
   "origin": "https://vasilico.ru",
   "name": "Сантехник в Новотитаровской — Василий Владимирович",
   "serviceArea": "станица Новотитаровская, Краснодарский край",
-  "excluded": ["/statistika/", "/chek/", "/raboty/protechka/", "/sovety/slabyy-napor/", "/sovety/voda-pod-rakovinoy/"],
+  "excluded": [
+    "/statistika/",
+    "/chek/",
+    "/raboty/protechka/",
+    "/sovety/slabyy-napor/",
+    "/sovety/voda-pod-rakovinoy/",
+    "/uslugi/8/"
+  ],
   "titles": {
     "/": "Сантехник в Новотитаровской — Василий Владимирович",
     "/ceny/": "Цены сантехника в Новотитаровской — прайс и калькулятор работ",

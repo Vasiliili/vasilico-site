@@ -58,7 +58,11 @@ for(const file of walk(root)){
  const master={'@context':'https://schema.org','@type':'Plumber','@id':'https://vasilico.ru/#master',name:'Сантехник Василий Владимирович',url:'https://vasilico.ru/',image:'https://vasilico.ru/vasiliy-wrench.webp',telephone:'+79182468852',address:{'@type':'PostalAddress',streetAddress:'ул. Почтовая, 59/1',addressLocality:'Новотитаровская',addressRegion:'Краснодарский край',addressCountry:'RU'},areaServed:'Новотитаровская',openingHoursSpecification:{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],opens:'08:00',closes:'18:00'},contactPoint:{'@type':'ContactPoint',telephone:'+79182468852',contactType:'Запись и вопросы по работе',availableLanguage:'ru',hoursAvailable:{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],opens:'08:00',closes:'20:00'}},sameAs:['https://www.avito.ru/user/e210c885a007339875bd33366eadb8c0/profile?src=sharing','https://www.google.com/maps?cid=18139848815102143497']};
  page=page.replace('</head>','<script type="application/ld+json" id="master-structured-data">'+JSON.stringify(master)+'</script></head>');
  }
- if(/^uslugi\/[1-9]$/.test(route)){
+ if(route==='uslugi/8'){
+ page=page.replace(/<meta name="robots" content="[^"]*">/,'<meta name="robots" content="noindex,follow">').replace(/<title>[\s\S]*?<\/title>/,'<title>Услуга больше не предлагается — Василий Владимирович</title>').replace(/<meta name="site-title" content="[^"]*">/,'').replace(/<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g,'');
+ page=page.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="Актуальные услуги сантехника в Новотитаровской представлены в разделе услуг.">');
+ }
+ if(/^uslugi\/[1-9]$/.test(route)&&route!=='uslugi/8'){
  const labels=['Смесители','Унитазы','Раковины и сифоны','Канализация','Насосы и водоснабжение','Фильтры','Водонагреватели','Отопление','Закупка и доставка'];const label=labels[Number(route.split('/')[1])-1];
  page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>'+label+' в Новотитаровской — сантехник Василий Владимирович</title>');
  page=page.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+label+' в Новотитаровской. Работы частного сантехника Василия Владимировича, цены по прайсу, предварительный калькулятор и связь с мастером. Стоимость согласуем до начала работы.">');
