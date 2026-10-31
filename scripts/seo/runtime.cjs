@@ -10,5 +10,23 @@ for(const p of pages){const html=read(p.path==='/'?'index.html':p.path.slice(1)+
  const liveText=w.document.querySelector('main').textContent.replace(/\s+/g,' ').trim();assert(liveText.length>100,p.path+' runtime content');
  if(p.path==='/sovety/'){assert(w.document.querySelectorAll('#knowledge-results a').length>10,'Search list with links');const input=w.document.querySelector('#knowledge-search');input.value='насос';input.dispatchEvent(new w.Event('input',{bubbles:true}));assert(w.document.querySelectorAll('#knowledge-suggestions a').length>0,'Live suggestions');}
  tested++;w.close();}
+// The home search has searchbox semantics and ordinary link results, not a combobox.
+{
+ const d=new JSDOM(read('index.html'),{url:'https://vasilico.ru/',runScripts:'outside-only',pretendToBeVisual:true}),w=d.window;
+ w.matchMedia=()=>({matches:true,addEventListener(){}});w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
+ w.eval(['knowledge-static.js','knowledge.js','pricing-data.js','pricing-pages.js','app.js','discovery.js'].map(read).join('\n'));
+ const input=w.document.querySelector('#site-query'),panel=w.document.querySelector('#site-results');
+ const hero=w.document.querySelector('img.hero-art'),logo=w.document.querySelector('img.brand-logo');
+ assert(hero.getAttribute('srcset').includes('/hero-768.webp 768w') && hero.getAttribute('fetchpriority')==='high' && hero.getAttribute('loading')!=='lazy','Hero uses smaller option and stays eager');
+ assert(logo.getAttribute('srcset').includes('/brand-vasilico-128.webp 128w'),'Header offers a smaller image');
+ assert(input && panel && panel.hidden,'Search starts closed');
+ assert(!input.hasAttribute('aria-expanded'),'Native searchbox must not use aria-expanded');
+ input.dispatchEvent(new w.Event('focus'));assert(!panel.hidden,'Search opens on focus');
+ input.value='генератор';input.dispatchEvent(new w.Event('input',{bubbles:true}));
+ assert(w.document.querySelector('#site-search-list a[href="/podbor-generatora/"]'),'Search still finds generator');
+ assert(!input.hasAttribute('aria-expanded'),'Opening search must not add unsupported aria-expanded');
+ input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert(panel.hidden,'Escape closes search');
+ assert(!input.hasAttribute('aria-expanded'),'Closing search must not add unsupported aria-expanded');d.window.close();
+}
 const data=JSON.parse(read('api/public/v1.json'));assert.equal(data.prices.find(x=>x.name==='Демонтаж фильтра воды').amount,500);assert.equal(data.prices.find(x=>x.name==='Монтаж фильтра для глубокой очистки воды').amount,1500);
 console.log('PASS: '+tested+' shared-renderer routes, SEO titles survive JS, contacts, live search, unchanged filter prices.');
