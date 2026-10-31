@@ -29,3 +29,5 @@ const diagnosisPriceJob=allPriceJobs.find(j=>j.name==='Диагностика н
 completedCasePrices["sovety/zamena-filtra-pitevoy-vody-pomoshch-roditelyam"]=(()=>{const rows=[["Установка шарового крана",500],["Демонтаж фильтра воды",500],["Монтаж фильтра для глубокой очистки воды",1500],["Поездка в местные магазины за материалами и доставка",300]],discount=500;return {rows,discount,amount:rows.reduce((sum,row)=>sum+row[1],0)-discount};})();
 
 completedCasePrices["sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy"]={amount:3500,description:'Согласованная стоимость этого выезда: новые линии горячей и холодной воды, краны и канализация, проходы через стены и восстановление снятых сифонов. Это итог конкретной работы, а не универсальная цена новой точки.'};
+
+completedCasePrices["sovety/remont-salnika-starogo-ventilya"]={amount:1000,description:'Итоговая стоимость этого ремонта вместе с уплотнителем: подготовка и слив воды, восстановление сальника вентиля, заполнение системы и проверка. Такой отдельной позиции в прайсе нет; это фактическая сумма конкретной работы, а не новый тариф.'};
