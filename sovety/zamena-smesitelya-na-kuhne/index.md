@@ -158,6 +158,14 @@
 
 [Посчитать замену по прайсу ↗](https://vasilico.ru/cena-zamena-unitaza/)
 
+## Хитрости мастера по теме
+
+[Сначала посчитай обороты ↗](https://vasilico.ru/sovety/hitrosti-mastera/poschitay-oboroty/)
+
+[Как наматывать сантехническую нить ↗](https://vasilico.ru/sovety/hitrosti-mastera/kak-namatyvat-santehnicheskuyu-nit/)
+
+[Почему новичку удобнее нить, чем ФУМ-лента ↗](https://vasilico.ru/sovety/hitrosti-mastera/nit-ili-fum-lenta/)
+
 ## Сколько стоит работа
 
 Ориентир по действующему прайсу, не сумма оплаты описанного вызова:

@@ -170,6 +170,86 @@
 
 [Посмотреть случай ↗](https://vasilico.ru/sovety/remont-salnika-starogo-ventilya/)
 
+СОВЕТ
+
+## [Сначала посчитай обороты](https://vasilico.ru/sovety/hitrosti-mastera/poschitay-oboroty/)
+
+Перед установкой крана или эксцентрика на неподвижную наружную резьбу сначала накрути деталь без уплотнителя и посчитай число оборотов до упора.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/poschitay-oboroty/)
+
+СОВЕТ
+
+## [Как наматывать сантехническую нить](https://vasilico.ru/sovety/hitrosti-mastera/kak-namatyvat-santehnicheskuyu-nit/)
+
+На обычную правую наружную резьбу наматывай нить по часовой стрелке при взгляде с торца, прижав начало пальцем.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/kak-namatyvat-santehnicheskuyu-nit/)
+
+СОВЕТ
+
+## [Почему новичку удобнее нить, чем ФУМ-лента](https://vasilico.ru/sovety/hitrosti-mastera/nit-ili-fum-lenta/)
+
+При выставлении крана и эксцентрика иногда нужен небольшой обратный поворот.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/nit-ili-fum-lenta/)
+
+СОВЕТ
+
+## [Есть торцевая прокладка — подмотка на резьбу не нужна](https://vasilico.ru/sovety/hitrosti-mastera/tortsevaya-prokladka-bez-podmotki/)
+
+Если соединение специально рассчитано на плоскую торцевую прокладку в накидной гайке, герметичность обеспечивает прокладка, а резьба только стягивает детали.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/tortsevaya-prokladka-bez-podmotki/)
+
+СОВЕТ
+
+## [Выбирай кран с достаточным вылетом наружной резьбы](https://vasilico.ru/sovety/hitrosti-mastera/dostatochnaya-dlina-shtutsera/)
+
+При покупке смотри не только на диаметр, но и на длину наружного штуцера.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/dostatochnaya-dlina-shtutsera/)
+
+СОВЕТ
+
+## [Смотри на толщину и торец штуцера](https://vasilico.ru/sovety/hitrosti-mastera/tolshchina-tortsa-shtutsera/)
+
+Тонкая и острая кромка наружного штуцера может прорезать мягкую торцевую прокладку.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/tolshchina-tortsa-shtutsera/)
+
+СОВЕТ
+
+## [Проверь глубину накидной гайки](https://vasilico.ru/sovety/hitrosti-mastera/glubina-nakidnoy-gayki/)
+
+У разных изделий одинаковый номинальный диаметр резьбы, но гайки различаются глубиной.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/glubina-nakidnoy-gayki/)
+
+СОВЕТ
+
+## [Гайка затянута, но не достаёт до прокладки](https://vasilico.ru/sovety/hitrosti-mastera/gayka-ne-dostaet-do-prokladki/)
+
+Если наружный штуцер немного коротковат, а всё уже установлено, мастер иногда компенсирует нехватку небольшим дополнительным паронитовым кольцом перед штатной мягкой прокладкой.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/gayka-ne-dostaet-do-prokladki/)
+
+СОВЕТ
+
+## [Паронит защищает мягкую прокладку](https://vasilico.ru/sovety/hitrosti-mastera/paronit-zashchishchaet-prokladku/)
+
+Если у штуцера узкий торец, который при затяжке повреждает мягкую прокладку, в подходящем узле между торцом и штатной прокладкой может помочь паронитовая прокладка соответствующего размера.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/paronit-zashchishchaet-prokladku/)
+
+СОВЕТ
+
+## [Не перетягивай прокладку](https://vasilico.ru/sovety/hitrosti-mastera/ne-peretyagivay-prokladku/)
+
+Если соединение уплотняется прокладкой, чрезмерная затяжка не делает его надёжнее.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/ne-peretyagivay-prokladku/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)
