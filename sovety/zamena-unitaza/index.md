@@ -176,6 +176,12 @@
 
 [Посчитать замену по прайсу ↗](https://vasilico.ru/cena-zamena-unitaza/)
 
+## Хитрости мастера по теме
+
+[Заржавели болты бачка? Не сорвите инструмент на керамику ↗](https://vasilico.ru/sovety/hitrosti-mastera/zarzhaveli-bolty-bachka/)
+
+[Сначала проверьте, получится ли вообще разобрать ↗](https://vasilico.ru/sovety/hitrosti-mastera/snachala-prover-vozmozhnost-razborki/)
+
 ## Сколько стоит работа
 
 Ориентир по действующему прайсу, не сумма оплаты описанного вызова:

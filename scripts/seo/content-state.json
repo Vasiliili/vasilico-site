@@ -79,12 +79,28 @@
     "hash": "d25c2625fe9af083ba4398eb99967f002ddfba965fa7ba451a836329118084b6",
     "lastmod": "2026-11-02"
   },
+  "/sovety/hitrosti-mastera/nalobnyy-fonar-pod-rakovinoy/": {
+    "hash": "e7b1542215440830ed552f8ab5f6940c0e2d124b737efd6afb741503ee863717",
+    "lastmod": "2026-11-02"
+  },
   "/sovety/hitrosti-mastera/ne-peretyagivay-prokladku/": {
     "hash": "bc62d5c69a11f04345c446680a40d42a5646b227761debe7fcb1a0db7ba12e35",
     "lastmod": "2026-11-02"
   },
+  "/sovety/hitrosti-mastera/ne-snimay-klapan-boylera-pod-davleniem/": {
+    "hash": "d041e2f620769925015d37db5bb43f2dfec364497c0d802637b01eb7ee1dc1d7",
+    "lastmod": "2026-11-02"
+  },
   "/sovety/hitrosti-mastera/nit-ili-fum-lenta/": {
     "hash": "a871fa58afced8cd88b946a302b45c3aaff6af24690eee83c22c2e77e4432180",
+    "lastmod": "2026-11-02"
+  },
+  "/sovety/hitrosti-mastera/osmotri-predohranitelnyy-klapan/": {
+    "hash": "8ce7e24beda52e977d3c357b3169f020cb2a1f64a7a0d460ccadca68b34feed3",
+    "lastmod": "2026-11-02"
+  },
+  "/sovety/hitrosti-mastera/ostudi-boyler-pered-slivom/": {
+    "hash": "ef0752df5a07dee10388fbbd326449fbd357d6a92487c69459638f65f254f39c",
     "lastmod": "2026-11-02"
   },
   "/sovety/hitrosti-mastera/paronit-zashchishchaet-prokladku/": {
@@ -95,6 +111,26 @@
     "hash": "8d1ec8de41935aec74fdb45fcbf74c1ffff1cddacff6cd0ee62210fbf801b552",
     "lastmod": "2026-11-02"
   },
+  "/sovety/hitrosti-mastera/posle-sliva-boylera-snachala-voda/": {
+    "hash": "610dacede53552b8def33a5a3868b9b70fb41a7d07f3d2676d672364858c5e00",
+    "lastmod": "2026-11-02"
+  },
+  "/sovety/hitrosti-mastera/prover-kreplenie-smesitelya-pod-umyvalnikom/": {
+    "hash": "1a55bb76204a240c63834e048b5b007fdb9ea6e9c00e0c680fd51abdae61e58e",
+    "lastmod": "2026-11-02"
+  },
+  "/sovety/hitrosti-mastera/sliv-boylera-bez-slivnogo-krana/": {
+    "hash": "c6de554091036ae12aa281ff3ec02d7ab7a3578d526b8bc994dfddd4c3aa206a",
+    "lastmod": "2026-11-02"
+  },
+  "/sovety/hitrosti-mastera/snachala-prover-vozmozhnost-razborki/": {
+    "hash": "228938f7b63ae7004fa2a91a81da12aab1be7eee3a41290ba18459a6cea29aa3",
+    "lastmod": "2026-11-02"
+  },
+  "/sovety/hitrosti-mastera/snyatie-moyki-dlya-zameny-smesitelya/": {
+    "hash": "bef1512a25963a4c44fb0e73bbc93baa37196a91a60b0f5576c2c833adf0768c",
+    "lastmod": "2026-11-02"
+  },
   "/sovety/hitrosti-mastera/tolshchina-tortsa-shtutsera/": {
     "hash": "4253185e129a5609b721791857a6084a8cda22beb36f902b1934274d2e0cf01e",
     "lastmod": "2026-11-02"
@@ -103,8 +139,20 @@
     "hash": "b0fe766c787292b4d475c221f1784aaada82e4b6015924248e8b1f4ba7991cd4",
     "lastmod": "2026-11-02"
   },
+  "/sovety/hitrosti-mastera/ustanovka-klapana-boylera/": {
+    "hash": "92dc300118ccbf6d38a27e6cb6191ff1a11ebf8f58aa1b1b301873a007ef03dd",
+    "lastmod": "2026-11-02"
+  },
+  "/sovety/hitrosti-mastera/vozduh-pri-slive-boylera/": {
+    "hash": "b1c3701a4dbe866cff4d9d25055809f7b5da4761ae731761ff5d5ee7953e7b8b",
+    "lastmod": "2026-11-02"
+  },
+  "/sovety/hitrosti-mastera/zarzhaveli-bolty-bachka/": {
+    "hash": "6dc7ab26b4a9e0c630e1b625cb145e9c90647581ba07a81c0eb5b661b0e4efb8",
+    "lastmod": "2026-11-02"
+  },
   "/sovety/": {
-    "hash": "14894f95dbafc09eec4649c8e4fb24caace9f4b69f2b1eebe1a7389dbbc76ab5",
+    "hash": "0205ddbd2c4d20a738a0e418393291b12ee94273efb8926e1c38695d5f11d557",
     "lastmod": "2026-11-02"
   },
   "/sovety/invertornaya-nasosnaya-stanciya-rabotaet-ryvkami/": {
@@ -123,9 +171,13 @@
     "hash": "9e0cbebfe16b85e704da94a16de58e16da8c422898394c4a641620778c397e25",
     "lastmod": "2026-10-31"
   },
+  "/sovety/sliv-i-obsluzhivanie-boylera/": {
+    "hash": "aa73ce51086f6c45581525a1974a05a528b0f42729627054b7e615137af1906c",
+    "lastmod": "2026-11-02"
+  },
   "/sovety/temperatura-boylera-i-zapah-vody/": {
-    "hash": "c1a77ab24ff17e13a346d108a326add878fd93b298a1ab9c6622d88bc309e1b5",
-    "lastmod": "2026-10-28"
+    "hash": "30fde4acebff8dce30589073d828efeb381f3fd27821f4d0e74473a5efc9b51e",
+    "lastmod": "2026-11-02"
   },
   "/sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy/": {
     "hash": "a1656be12d490ecacaa24561d36edd1a7c0539f6e173e13577012ca949515645",
@@ -140,16 +192,16 @@
     "lastmod": "2026-11-02"
   },
   "/sovety/zamena-smesitelya-na-kuhne/": {
-    "hash": "9e0b4178755a3509cc655e3487dd1fe14bb790d9769393e0cd2388934d01bb91",
+    "hash": "2d239786265c0a4c0b2586b3a65441cd57e659e57957dcc6a2b8af05d3023394",
     "lastmod": "2026-11-02"
   },
   "/sovety/zamena-smesitelya-na-rakovine-zakisshiy-krepezh/": {
-    "hash": "bd78ab432206b34bdf96954aea274418deb52f0eff57b532b007643ff51217f4",
+    "hash": "e43e7ae9f9acf72eeaf127a1712f317facfaafe46a5c7f1837bb08539f445c3a",
     "lastmod": "2026-11-02"
   },
   "/sovety/zamena-unitaza/": {
-    "hash": "f3df16665a65cf8ed818b65799b7a00460dbc66af3c5f024f90eab8ea59f83d5",
-    "lastmod": "2026-10-29"
+    "hash": "2e77a4eb9c264a114fc8c9318e6963768c6f9fe5b476fbd764faf0024aaa9cb6",
+    "lastmod": "2026-11-02"
   },
   "/t3/": {
     "hash": "8e61a5bc47d19752f13d8bf9cbc64c514600077c030e9b38aeebc4b6bf8fbed5",
