@@ -93,6 +93,7 @@ if(taskInput){
    const n=choice.jobs.filter(id=>selectedJobs.has(id)).length;input.checked=n===choice.jobs.length;input.indeterminate=n>0&&n<choice.jobs.length;
   });
   empty.hidden=basketNodes.size>0;
+  const heaterLink=document.querySelector('#heater-diy-link');if(heaterLink)heaterLink.hidden=!estimate.rows.some(job=>/водонагревател|бойлер/i.test(job.name));
   document.querySelector('.receipt-builder').hidden=!estimate.rows.length;
   result.replaceChildren();const total=document.createElement('p');total.className='estimate-total';total.textContent=estimate.rows.length?(completedInput.checked?'Итого за работы: ':'Предварительно: ')+(estimate.from&&!completedInput.checked?'от ':'')+money(estimate.payable):'Выберите работы для расчёта';if(estimate.discount){const deduction=document.createElement('p');deduction.className='receipt-discount-summary';deduction.textContent='По прайсу: '+money(estimate.total)+' · Скидка: −'+money(estimate.discount);result.append(deduction);}result.append(total);receipt?.update({...estimate,completed:completedInput.checked});
   clear.disabled=selectedJobs.size===0;
