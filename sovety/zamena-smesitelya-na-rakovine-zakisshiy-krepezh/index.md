@@ -115,6 +115,12 @@
 
 [Не перетягивай прокладку ↗](https://vasilico.ru/sovety/hitrosti-mastera/ne-peretyagivay-prokladku/)
 
+[Перед заменой смесителя загляните под умывальник ↗](https://vasilico.ru/sovety/hitrosti-mastera/prover-kreplenie-smesitelya-pod-umyvalnikom/)
+
+[Под раковиной — налобный фонарь, не переноска на 220 В ↗](https://vasilico.ru/sovety/hitrosti-mastera/nalobnyy-fonar-pod-rakovinoy/)
+
+[Сначала проверьте, получится ли вообще разобрать ↗](https://vasilico.ru/sovety/hitrosti-mastera/snachala-prover-vozmozhnost-razborki/)
+
 ## Сколько стоит работа
 
 Ориентир по действующему прайсу, не сумма оплаты описанного вызова:

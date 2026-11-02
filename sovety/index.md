@@ -250,6 +250,110 @@
 
 [Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/ne-peretyagivay-prokladku/)
 
+СОВЕТ
+
+## [Заржавели болты бачка? Не сорвите инструмент на керамику](https://vasilico.ru/sovety/hitrosti-mastera/zarzhaveli-bolty-bachka/)
+
+При замене арматуры часто приходится снимать бачок.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/zarzhaveli-bolty-bachka/)
+
+СОВЕТ
+
+## [Перед заменой смесителя загляните под умывальник](https://vasilico.ru/sovety/hitrosti-mastera/prover-kreplenie-smesitelya-pod-umyvalnikom/)
+
+Под «тюльпаном» или в тумбе к креплению смесителя часто почти невозможно подлезть.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/prover-kreplenie-smesitelya-pod-umyvalnikom/)
+
+СОВЕТ
+
+## [Кухонный смеситель: иногда приходится снимать мойку](https://vasilico.ru/sovety/hitrosti-mastera/snyatie-moyki-dlya-zameny-smesitelya/)
+
+Прежде чем откручивать старый смеситель, проверьте доступ снизу и состояние крепления.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/snyatie-moyki-dlya-zameny-smesitelya/)
+
+СОВЕТ
+
+## [Под раковиной — налобный фонарь, не переноска на 220 В](https://vasilico.ru/sovety/hitrosti-mastera/nalobnyy-fonar-pod-rakovinoy/)
+
+Под мойкой и раковиной темно, тесно и нередко мокро.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/nalobnyy-fonar-pod-rakovinoy/)
+
+СОВЕТ
+
+## [Сначала проверьте, получится ли вообще разобрать](https://vasilico.ru/sovety/hitrosti-mastera/snachala-prover-vozmozhnost-razborki/)
+
+Не начинайте замену со срывания первой гайки.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/snachala-prover-vozmozhnost-razborki/)
+
+СОВЕТ
+
+## [Перед сливом бойлера остудите воду](https://vasilico.ru/sovety/hitrosti-mastera/ostudi-boyler-pered-slivom/)
+
+Если собираетесь чистить, ремонтировать или менять накопительный водонагреватель, заранее отключите нагрев от электросети.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/ostudi-boyler-pered-slivom/)
+
+СОВЕТ
+
+## [Как слить бойлер без отдельного сливного крана](https://vasilico.ru/sovety/hitrosti-mastera/sliv-boylera-bez-slivnogo-krana/)
+
+У многих бойлеров на синем патрубке стоит непосредственно обратный предохранительный клапан, а ниже — кран холодной подачи.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/sliv-boylera-bez-slivnogo-krana/)
+
+СОВЕТ
+
+## [Бойлер плохо сливается? Дайте воздуху войти](https://vasilico.ru/sovety/hitrosti-mastera/vozduh-pri-slive-boylera/)
+
+Если шланг подключён к нижнему холодному патрубку, но вода идёт слабо, в бак может не поступать воздух.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/vozduh-pri-slive-boylera/)
+
+СОВЕТ
+
+## [Не снимайте клапан бойлера под давлением](https://vasilico.ru/sovety/hitrosti-mastera/ne-snimay-klapan-boylera-pod-davleniem/)
+
+Перед разборкой отключите питание, остудите воду, перекройте холодную подачу и откройте горячий кран для сброса давления.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/ne-snimay-klapan-boylera-pod-davleniem/)
+
+СОВЕТ
+
+## [Сняли предохранительный клапан? Осмотрите его](https://vasilico.ru/sovety/hitrosti-mastera/osmotri-predohranitelnyy-klapan/)
+
+При сливе бойлера осмотрите снятый обратный предохранительный клапан.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/osmotri-predohranitelnyy-klapan/)
+
+СОВЕТ
+
+## [Установка клапана: сначала примерка, потом подмотка](https://vasilico.ru/sovety/hitrosti-mastera/ustanovka-klapana-boylera/)
+
+После обслуживания восстановите горячее подключение и установите исправный обратный предохранительный клапан на синий патрубок.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/ustanovka-klapana-boylera/)
+
+СОВЕТ
+
+## [После слива бойлера: сначала вода, потом электричество](https://vasilico.ru/sovety/hitrosti-mastera/posle-sliva-boylera-snachala-voda/)
+
+Когда все соединения собраны, откройте холодную подачу в бойлер и горячий кран ближайшего смесителя.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/hitrosti-mastera/posle-sliva-boylera-snachala-voda/)
+
+СОВЕТ
+
+## [Слив и обслуживание накопительного водонагревателя](https://vasilico.ru/sovety/sliv-i-obsluzhivanie-boylera/)
+
+Пошаговый порядок и советы по сливу и обслуживанию бойлера.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/sliv-i-obsluzhivanie-boylera/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)

@@ -48,6 +48,14 @@
 
 [CDC: домашние водонагреватели, профилактика водных инфекций и термостатическая защита](https://www.cdc.gov/drinking-water/prevention/preventing-waterborne-germs-at-home.html). Рекомендации производителя вашего прибора и условия дома также обязательны к учёту.
 
+## Хитрости мастера по теме
+
+[Перед сливом бойлера остудите воду ↗](https://vasilico.ru/sovety/hitrosti-mastera/ostudi-boyler-pered-slivom/)
+
+[Не снимайте клапан бойлера под давлением ↗](https://vasilico.ru/sovety/hitrosti-mastera/ne-snimay-klapan-boylera-pod-davleniem/)
+
+[После слива бойлера: сначала вода, потом электричество ↗](https://vasilico.ru/sovety/hitrosti-mastera/posle-sliva-boylera-snachala-voda/)
+
 Василий ВладимировичСантехник · НовотитаровскаяГарантия на выполненную работу
 
 [Связаться ↗](https://vasilico.ru/kontakty/)

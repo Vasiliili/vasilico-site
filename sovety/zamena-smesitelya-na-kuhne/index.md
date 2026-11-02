@@ -166,6 +166,12 @@
 
 [Почему новичку удобнее нить, чем ФУМ-лента ↗](https://vasilico.ru/sovety/hitrosti-mastera/nit-ili-fum-lenta/)
 
+[Кухонный смеситель: иногда приходится снимать мойку ↗](https://vasilico.ru/sovety/hitrosti-mastera/snyatie-moyki-dlya-zameny-smesitelya/)
+
+[Под раковиной — налобный фонарь, не переноска на 220 В ↗](https://vasilico.ru/sovety/hitrosti-mastera/nalobnyy-fonar-pod-rakovinoy/)
+
+[Сначала проверьте, получится ли вообще разобрать ↗](https://vasilico.ru/sovety/hitrosti-mastera/snachala-prover-vozmozhnost-razborki/)
+
 ## Сколько стоит работа
 
 Ориентир по действующему прайсу, не сумма оплаты описанного вызова:
