@@ -1019,13 +1019,13 @@
       "heading": "Проверь глубину накидной гайки",
       "description": "У разных изделий одинаковый номинальный диаметр резьбы, но гайки различаются глубиной. Слишком глубокая гайка может упереться до прижатия прокладки, если.",
       "kind": "article",
-      "contentHash": "32a885229a03e59c282baa879d64fb57ae4c2ae4432d8cb9dd7a361d37b7e572",
+      "contentHash": "3dd4284b340b8359b78e63b50c98795263075a59ed10b17254743222a3990335",
       "completedWork": false,
       "lastmod": "2026-11-02",
       "images": [
         {
-          "url": "https://vasilico.ru/photos/hitrosti-mastera/glubina-gayki.webp",
-          "caption": "Две гайки в условном разрезе с разной глубиной до прокладки",
+          "url": "https://vasilico.ru/photos/hitrosti-mastera/glubina-gayki-podvodka.webp",
+          "caption": "Две накидные гайки гибкой подводки в разрезе с разной глубиной до прокладки",
           "width": 1440,
           "height": 960
         }
