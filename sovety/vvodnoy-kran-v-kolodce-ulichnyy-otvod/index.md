@@ -96,6 +96,14 @@
 
 Пример документации производителя: [инструкция Grundfos PM 1/PM 2 — встроенный обратный клапан и требования к монтажу](https://api.grundfos.com/literature/Grundfosliterature-5768547.pdf). Это пояснение общего принципа, а не инструкция к насосу на фотографиях.
 
+## Хитрости мастера по теме
+
+[Сначала посчитай обороты ↗](https://vasilico.ru/sovety/hitrosti-mastera/poschitay-oboroty/)
+
+[Выбирай кран с достаточным вылетом наружной резьбы ↗](https://vasilico.ru/sovety/hitrosti-mastera/dostatochnaya-dlina-shtutsera/)
+
+[Смотри на толщину и торец штуцера ↗](https://vasilico.ru/sovety/hitrosti-mastera/tolshchina-tortsa-shtutsera/)
+
 ![Синий штамп с отпечатком пальца: работа выполнена](https://vasilico.ru/work-stamp-blue.png)
 За выполненную работу отвечаю лично.
 

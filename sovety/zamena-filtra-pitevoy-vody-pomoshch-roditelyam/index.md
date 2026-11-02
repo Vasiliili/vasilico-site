@@ -134,6 +134,14 @@
 
 [Специализированные магазины сантехники в нашей станице](https://vasilico.ru/gde-kupit-santehniku/)
 
+## Хитрости мастера по теме
+
+[Есть торцевая прокладка — подмотка на резьбу не нужна ↗](https://vasilico.ru/sovety/hitrosti-mastera/tortsevaya-prokladka-bez-podmotki/)
+
+[Проверь глубину накидной гайки ↗](https://vasilico.ru/sovety/hitrosti-mastera/glubina-nakidnoy-gayki/)
+
+[Паронит защищает мягкую прокладку ↗](https://vasilico.ru/sovety/hitrosti-mastera/paronit-zashchishchaet-prokladku/)
+
 ![Синий штамп с отпечатком пальца: работа выполнена](https://vasilico.ru/work-stamp-blue.png)
 За выполненную работу отвечаю лично.
 
