@@ -14,3 +14,9 @@
 - Preserve explicit training-bot policies; GPTBot and ClaudeBot are separate from search bots. Do not change training permissions without owner approval.
 - See scripts/seo/README.md for the one-time GitHub Pages Actions setting, safe drafting/publication workflow, live checks and IndexNow. Do not publish drafts without owner approval.
 - Never invent publication dates, ratings, addresses, prices or completed jobs. Exclude technical/noindex pages from public feeds and sitemap.
+
+## Постоянное правило: адреса опубликованных страниц
+- При обновлении сайта сохранять существующие URL опубликованных страниц, статей, советов и калькуляторов. Не удалять и не переименовывать адреса без необходимости.
+- Если перенос неизбежен, обеспечить корректное перенаправление со старого адреса на новый с учётом возможностей действующего хостинга; проверить перенаправление после публикации.
+- Новые материалы добавлять без нарушения доступности старых. Проверять внутренние ссылки, sitemap.xml и индексацию доступными способами; не утверждать, что индексация проверена, без подтверждения.
+- Массовые изменения адресов и структуры сайта выполнять только после отдельного согласования с владельцем.
