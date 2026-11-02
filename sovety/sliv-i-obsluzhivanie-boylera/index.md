@@ -22,13 +22,13 @@
 
 ## Шаги и подсказки
 
-- [Перед сливом бойлера остудите воду](https://vasilico.ru/sovety/hitrosti-mastera/ostudi-boyler-pered-slivom/)
-- [Как слить бойлер без отдельного сливного крана](https://vasilico.ru/sovety/hitrosti-mastera/sliv-boylera-bez-slivnogo-krana/)
-- [Бойлер плохо сливается? Дайте воздуху войти](https://vasilico.ru/sovety/hitrosti-mastera/vozduh-pri-slive-boylera/)
-- [Не снимайте клапан бойлера под давлением](https://vasilico.ru/sovety/hitrosti-mastera/ne-snimay-klapan-boylera-pod-davleniem/)
-- [Сняли предохранительный клапан? Осмотрите его](https://vasilico.ru/sovety/hitrosti-mastera/osmotri-predohranitelnyy-klapan/)
-- [Установка клапана: сначала примерка, потом подмотка](https://vasilico.ru/sovety/hitrosti-mastera/ustanovka-klapana-boylera/)
-- [После слива бойлера: сначала вода, потом электричество](https://vasilico.ru/sovety/hitrosti-mastera/posle-sliva-boylera-snachala-voda/)
+- [Перед сливом бойлера остудите воду ↗](https://vasilico.ru/sovety/hitrosti-mastera/ostudi-boyler-pered-slivom/)
+- [Как слить бойлер без отдельного сливного крана ↗](https://vasilico.ru/sovety/hitrosti-mastera/sliv-boylera-bez-slivnogo-krana/)
+- [Бойлер плохо сливается? Дайте воздуху войти ↗](https://vasilico.ru/sovety/hitrosti-mastera/vozduh-pri-slive-boylera/)
+- [Не снимайте клапан бойлера под давлением ↗](https://vasilico.ru/sovety/hitrosti-mastera/ne-snimay-klapan-boylera-pod-davleniem/)
+- [Сняли предохранительный клапан? Осмотрите его ↗](https://vasilico.ru/sovety/hitrosti-mastera/osmotri-predohranitelnyy-klapan/)
+- [Установка клапана: сначала примерка, потом подмотка ↗](https://vasilico.ru/sovety/hitrosti-mastera/ustanovka-klapana-boylera/)
+- [После слива бойлера: сначала вода, потом электричество ↗](https://vasilico.ru/sovety/hitrosti-mastera/posle-sliva-boylera-snachala-voda/)
 
 Установите исправный клапан с соблюдением направления потока и требований производителя. Перед включением электропитания полностью заполните бак и проверьте соединения.
 
