@@ -19,6 +19,12 @@
 
 [Почему новичку удобнее нить, чем ФУМ-лента ↗](https://vasilico.ru/sovety/hitrosti-mastera/nit-ili-fum-lenta/)
 
+## Инструменты для этой работы
+
+### Может пригодиться
+
+[Сантехническая уплотнительная нить ↗](https://vasilico.ru/sovety/instrumenty-mastera/#nit)
+
 Василий ВладимировичСантехник · НовотитаровскаяГарантия на выполненную работу
 
 [Связаться ↗](https://vasilico.ru/kontakty/)

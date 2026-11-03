@@ -117,6 +117,18 @@
 
 [Позвонить мастеру ↗](tel:+79182468852)
 
+## Инструменты для этой работы
+
+### Понадобится
+
+[Два разводных ключа ↗](https://vasilico.ru/sovety/instrumenty-mastera/#razvodnye)[Рулетка ↗](https://vasilico.ru/sovety/instrumenty-mastera/#ruletka)
+
+### Может пригодиться
+
+[Рожково-накидной ключ ↗](https://vasilico.ru/sovety/instrumenty-mastera/#rozhkovo-nakidnoy)[Переставные сантехнические клещи ↗](https://vasilico.ru/sovety/instrumenty-mastera/#kleshchi)[Сантехническая уплотнительная нить ↗](https://vasilico.ru/sovety/instrumenty-mastera/#nit)
+
+Нить нужна при замене эксцентриков; клещи — для разборки старых соединений. Инструмент подбирайте по деталям и доступу.
+
 Василий ВладимировичСантехник · НовотитаровскаяГарантия на выполненную работу
 
 [Связаться ↗](https://vasilico.ru/kontakty/)

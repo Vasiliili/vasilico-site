@@ -107,6 +107,12 @@
 
 Если торец повреждён или деталь не рассчитана на такое уплотнение, нужно заменить неподходящую деталь. При покупке смотрите на ровную посадочную поверхность под прокладку, совместимость соединений и качество изготовления, а не только на цену и блестящее покрытие. Перед заменой перекройте воду и сбросьте давление; после сборки проверьте герметичность.
 
+## Инструменты для этой работы
+
+### Может пригодиться
+
+[Трубчатый торцевой ключ ↗](https://vasilico.ru/sovety/instrumenty-mastera/#trubchatyy)[Набор торцевых головок ↗](https://vasilico.ru/sovety/instrumenty-mastera/#golovki)[Два разводных ключа ↗](https://vasilico.ru/sovety/instrumenty-mastera/#razvodnye)[Налобный фонарь ↗](https://vasilico.ru/sovety/instrumenty-mastera/#fonar)[Длинный удлинитель для торцевых головок ↗](https://vasilico.ru/sovety/instrumenty-mastera/#udlinitel)
+
 ## Хитрости мастера по теме
 
 [Есть торцевая прокладка — подмотка на резьбу не нужна ↗](https://vasilico.ru/sovety/hitrosti-mastera/tortsevaya-prokladka-bez-podmotki/)

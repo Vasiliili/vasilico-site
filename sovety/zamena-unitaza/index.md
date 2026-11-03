@@ -184,6 +184,14 @@
 
 [Посчитать замену по прайсу ↗](https://vasilico.ru/cena-zamena-unitaza/)
 
+## Инструменты для этой работы
+
+### Может пригодиться
+
+[Набор торцевых головок ↗](https://vasilico.ru/sovety/instrumenty-mastera/#golovki)[Трещотка с набором бит ↗](https://vasilico.ru/sovety/instrumenty-mastera/#treshchotka)[Налобный фонарь ↗](https://vasilico.ru/sovety/instrumenty-mastera/#fonar)[Длинный удлинитель для торцевых головок ↗](https://vasilico.ru/sovety/instrumenty-mastera/#udlinitel)
+
+Торцевая головка с удлинителем может помочь добраться до крепежа бачка, если подходят размер и доступ. Закисшие болты могут потребовать другого способа; берегите керамику.
+
 ## Хитрости мастера по теме
 
 [Заржавели болты бачка? Не сорвите инструмент на керамику ↗](https://vasilico.ru/sovety/hitrosti-mastera/zarzhaveli-bolty-bachka/)
