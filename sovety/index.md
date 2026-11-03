@@ -354,6 +354,14 @@
 
 [Прочитать совет ↗](https://vasilico.ru/sovety/sliv-i-obsluzhivanie-boylera/)
 
+СОВЕТ
+
+## [Как самостоятельно заменить смеситель в ванной](https://vasilico.ru/sovety/zamena-smesitelya-v-vannoy/)
+
+Как снять старый смеситель, выставить эксцентрики и проверить новый на течь.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/zamena-smesitelya-v-vannoy/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)
