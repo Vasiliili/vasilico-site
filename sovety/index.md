@@ -370,6 +370,14 @@
 
 [Прочитать совет ↗](https://vasilico.ru/sovety/instrumenty-mastera/)
 
+СОВЕТ
+
+## [Как самостоятельно заменить унитаз](https://vasilico.ru/sovety/kak-samostoyatelno-zamenit-unitaz/)
+
+Как снять старый унитаз, выставить новый без качания и проверить соединения.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/kak-samostoyatelno-zamenit-unitaz/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)

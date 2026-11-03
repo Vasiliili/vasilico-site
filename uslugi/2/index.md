@@ -4,6 +4,8 @@
 
 Источник: https://vasilico.ru/uslugi/2/
 
+[Хотите сделать сами? → Пошаговая инструкция](https://vasilico.ru/sovety/kak-samostoyatelno-zamenit-unitaz/)
+
 [← Все услуги](https://vasilico.ru/uslugi/)02 / Услуги
 
 # Унитазы
