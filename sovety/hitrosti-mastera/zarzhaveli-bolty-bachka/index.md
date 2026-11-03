@@ -14,6 +14,14 @@
 
 [Сначала проверьте, получится ли вообще разобрать ↗](https://vasilico.ru/sovety/hitrosti-mastera/snachala-prover-vozmozhnost-razborki/)
 
+## Инструменты для этой работы
+
+### Может пригодиться
+
+[Набор торцевых головок ↗](https://vasilico.ru/sovety/instrumenty-mastera/#golovki)[Трещотка с набором бит ↗](https://vasilico.ru/sovety/instrumenty-mastera/#treshchotka)[Налобный фонарь ↗](https://vasilico.ru/sovety/instrumenty-mastera/#fonar)[Длинный удлинитель для торцевых головок ↗](https://vasilico.ru/sovety/instrumenty-mastera/#udlinitel)
+
+Если размер подходит, торцевая головка с удлинителем помогает добраться до крепежа. Закисший болт она не обязательно открутит; не допускайте срыва инструмента на керамику.
+
 Василий ВладимировичСантехник · НовотитаровскаяГарантия на выполненную работу
 
 [Связаться ↗](https://vasilico.ru/kontakty/)

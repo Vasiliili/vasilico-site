@@ -166,6 +166,14 @@
 
 [Посчитать замену по прайсу ↗](https://vasilico.ru/cena-zamena-unitaza/)
 
+## Инструменты для этой работы
+
+### Может пригодиться
+
+[Трубчатый торцевой ключ ↗](https://vasilico.ru/sovety/instrumenty-mastera/#trubchatyy)[Набор торцевых головок ↗](https://vasilico.ru/sovety/instrumenty-mastera/#golovki)[Два разводных ключа ↗](https://vasilico.ru/sovety/instrumenty-mastera/#razvodnye)[Налобный фонарь ↗](https://vasilico.ru/sovety/instrumenty-mastera/#fonar)[Длинный удлинитель для торцевых головок ↗](https://vasilico.ru/sovety/instrumenty-mastera/#udlinitel)
+
+Подходящий ключ зависит от крепления и доступа под мойкой.
+
 ## Хитрости мастера по теме
 
 [Сначала посчитай обороты ↗](https://vasilico.ru/sovety/hitrosti-mastera/poschitay-oboroty/)

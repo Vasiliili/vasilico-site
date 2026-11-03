@@ -16,6 +16,12 @@
 
 [Кухонный смеситель: иногда приходится снимать мойку ↗](https://vasilico.ru/sovety/hitrosti-mastera/snyatie-moyki-dlya-zameny-smesitelya/)
 
+## Инструменты для этой работы
+
+### Может пригодиться
+
+[Налобный фонарь ↗](https://vasilico.ru/sovety/instrumenty-mastera/#fonar)
+
 Василий ВладимировичСантехник · НовотитаровскаяГарантия на выполненную работу
 
 [Связаться ↗](https://vasilico.ru/kontakty/)

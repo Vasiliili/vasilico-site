@@ -362,6 +362,14 @@
 
 [Прочитать совет ↗](https://vasilico.ru/sovety/zamena-smesitelya-v-vannoy/)
 
+СОВЕТ
+
+## [Инструменты мастера](https://vasilico.ru/sovety/instrumenty-mastera/)
+
+Настоящие инструменты мастера: для каких работ они подходят и что учитывать.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/instrumenty-mastera/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)

@@ -76,12 +76,12 @@
     "lastmod": "2026-11-02"
   },
   "/sovety/hitrosti-mastera/kak-namatyvat-santehnicheskuyu-nit/": {
-    "hash": "d25c2625fe9af083ba4398eb99967f002ddfba965fa7ba451a836329118084b6",
-    "lastmod": "2026-11-02"
+    "hash": "24248e3c698fc9e3f4d16a8bce343c5c36cafdd82803f010b086bcb828882242",
+    "lastmod": "2026-11-03"
   },
   "/sovety/hitrosti-mastera/nalobnyy-fonar-pod-rakovinoy/": {
-    "hash": "e7b1542215440830ed552f8ab5f6940c0e2d124b737efd6afb741503ee863717",
-    "lastmod": "2026-11-02"
+    "hash": "47319567d1bb626b97a7c97a1046809ad20c9dd15ac37c192b5f53d82bde5953",
+    "lastmod": "2026-11-03"
   },
   "/sovety/hitrosti-mastera/ne-peretyagivay-prokladku/": {
     "hash": "bc62d5c69a11f04345c446680a40d42a5646b227761debe7fcb1a0db7ba12e35",
@@ -108,8 +108,8 @@
     "lastmod": "2026-11-02"
   },
   "/sovety/hitrosti-mastera/poschitay-oboroty/": {
-    "hash": "8d1ec8de41935aec74fdb45fcbf74c1ffff1cddacff6cd0ee62210fbf801b552",
-    "lastmod": "2026-11-02"
+    "hash": "af9bd17b04007de65fe11f73a81347f8813eded2b4bb6fca4a82373031aa3516",
+    "lastmod": "2026-11-03"
   },
   "/sovety/hitrosti-mastera/posle-sliva-boylera-snachala-voda/": {
     "hash": "610dacede53552b8def33a5a3868b9b70fb41a7d07f3d2676d672364858c5e00",
@@ -148,11 +148,15 @@
     "lastmod": "2026-11-02"
   },
   "/sovety/hitrosti-mastera/zarzhaveli-bolty-bachka/": {
-    "hash": "6dc7ab26b4a9e0c630e1b625cb145e9c90647581ba07a81c0eb5b661b0e4efb8",
-    "lastmod": "2026-11-02"
+    "hash": "91f84bf70128c07ba0c72008ac792bb07e9d979a794f69fb6f38f99c2096dd45",
+    "lastmod": "2026-11-03"
   },
   "/sovety/": {
-    "hash": "dfaa278272f2a0ff863aa11749445a191d745954f8a9b191d44449b1257357d8",
+    "hash": "768677270fc397846644e759dfa50016b17cf8e774ab41bfefa667f37a57a406",
+    "lastmod": "2026-11-03"
+  },
+  "/sovety/instrumenty-mastera/": {
+    "hash": "5d8118691d7b6cf15946e1ba533e1fda78808ef142a02088205c7fc559477983",
     "lastmod": "2026-11-03"
   },
   "/sovety/invertornaya-nasosnaya-stanciya-rabotaet-ryvkami/": {
@@ -172,8 +176,8 @@
     "lastmod": "2026-10-31"
   },
   "/sovety/sliv-i-obsluzhivanie-boylera/": {
-    "hash": "eee0130c0a01891a74057004746b9a0193dcb475bdb66cfa2d67092b4cde3203",
-    "lastmod": "2026-11-02"
+    "hash": "af0183af34d211171b1e2d8121f91fe6ad3714f0e89cdc8818d1e4df286df8b4",
+    "lastmod": "2026-11-03"
   },
   "/sovety/temperatura-boylera-i-zapah-vody/": {
     "hash": "30fde4acebff8dce30589073d828efeb381f3fd27821f4d0e74473a5efc9b51e",
@@ -192,20 +196,20 @@
     "lastmod": "2026-11-02"
   },
   "/sovety/zamena-smesitelya-na-kuhne/": {
-    "hash": "5f88f644b8a134c5eb2772f91102fdb52f8a766be10795f0aba9726e504a9ce8",
-    "lastmod": "2026-11-02"
+    "hash": "2b56200e5433905553a5fb9db2c6373afed5a944424665501b60e9b8bdb0736a",
+    "lastmod": "2026-11-03"
   },
   "/sovety/zamena-smesitelya-na-rakovine-zakisshiy-krepezh/": {
-    "hash": "e43e7ae9f9acf72eeaf127a1712f317facfaafe46a5c7f1837bb08539f445c3a",
-    "lastmod": "2026-11-02"
+    "hash": "52ff179534240a86f7cb495f4b7610a33c0a87daf16cdbb9b3e804cdb8dc32eb",
+    "lastmod": "2026-11-03"
   },
   "/sovety/zamena-smesitelya-v-vannoy/": {
-    "hash": "6372ce69306ce078dc3a20bbb4f97a67617e3ad48e1fc47b9232c2b16642da7a",
+    "hash": "c77c0d5e3346b231f41ac32992a368a12e19ea7ba681cc5e5088973ebfb462d5",
     "lastmod": "2026-11-03"
   },
   "/sovety/zamena-unitaza/": {
-    "hash": "3895deb66c4dd57caca04596708d4c3537d8b99224e1d57083aac18fe015833f",
-    "lastmod": "2026-11-02"
+    "hash": "217d2df23dde5b3057c8944b75557971bb9949c546e3cda25a7efe2081d762b4",
+    "lastmod": "2026-11-03"
   },
   "/t3/": {
     "hash": "8e61a5bc47d19752f13d8bf9cbc64c514600077c030e9b38aeebc4b6bf8fbed5",
