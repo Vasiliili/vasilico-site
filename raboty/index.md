@@ -18,7 +18,7 @@
 
 Диагностика помогла найти неисправный конденсатор и обойтись без поездки в сервис.
 
-[Читать историю ↗](https://vasilico.ru/sovety/nasos-grundfos-gudit-kondensator/)
+[Читать о ремонте насосной станции ↗](https://vasilico.ru/sovety/nasos-grundfos-gudit-kondensator/)
 
 Реальная работа · Новотитаровская
 
