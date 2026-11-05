@@ -378,6 +378,14 @@
 
 [Прочитать совет ↗](https://vasilico.ru/sovety/kak-samostoyatelno-zamenit-unitaz/)
 
+ПРАКТИКА
+
+## [Насосная станция Grundfos гудела и запускалась с задержкой](https://vasilico.ru/sovety/nasos-grundfos-gudit-kondensator/)
+
+Как диагностика помогла найти неисправный конденсатор и обойтись без перемычки и поездки в сервис.
+
+[Посмотреть случай ↗](https://vasilico.ru/sovety/nasos-grundfos-gudit-kondensator/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)

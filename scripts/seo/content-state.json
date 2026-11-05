@@ -48,8 +48,8 @@
     "lastmod": "2026-10-28"
   },
   "/raboty/": {
-    "hash": "0b715042539bdf4092b8cfadb9715f82ac376e92ade3f39320e1a6a10bc7a958",
-    "lastmod": "2026-10-31"
+    "hash": "c2df265707b1fbd9655e673c45d8e3001774e23c0e3a5fc59a363a3609cc7f07",
+    "lastmod": "2026-11-05"
   },
   "/raboty/skvazhinnyy-nasos-ne-otklyuchaetsya/": {
     "hash": "2e93e5dfbe1e998a1e6485d84c5fe69d4d5df8032f91e4de505625e8d22402ad",
@@ -152,7 +152,7 @@
     "lastmod": "2026-11-03"
   },
   "/sovety/": {
-    "hash": "8d58d572ac19a9af714f77f0f3449347076326f40128b5a58389324fa24d0548",
+    "hash": "13a759ef06aff5ea1cba40827e656e8fc65c489603b80f26115cf7de9aaf297a",
     "lastmod": "2026-11-05"
   },
   "/sovety/instrumenty-mastera/": {
@@ -166,6 +166,10 @@
   "/sovety/kak-samostoyatelno-zamenit-unitaz/": {
     "hash": "18650e260039a5246dff98b31794badb2652b2b96ac793511a494f5d7c1ad27e",
     "lastmod": "2026-11-03"
+  },
+  "/sovety/nasos-grundfos-gudit-kondensator/": {
+    "hash": "26932afdc52ce3427552e8d6ec425e3f044e2a359ddb1cbd323326151e916c70",
+    "lastmod": "2026-11-05"
   },
   "/sovety/ne-otkruchivaetsya-kolba-filtra-zamena-kartridzha/": {
     "hash": "e8757d06fe7db0c25085cff30ec1e9fdfccebff589d0515a138ab9e2bda3bd64",
@@ -236,8 +240,8 @@
     "lastmod": "2026-10-28"
   },
   "/uslugi/5/": {
-    "hash": "c571e47629f7856522a208faf46dc8aac806876d11904a3a21af6df9c002d904",
-    "lastmod": "2026-10-28"
+    "hash": "dc6dfb7a67c40af0b9c0ddaad09929ef66a7982ee7334b7f03f946b26b2c35df",
+    "lastmod": "2026-11-05"
   },
   "/uslugi/6/": {
     "hash": "7e1f26a07d62b2787044f804c704c48f5325a8abc8b81a4b2a9da79f704b38b6",
