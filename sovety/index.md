@@ -386,6 +386,14 @@
 
 [Посмотреть случай ↗](https://vasilico.ru/sovety/nasos-grundfos-gudit-kondensator/)
 
+ПРАКТИКА
+
+## [Погружной насос перестал давать напор: вместо замены помогла чистка](https://vasilico.ru/sovety/skvazhinnyy-nasos-propadaet-davlenie-chistka/)
+
+Почему пропадал напор, что обнаружили на сетке насоса и как обошлись без покупки нового оборудования.
+
+[Посмотреть случай ↗](https://vasilico.ru/sovety/skvazhinnyy-nasos-propadaet-davlenie-chistka/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)

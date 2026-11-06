@@ -16,6 +16,8 @@
 
 Сначала диагностикаНасос гудит или запускается с задержкой? Сначала выясним причину. [Ремонт насосной станции Grundfos: диагностика и замена конденсатора ↗](https://vasilico.ru/sovety/nasos-grundfos-gudit-kondensator/)
 
+Пропадает напор при открытии крана?[Как чистка погружного насоса помогла восстановить давление ↗](https://vasilico.ru/sovety/skvazhinnyy-nasos-propadaet-davlenie-chistka/)
+
 [← Все услуги](https://vasilico.ru/uslugi/)05 / Услуги
 
 # Насосы и водоснабжение
