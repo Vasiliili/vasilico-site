@@ -34,4 +34,4 @@ completedCasePrices["sovety/remont-salnika-starogo-ventilya"]={amount:1000,descr
 
 completedCasePrices["sovety/skvazhinnyy-nasos-propadaet-davlenie-chistka"]={amount:2000,description:"Предварительно согласованная стоимость работы: подъём и очистка насоса, замена обратного клапана и обратная установка."};
 
-completedCasePrices["sovety/aeraciya-septika-kompressor-otvod-vody"]={amount:2000,description:"Согласованная стоимость выполненной работы: монтаж аэрации, вентиляции и линий отвода воды."};
+completedCasePrices["sovety/aeraciya-septika-kompressor-otvod-vody"]={amount:2000,description:"Согласованная стоимость монтажа компрессора и распылителя с пайкой. Дренажный насос и линии отвода были сделаны раньше и оплачены отдельно."};
