@@ -281,3 +281,9 @@ body{font-size:18px}.inner{--accent:inherit}.lede,.card p,.step p{font-size:18px
   body>header>.brand span{font-size:13px}
   .article .section-title{font-size:29px}
 }
+
+/* Case photos and video must fit a phone screen without widening the page. */
+.pump-cleaning-story .story-block figure{margin:24px 0;min-width:0}
+.pump-cleaning-story .story-block figure img{display:block;max-width:100%;height:auto;border-radius:8px}
+.pump-cleaning-story .story-block figcaption{margin-top:8px;line-height:1.5}
+.pump-cleaning-story video{display:block;width:100%;max-width:460px;height:auto}

@@ -31,3 +31,5 @@ completedCasePrices["sovety/zamena-filtra-pitevoy-vody-pomoshch-roditelyam"]=(()
 completedCasePrices["sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy"]={amount:3500,description:'Согласованная стоимость этого выезда: новые линии горячей и холодной воды, краны и канализация, проходы через стены и восстановление снятых сифонов. Это итог конкретной работы, а не универсальная цена новой точки.'};
 
 completedCasePrices["sovety/remont-salnika-starogo-ventilya"]={amount:1000,description:'Итоговая стоимость этого ремонта вместе с уплотнителем: подготовка и слив воды, восстановление сальника вентиля, заполнение системы и проверка. Такой отдельной позиции в прайсе нет; это фактическая сумма конкретной работы, а не новый тариф.'};
+
+completedCasePrices["sovety/skvazhinnyy-nasos-propadaet-davlenie-chistka"]={amount:2000,description:"Предварительно согласованная стоимость работы: подъём и очистка насоса, замена обратного клапана и обратная установка."};
