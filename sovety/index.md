@@ -394,6 +394,14 @@
 
 [Посмотреть случай ↗](https://vasilico.ru/sovety/skvazhinnyy-nasos-propadaet-davlenie-chistka/)
 
+ПРАКТИКА
+
+## [Аэрация септика: компрессор, распылитель и отвод воды](https://vasilico.ru/sovety/aeraciya-septika-kompressor-otvod-vody/)
+
+Как установили компрессор и распылитель, собрали сливные линии и проверили первый запуск аэрации.
+
+[Посмотреть случай ↗](https://vasilico.ru/sovety/aeraciya-septika-kompressor-otvod-vody/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)

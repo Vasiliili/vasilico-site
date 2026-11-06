@@ -48,7 +48,7 @@
     "lastmod": "2026-10-28"
   },
   "/raboty/": {
-    "hash": "aef6b7ad24bd218d22fd1b1599449821e439ab7a27fc5070a7cbada4b66c2046",
+    "hash": "f9026d75879c8ed96f5025bcc916c8350f420905ed664fc45fff0a9bb09298a7",
     "lastmod": "2026-11-06"
   },
   "/raboty/skvazhinnyy-nasos-ne-otklyuchaetsya/": {
@@ -58,6 +58,10 @@
   "/raboty/zamena-pogruzhnogo-nasosa-na-poverhnostnyy/": {
     "hash": "bab70cf92875532bc7daf068f507013d404291f44be9e25e7b45812f258360fa",
     "lastmod": "2026-10-28"
+  },
+  "/sovety/aeraciya-septika-kompressor-otvod-vody/": {
+    "hash": "e7f5a8eca2cf4b09d47656340b1f113542c564134d667753f7abc98c2554d0e3",
+    "lastmod": "2026-11-06"
   },
   "/sovety/goryachaya-voda-iz-skvazhiny/": {
     "hash": "69ca365c196f53fe1a4ecddc71e0bbcb87ee61a26740f74b8ff017071a76ef38",
@@ -152,7 +156,7 @@
     "lastmod": "2026-11-03"
   },
   "/sovety/": {
-    "hash": "60d58c368e2e7ba328fadc4bb9af98e7833d064d83710d1c76d0596c59b4e4eb",
+    "hash": "f0daf05284c9082b2f4d070fbc5d8fd20ef2ac82399cbe09b4c04b9443364518",
     "lastmod": "2026-11-06"
   },
   "/sovety/instrumenty-mastera/": {

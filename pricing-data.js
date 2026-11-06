@@ -33,3 +33,5 @@ completedCasePrices["sovety/voda-i-kanalizaciya-dlya-domashney-parikmaherskoy"]=
 completedCasePrices["sovety/remont-salnika-starogo-ventilya"]={amount:1000,description:'Итоговая стоимость этого ремонта вместе с уплотнителем: подготовка и слив воды, восстановление сальника вентиля, заполнение системы и проверка. Такой отдельной позиции в прайсе нет; это фактическая сумма конкретной работы, а не новый тариф.'};
 
 completedCasePrices["sovety/skvazhinnyy-nasos-propadaet-davlenie-chistka"]={amount:2000,description:"Предварительно согласованная стоимость работы: подъём и очистка насоса, замена обратного клапана и обратная установка."};
+
+completedCasePrices["sovety/aeraciya-septika-kompressor-otvod-vody"]={amount:2000,description:"Согласованная стоимость выполненной работы: монтаж аэрации, вентиляции и линий отвода воды."};
