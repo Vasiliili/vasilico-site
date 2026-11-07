@@ -402,6 +402,14 @@
 
 [Посмотреть случай ↗](https://vasilico.ru/sovety/aeraciya-septika-kompressor-otvod-vody/)
 
+ПРАКТИКА
+
+## [Пропало давление воды: песок из скважины забил фильтры](https://vasilico.ru/sovety/skvazhina-pesok-il-filtry-propalo-davlenie/)
+
+Как песок и ил забили фильтры, что показала проверка насоса и зачем его приподняли.
+
+[Посмотреть случай ↗](https://vasilico.ru/sovety/skvazhina-pesok-il-filtry-propalo-davlenie/)
+
 РАЗБОР
 
 ## [Почему вода из-под ручки смесителя попадает в шкаф](https://vasilico.ru/sovety/zamena-smesitelya-na-kuhne/#prichina)

@@ -18,6 +18,8 @@
 
 Пропадает напор при открытии крана?[Как чистка погружного насоса помогла восстановить давление ↗](https://vasilico.ru/sovety/skvazhinnyy-nasos-propadaet-davlenie-chistka/)
 
+Песок из скважины и пропало давление?[Как проверили насос и нашли забитые фильтры ↗](https://vasilico.ru/sovety/skvazhina-pesok-il-filtry-propalo-davlenie/)
+
 [← Все услуги](https://vasilico.ru/uslugi/)05 / Услуги
 
 # Насосы и водоснабжение
