@@ -18,6 +18,7 @@ priceGroups.find(([name])=>name==='Насосы, фильтры и техник�
 // Keep the retired group 7 empty: existing shared job IDs (including trip 8-0) remain stable.
 const MAX_JOB_QUANTITY=99;
 priceGroups.find(([name])=>name==='Насосы, фильтры и техника')[1].push(['Демонтаж насоса',500]);
+priceGroups.find(([name])=>name==='Насосы, фильтры и техника')[1].push(['Демонтаж водонагревателя',500],['Прочистка водонагревателя',2000],['Замена ТЭНа водонагревателя',1500],['Замена клапана водонагревателя',1000],['Замена терморегулятора водонагревателя',1000]);
 const allPriceJobs=priceGroups.flatMap(([,rows],group)=>rows.flatMap(([name,amount,from=true],index)=>name?[{id:`${group}-${index}`,name,amount,from,group}]:[]));
 const replacementJobs=replacementChoices.map(([name,parts],index)=>({id:`replacement-${index}`,name,jobs:parts.map(part=>allPriceJobs.find(job=>job.name===part).id)}));
 
