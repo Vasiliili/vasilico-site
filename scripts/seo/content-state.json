@@ -4,8 +4,8 @@
     "lastmod": "2026-11-02"
   },
   "/ceny/": {
-    "hash": "ac1d1de8359abaca264ac408b7bb11170ded533ed575328f765ab15966bb0242",
-    "lastmod": "2026-11-14"
+    "hash": "87d9ec3c2b2403d280fc01a092bf32c54b29dc7b07aea85f6bededc1a11649b9",
+    "lastmod": "2026-11-15"
   },
   "/gde-kupit-santehniku/": {
     "hash": "b62a5e3b41fb511432f60ec343bc41256ca8c44ee33a71b89cbb564d5affe58d",
@@ -48,8 +48,8 @@
     "lastmod": "2026-10-28"
   },
   "/raboty/": {
-    "hash": "3a304459d54943c84a9b0d55e213495c064c1d0196f68f0d1e6642399b364fd8",
-    "lastmod": "2026-11-07"
+    "hash": "1cd54a221fdb487349c4bf2f71bd47a55d69bb4c3b771a7d55aca106b41a74b0",
+    "lastmod": "2026-11-15"
   },
   "/raboty/skvazhinnyy-nasos-ne-otklyuchaetsya/": {
     "hash": "2e93e5dfbe1e998a1e6485d84c5fe69d4d5df8032f91e4de505625e8d22402ad",
@@ -210,6 +210,10 @@
   "/sovety/vvodnoy-kran-v-kolodce-ulichnyy-otvod/": {
     "hash": "0655b80d09bf3a148242786738f752e72b627809ba7ef51ba493a9db6c105651",
     "lastmod": "2026-11-02"
+  },
+  "/sovety/zamena-avtomatiki-nasosnoy-stancii/": {
+    "hash": "7ab90e1b4bfc9025db1e488196d7817e80581e8773852e12fd1c7d14eac78b31",
+    "lastmod": "2026-11-15"
   },
   "/sovety/zamena-filtra-pitevoy-vody-pomoshch-roditelyam/": {
     "hash": "68e819b2b3d85ee3056e2c40809a87ae0006a10e4d8524fd50d0a56f316e0fc9",
