@@ -4,7 +4,7 @@
 
 Источник: https://vasilico.ru/sovety/
 
-[Новая работа · 31 октября Капало из-под штока старого вентиля Ремонт без рискованной замены на заржавевших трубах. Фото и итоговая стоимость. Читать ↗](https://vasilico.ru/sovety/remont-salnika-starogo-ventilya/)Советы
+Советы
 
 # Что у вас случилось?
 
@@ -409,6 +409,14 @@
 Как песок и ил забили фильтры, что показала проверка насоса и зачем его приподняли.
 
 [Посмотреть случай ↗](https://vasilico.ru/sovety/skvazhina-pesok-il-filtry-propalo-davlenie/)
+
+СОВЕТ
+
+## [Как выбрать автоматику насосной станции при низком напряжении](https://vasilico.ru/sovety/avtomatika-nasosa-pri-nizkom-napryazhenii/)
+
+Почему насос может не отключиться при просадке напряжения и как выбрать подходящую автоматику и защиту.
+
+[Прочитать совет ↗](https://vasilico.ru/sovety/avtomatika-nasosa-pri-nizkom-napryazhenii/)
 
 РАЗБОР
 
