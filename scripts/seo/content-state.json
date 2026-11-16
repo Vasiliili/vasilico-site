@@ -12,8 +12,8 @@
     "lastmod": "2026-10-28"
   },
   "/": {
-    "hash": "5ad08845ec284c02321f5e34659b8de922742bb5fa8933dd51c96b8a201791e9",
-    "lastmod": "2026-10-31"
+    "hash": "5106a9804f34efe4f8d10a856644c9651f836a9ef8786f3862e8d71a3e4aaa28",
+    "lastmod": "2026-11-16"
   },
   "/kalkulyator/": {
     "hash": "f65b6027fe3787b63b5c29a9bd18588e34c3b669089a6312da724bddca9ee1ab",
@@ -32,8 +32,8 @@
     "lastmod": "2026-10-28"
   },
   "/podbor-nasosa/": {
-    "hash": "0d3c7598c1854ca27507af159064a2083ed2551e5992db65456f3678e99e851a",
-    "lastmod": "2026-10-28"
+    "hash": "004caa691200c3f722b700c1f95fd8e8c6dfae0ebe5e3dcfc5a8cdc19cbdc3ce",
+    "lastmod": "2026-11-16"
   },
   "/podbor-poverhnostnogo-nasosa/": {
     "hash": "1eef2c9fe3aaae6f971afa15a5c0e27ba6fb3cfa549d055cd2d8fb242e2d32f0",
@@ -48,8 +48,8 @@
     "lastmod": "2026-10-28"
   },
   "/raboty/": {
-    "hash": "2eb4a457c3256cea35e4b592329e6f91eecae0b19150099994fffeac1891abab",
-    "lastmod": "2026-11-15"
+    "hash": "73400e5f0193212e43cd7730661fe1c02e30501d8b6c2e1af575190f78aacb3c",
+    "lastmod": "2026-11-16"
   },
   "/raboty/skvazhinnyy-nasos-ne-otklyuchaetsya/": {
     "hash": "2e93e5dfbe1e998a1e6485d84c5fe69d4d5df8032f91e4de505625e8d22402ad",
@@ -62,6 +62,10 @@
   "/sovety/aeraciya-septika-kompressor-otvod-vody/": {
     "hash": "80059010a80118eac8807fc334d3fcc5d604e128271567faca274c60216232a0",
     "lastmod": "2026-11-06"
+  },
+  "/sovety/avtomatika-nasosa-pri-nizkom-napryazhenii/": {
+    "hash": "9e116e6b3696c70e24cfdc2507fcd6b811548161787c2c00c09f047b2ee9337c",
+    "lastmod": "2026-11-16"
   },
   "/sovety/goryachaya-voda-iz-skvazhiny/": {
     "hash": "69ca365c196f53fe1a4ecddc71e0bbcb87ee61a26740f74b8ff017071a76ef38",
@@ -156,8 +160,8 @@
     "lastmod": "2026-11-03"
   },
   "/sovety/": {
-    "hash": "da6ca0ea5b1f9b6e93a21134689696843edf957328927d64a4a76334b549554a",
-    "lastmod": "2026-11-07"
+    "hash": "398049fec774d948770b93b7a1b2047104e6574615d64653895fbd1a3dbf98c1",
+    "lastmod": "2026-11-16"
   },
   "/sovety/instrumenty-mastera/": {
     "hash": "5d8118691d7b6cf15946e1ba533e1fda78808ef142a02088205c7fc559477983",
@@ -186,6 +190,10 @@
   "/sovety/remont-salnika-starogo-ventilya/": {
     "hash": "9e0cbebfe16b85e704da94a16de58e16da8c422898394c4a641620778c397e25",
     "lastmod": "2026-10-31"
+  },
+  "/sovety/santehnik-dlya-roditeley-novotitarovskaya/": {
+    "hash": "39be4ede92cf975ae81ee2efb5eb1188e15754571d523fffd9e557a683148f96",
+    "lastmod": "2026-11-16"
   },
   "/sovety/skvazhina-pesok-il-filtry-propalo-davlenie/": {
     "hash": "60612141ec3f09f9df810c38a3ac942571e775dfc2f6a98fd1ad0a16126bdbde",
