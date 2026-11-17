@@ -287,3 +287,5 @@ body{font-size:18px}.inner{--accent:inherit}.lede,.card p,.step p{font-size:18px
 .pump-cleaning-story .story-block figure img{display:block;max-width:100%;height:auto;border-radius:8px}
 .pump-cleaning-story .story-block figcaption{margin-top:8px;line-height:1.5}
 .pump-cleaning-story video{display:block;width:100%;max-width:460px;height:auto}
+
+.availability-notice { background:#fff1c7; border:1px solid #bc9135; border-radius:10px; color:#4c3910; font-weight:700; padding:12px; margin:0 0 10px; }

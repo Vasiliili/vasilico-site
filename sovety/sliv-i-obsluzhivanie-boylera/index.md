@@ -66,7 +66,7 @@
 
 [Посчитать стоимость работы ↗](https://vasilico.ru/kalkulyator/)
 
-[Позвоните мне +7 (918) 246-88-52](tel:+79182468852)Для связи ежедневно 08:00–20:00 · МСК
+[Позвоните мне +7 (918) 246-88-52](tel:+79182468852)Уточните график по телефону
 
 [MAX](https://max.ru/u/f9LHodD0cOIy0OpzDX5iWMZxdG19R-xGFJqSoAI0LDX6gdyVvwyRDxl7ips)[WhatsApp](https://wa.me/79182468852)[Telegram](https://t.me/+79182468852)
 
