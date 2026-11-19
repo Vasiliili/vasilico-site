@@ -4,13 +4,13 @@
 
 Источник: https://vasilico.ru/uslugi/6/
 
-[← Все услуги](https://vasilico.ru/uslugi/)06 / Услуги
+[← Все услуги](https://vasilico.ru/uslugi/)07 / Услуги
 
 # Фильтры
 
 Установка корпусов и замена элементов.
 
-06
+07
 
 01
 

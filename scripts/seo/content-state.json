@@ -4,16 +4,16 @@
     "lastmod": "2026-11-02"
   },
   "/ceny/": {
-    "hash": "87d9ec3c2b2403d280fc01a092bf32c54b29dc7b07aea85f6bededc1a11649b9",
-    "lastmod": "2026-11-15"
+    "hash": "f07d33f66f405d9ad376635f899b4d898ae7562a29c2da965ff75c3ef5ea62f0",
+    "lastmod": "2026-11-19"
   },
   "/gde-kupit-santehniku/": {
     "hash": "b62a5e3b41fb511432f60ec343bc41256ca8c44ee33a71b89cbb564d5affe58d",
     "lastmod": "2026-10-28"
   },
   "/": {
-    "hash": "ecc40162664cfdc4e308387fb08fac0b3377564a97417efcadedb99d323a2b5c",
-    "lastmod": "2026-11-17"
+    "hash": "0f75255a2dde15d5f55dfb59e08752ea9f2897d088e302e6ea5c01e2d4668ab1",
+    "lastmod": "2026-11-19"
   },
   "/kalkulyator/": {
     "hash": "f65b6027fe3787b63b5c29a9bd18588e34c3b669089a6312da724bddca9ee1ab",
@@ -68,7 +68,7 @@
     "lastmod": "2026-11-16"
   },
   "/sovety/distancionnaya-pomoshch-santehnika/": {
-    "hash": "48c004c487ca75bebad3d0352868056e2538b2d6adc38b40da08b2cde40189f0",
+    "hash": "0502c8628216c41d7010354e61d9a17d2e2c060e3d199593cf8cd8e613820166",
     "lastmod": "2026-11-19"
   },
   "/sovety/goryachaya-voda-iz-skvazhiny/": {
@@ -264,39 +264,39 @@
     "lastmod": "2026-10-28"
   },
   "/uslugi/1/": {
-    "hash": "4a5321636749efcf053adf172b6a8d167f939a98cc7a127e51723a9cd186b1d3",
-    "lastmod": "2026-10-28"
+    "hash": "a3c04c0b9ecfae6b2fc4ae7998b5fcf9c0b0ab679aab2cdda91d616d4b2f22d2",
+    "lastmod": "2026-11-19"
   },
   "/uslugi/2/": {
-    "hash": "2d4654b0255f4af268402e8ed1a5cc0e761423a4310de287a028559a0950de59",
-    "lastmod": "2026-11-03"
+    "hash": "628479c94fa9182b72340b20577344b0784c5ff3c04357cba571a92855c7cc51",
+    "lastmod": "2026-11-19"
   },
   "/uslugi/3/": {
-    "hash": "3ea687bd63ca5d8bfaa918dd962d962cf9d9ec4916b4895c8b8845633c310b91",
-    "lastmod": "2026-10-28"
+    "hash": "0bf744aef1ba40dd4fbaaa5d2498ec65d1531c36c9bf5f9e36eeb3c33979d1e6",
+    "lastmod": "2026-11-19"
   },
   "/uslugi/4/": {
-    "hash": "0789328a9149213e651c1db762a362611ffed262efa83a8e6b48748c9324be12",
-    "lastmod": "2026-10-28"
+    "hash": "0677a58f544fe71e1085ed7497c85af967ac0da35e7feb5423d59577fa15e1f3",
+    "lastmod": "2026-11-19"
   },
   "/uslugi/5/": {
-    "hash": "60251e5f62bc5d2e7a01233193d9c2ab3859ded476d0680d8e1856d09487b91a",
-    "lastmod": "2026-11-07"
+    "hash": "d7e88328781c5e3cb8e5b6886698a9a481ca18f1bcb31e2e149be304819bca8d",
+    "lastmod": "2026-11-19"
   },
   "/uslugi/6/": {
-    "hash": "7e1f26a07d62b2787044f804c704c48f5325a8abc8b81a4b2a9da79f704b38b6",
-    "lastmod": "2026-10-28"
+    "hash": "07e370f4ae10f77c83271742fb9c4104666f5deb9599bfb17b9138edb38296e2",
+    "lastmod": "2026-11-19"
   },
   "/uslugi/7/": {
-    "hash": "e8d12c18697c79dbbad5b4d36c7872a443f817e7c3237f5b163a13ec03a3fdbf",
-    "lastmod": "2026-11-02"
+    "hash": "7ade422b279d2ab6068984777e04461bed42b0691fc99671a04d16caf65909d6",
+    "lastmod": "2026-11-19"
   },
   "/uslugi/9/": {
     "hash": "bb3561a562329a580f46f4a49ac765c0df424b63618a6bf1163ccfc94c3e0251",
     "lastmod": "2026-10-29"
   },
   "/uslugi/": {
-    "hash": "a5df17ab9aaab736843fdfead40f2b1195fbbaa5573bba6491f987c7a552c006",
+    "hash": "b5719802efe50ba47c891d8a0e5fa3778a939cb90446f2d39d565e65db848ce8",
     "lastmod": "2026-11-19"
   }
 }
