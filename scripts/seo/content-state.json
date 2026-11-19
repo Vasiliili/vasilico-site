@@ -67,6 +67,10 @@
     "hash": "9e116e6b3696c70e24cfdc2507fcd6b811548161787c2c00c09f047b2ee9337c",
     "lastmod": "2026-11-16"
   },
+  "/sovety/distancionnaya-pomoshch-santehnika/": {
+    "hash": "e2995985aae649eab18e76dae2f5d174dc5c23983cd2d9befb333905bf5e81e1",
+    "lastmod": "2026-11-19"
+  },
   "/sovety/goryachaya-voda-iz-skvazhiny/": {
     "hash": "69ca365c196f53fe1a4ecddc71e0bbcb87ee61a26740f74b8ff017071a76ef38",
     "lastmod": "2026-10-28"
@@ -292,7 +296,7 @@
     "lastmod": "2026-10-29"
   },
   "/uslugi/": {
-    "hash": "ebcec564b58664955f9e8411c95627eeba1b90e14a2fb9bea2fda1e6a57bd427",
-    "lastmod": "2026-10-29"
+    "hash": "cb71423df0927c8af1f181b1f90799b90dc9b1dd017ec6b02c4dc1f1de3de84a",
+    "lastmod": "2026-11-19"
   }
 }
