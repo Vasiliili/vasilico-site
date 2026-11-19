@@ -4,13 +4,13 @@
 
 Источник: https://vasilico.ru/uslugi/1/
 
-[← Все услуги](https://vasilico.ru/uslugi/)01 / Услуги
+[← Все услуги](https://vasilico.ru/uslugi/)02 / Услуги
 
 # Смесители
 
 Замена, установка и устранение протечек.
 
-01
+02
 
 01
 

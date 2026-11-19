@@ -6,13 +6,13 @@
 
 [Хотите сделать сами? → Пошаговая инструкция](https://vasilico.ru/sovety/kak-samostoyatelno-zamenit-unitaz/)
 
-[← Все услуги](https://vasilico.ru/uslugi/)02 / Услуги
+[← Все услуги](https://vasilico.ru/uslugi/)03 / Услуги
 
 # Унитазы
 
 Установка, замена арматуры и подключение.
 
-02
+03
 
 01
 
