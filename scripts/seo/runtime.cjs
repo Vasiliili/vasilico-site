@@ -8,13 +8,13 @@ for(const p of pages){const html=read(p.path==='/'?'index.html':p.path.slice(1)+
  assert.equal(w.document.title,p.title,p.path+' runtime title');assert.equal(w.document.querySelectorAll('h1').length,1,p.path+' one runtime heading');
  assert(w.document.querySelector('a[href="tel:+79182468852"]'),p.path+' actual master phone');
  const liveText=w.document.querySelector('main').textContent.replace(/\s+/g,' ').trim();assert(liveText.length>100,p.path+' runtime content');
- if(p.path==='/sovety/'){assert(w.document.querySelectorAll('#knowledge-results a').length>10,'Search list with links');const input=w.document.querySelector('#knowledge-search');input.value='насос';input.dispatchEvent(new w.Event('input',{bubbles:true}));assert(w.document.querySelectorAll('#knowledge-suggestions a').length>0,'Live suggestions');}
+ if(p.path==='/sovety/'){assert(w.document.querySelectorAll('#knowledge-results a').length>10,'Search list with links');assert(!w.document.querySelector('#knowledge-search'),'No duplicate search');const filter=w.document.querySelector('[data-kind=practice]');filter.click();assert.equal(filter.getAttribute('aria-pressed'),'true','Filters work');}
  tested++;w.close();}
 // The home search has searchbox semantics and ordinary link results, not a combobox.
 {
  const d=new JSDOM(read('index.html'),{url:'https://vasilico.ru/',runScripts:'outside-only',pretendToBeVisual:true}),w=d.window;
  w.matchMedia=()=>({matches:true,addEventListener(){}});w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
- w.eval(['knowledge-static.js','knowledge.js','pricing-data.js','pricing-pages.js','app.js','discovery.js'].map(read).join('\n'));
+ w.eval(['knowledge-static.js','knowledge.js','pricing-data.js','pricing-pages.js','app.js','discovery.js'].map(read).join('\n')+'\n;globalThis.testArticles=knowledgeArticles;');
  const input=w.document.querySelector('#site-query'),panel=w.document.querySelector('#site-results');
  const hero=w.document.querySelector('img.hero-art'),logo=w.document.querySelector('img.brand-logo');
  assert(hero.getAttribute('srcset').includes('/hero-768.webp 768w') && hero.getAttribute('fetchpriority')==='high' && hero.getAttribute('loading')!=='lazy','Hero uses smaller option and stays eager');
@@ -24,6 +24,9 @@ for(const p of pages){const html=read(p.path==='/'?'index.html':p.path.slice(1)+
  input.dispatchEvent(new w.Event('focus'));assert(!panel.hidden,'Search opens on focus');
  input.value='генератор';input.dispatchEvent(new w.Event('input',{bubbles:true}));
  assert(w.document.querySelector('#site-search-list a[href="/podbor-generatora/"]'),'Search still finds generator');
+ for(const a of w.testArticles)assert(w.SiteDiscovery.items.some(x=>x.url==='/'+a.path+'/'), 'Article in search: '+a.path);
+ for(const q of ['цирку','циркуляционный насос','стиральной машины','автоматика'])assert(w.SiteDiscovery.search(q).length,'Search: '+q);
+ assert(w.SiteDiscovery.search('цирку').some(x=>x.url==='/sovety/zamena-cirkulyacionnogo-nasosa/'),'Circulation pump article');
  assert(!input.hasAttribute('aria-expanded'),'Opening search must not add unsupported aria-expanded');
  input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert(panel.hidden,'Escape closes search');
  assert(!input.hasAttribute('aria-expanded'),'Closing search must not add unsupported aria-expanded');d.window.close();
