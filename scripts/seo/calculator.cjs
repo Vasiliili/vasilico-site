@@ -4,7 +4,7 @@ const src=n=>fs.readFileSync(root+n,'utf8');
 function setup(route='kalkulyator',query='?jobs=0-0,0-2',service=''){
  const d=new JSDOM('<body><main class="prices-page"></main></body>',{url:'https://vasilico.ru/'+route+'/'+query,runScripts:'outside-only'}),w=d.window;
  w.TextEncoder=TextEncoder;w.TextDecoder=TextDecoder;w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
- w.eval("const path="+JSON.stringify(route)+';'+src('pricing-data.js')+'\n'+src('pricing-pages.js')+'\ndocument.querySelector("main").innerHTML=renderCalculator('+JSON.stringify(service)+');\n'+src('seller-sheet.js')+'\n'+src('price-receipt.js')+'\n'+src('calculator.js'));
+ w.eval("const path="+JSON.stringify(route)+';'+src('pricing-data.js').replace(/^.* \/\/ price-editor$/gm,'')+'\n'+src('pricing-pages.js')+'\ndocument.querySelector("main").innerHTML=renderCalculator('+JSON.stringify(service)+');\n'+src('seller-sheet.js')+'\n'+src('price-receipt.js')+'\n'+src('calculator.js'));
  return w;
 }
 const w=setup(),doc=w.document,$=s=>doc.querySelector(s),input=(s,v)=>{$(s).value=v;$(s).dispatchEvent(new w.Event('input',{bubbles:true}));},change=(s,v)=>{$(s).checked=v;$(s).dispatchEvent(new w.Event('change',{bubbles:true}));};

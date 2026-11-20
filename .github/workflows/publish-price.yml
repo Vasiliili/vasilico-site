@@ -1,0 +1,53 @@
+name: Опубликовать правки прайса
+on:
+  workflow_dispatch:
+    inputs:
+      edits:
+        description: 'Скопированные правки со страницы статистики'
+        required: true
+        type: string
+permissions:
+  contents: write
+  pages: write
+  actions: write
+concurrency:
+  group: publish-price
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main' && github.actor == 'Vasiliili'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Применить и проверить правки
+        env:
+          PRICE_EDITS: ${{ inputs.edits }}
+        run: |
+          printf '%s' "$PRICE_EDITS" | node scripts/apply-price-edits.cjs
+          npm run build
+          npm run check
+          npm test
+      - name: Опубликовать проверенную версию
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
+          case "$mode" in workflow|legacy) ;; *) exit 1 ;; esac
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -u
+          git diff --staged --quiet && exit 0
+          git commit -m 'Обновить прайс из технической страницы'
+          git push origin HEAD:main
+          if [ "$mode" = workflow ]; then
+            gh workflow run site-quality.yml --ref main
+          else
+            gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+          fi

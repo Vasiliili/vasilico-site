@@ -42,5 +42,8 @@ for(const p of pages){const html=read(p.path==='/'?'index.html':p.path.slice(1)+
  input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert(panel.hidden,'Escape closes search');
  assert(!input.hasAttribute('aria-expanded'),'Closing search must not add unsupported aria-expanded');d.window.close();
 }
-const data=JSON.parse(read('api/public/v1.json'));assert.equal(data.prices.find(x=>x.name==='Демонтаж фильтра воды').amount,500);assert.equal(data.prices.find(x=>x.name==='Монтаж фильтра для глубокой очистки воды').amount,1500);
-console.log('PASS: '+tested+' shared-renderer routes, SEO titles survive JS, contacts, live search, unchanged filter prices.');
+const data=JSON.parse(read('api/public/v1.json'));
+const activePrices=require('node:vm').runInNewContext(read('pricing-data.js')+'\nJSON.stringify(allPriceJobs)');
+assert.deepEqual(data.prices.map(({id,name,amount,from})=>({id,name,amount,from})),
+ JSON.parse(activePrices).map(({id,name,amount,from})=>({id,name,amount,from})));
+console.log('PASS: '+tested+' shared-renderer routes, SEO titles survive JS, contacts, live search, current published prices.');
