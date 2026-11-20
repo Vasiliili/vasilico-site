@@ -24,6 +24,17 @@ for(const p of pages){const html=read(p.path==='/'?'index.html':p.path.slice(1)+
  input.dispatchEvent(new w.Event('focus'));assert(!panel.hidden,'Search opens on focus');
  input.value='генератор';input.dispatchEvent(new w.Event('input',{bubbles:true}));
  assert(w.document.querySelector('#site-search-list a[href="/podbor-generatora/"]'),'Search still finds generator');
+ for(const page of pages)assert(w.SiteDiscovery.items.some(item=>item.url===page.path),'Public page in search: '+page.path);
+ const searchLinks=query=>{
+  input.value=query;
+  input.dispatchEvent(new w.Event('input',{bubbles:true}));
+  return [...w.document.querySelectorAll('#site-search-list a.search-row')].map(a=>a.getAttribute('href'));
+ };
+ assert(searchLinks('цирку').includes('/sovety/zamena-cirkulyacionnogo-nasosa/'),'Partial word updates the visible list');
+ assert(searchLinks('разводным ключом').includes('/sovety/kak-samostoyatelno-zamenit-unitaz/'),'Inflected phrase found in the article text');
+ assert(!searchLinks('ключ').includes('/raboty/skvazhinnyy-nasos-ne-otklyuchaetsya/'),'Key query ignores verb substrings');
+ assert.equal(searchLinks('сантехник для мамы')[0],'/sovety/santehnik-dlya-roditeley-novotitarovskaya/','Customer wording finds relevant story first');
+ assert.equal(searchLinks('несуществующий запроспроверки').length,0,'Unmatched query has no unrelated results');
  for(const a of w.testArticles)assert(w.SiteDiscovery.items.some(x=>x.url==='/'+a.path+'/'), 'Article in search: '+a.path);
  for(const q of ['цирку','циркуляционный насос','стиральной машины','автоматика'])assert(w.SiteDiscovery.search(q).length,'Search: '+q);
  assert(w.SiteDiscovery.search('цирку').some(x=>x.url==='/sovety/zamena-cirkulyacionnogo-nasosa/'),'Circulation pump article');

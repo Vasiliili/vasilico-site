@@ -54,6 +54,16 @@ for(const file of walk(root).filter(f=>f.endsWith('/index.html')||f===path.join(
  write(rel.replace(/index\.html$/,'index.md'),'# '+h1+'\n\n'+description+'\n\nИсточник: '+url+'\n\n'+markdown(body)+'\n');
 }
 pages.sort((a,b)=>a.url.localeCompare(b.url));
+// Index the same published routes as the sitemap, including standalone pages.
+const searchPages=pages.map(({path:url,heading,title,description,kind,text,completedWork})=>({
+ url,heading,title,summary:description,
+ type:kind==='calculator'?'tool':kind==='article'?(completedWork?'practice':'tip'):kind,
+ // Collection cards repeat the text of their own search results.
+ body:['/sovety/','/raboty/'].includes(url)?'':text
+}));
+const standaloneIndex=read('knowledge-static.js').split('const publicSearchPages=')[0];
+write('knowledge-static.js',standaloneIndex+'const publicSearchPages='+JSON.stringify(searchPages).replaceAll('<','\\u003c')+';\n');
+
 for(const old of oldCatalogue){if(!pages.some(p=>p.url===old.url)){const md=new URL(old.markdown);if(md.origin===origin){const f=path.join(root,md.pathname);if(fs.existsSync(f))fs.unlinkSync(f);}}}
 write(stateFile,JSON.stringify(state,null,2)+'\n');
 write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(p=>`<url><loc>${esc(p.url)}</loc><lastmod>${p.lastmod}</lastmod></url>`).join('\n')+'\n</urlset>\n');

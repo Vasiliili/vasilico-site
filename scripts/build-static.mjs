@@ -72,6 +72,9 @@ for(const file of walk(root)){
 let sitemap=read('sitemap.xml');for(const route of paths){if(!sitemap.includes('https://vasilico.ru/'+route+'/'))sitemap=sitemap.replace('</urlset>','<url><loc>https://vasilico.ru/'+route+'/</loc></url>\n</urlset>');}fs.writeFileSync(path.join(root,'sitemap.xml'),sitemap);
 console.log('Static HTML rebuilt from shared renderers and pricing-data.js.');
 
+// Build the public page catalogue before hashing the search data.
+await import('./seo/build.mjs');
+
 // Fingerprint local assets so previously cached scripts cannot mix old/new logic.
 function allHtml(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()&&!e.name.startsWith('.')?allHtml(path.join(dir,e.name)):e.isFile()&&e.name.endsWith('.html')?[path.join(dir,e.name)]:[]);}
 for(const file of allHtml(root)){
@@ -82,6 +85,3 @@ for(const file of allHtml(root)){
   return `${attr}="/${asset}?v=${digest}"`;
  });fs.writeFileSync(file,html);
 }
-
-// One entry point for both manual editing and continuous publication.
-await import('./seo/build.mjs');

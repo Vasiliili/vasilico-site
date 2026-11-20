@@ -6,12 +6,70 @@
  const services=serviceNames.flatMap((heading,i)=>heading?[{heading,url:'/uslugi/'+(i+1)+'/',summary:'Услуги мастера в Новотитаровской. Объём и стоимость согласуем до начала работы.',type:'service',tags:[heading],keywords:i===4?'насос слабый напор давление настройка':i===6?'бойлер горячая вода накопительный':i===2?'сифон прочистка течь под мойкой':''}]:[]);
  const materials=typeof knowledgeSearchItems!=='undefined'?knowledgeSearchItems:[];
  const items=[...extras,...materials,...services,...(typeof staticKnowledgeItems==='undefined'?[]:staticKnowledgeItems)].map(x=>({...x,url:x.url||'/'+x.path+'/',heading:x.heading||x.title})).filter((x,i,all)=>all.findIndex(v=>v.url===x.url)===i);
- const groups=[['насос','помп','вило','wilo'],['слаб','напор','давлен'],['смесител','кран'],['унитаз','бачок','бачк'],['раковин','мойк','умывальник'],['теч','тек','кап','протеч','мокр','луж'],['бойлер','водонагревател'],['цен','стоим','стоит','прайс','сколько'],['щелк','част','включ','выключ']];
- const stop=new Set('и в на у с со из под для как что мне меня не вода воды очень стал стала нужно надо'.split(' '));
- const tokens=q=>norm(q).split(' ').filter(t=>t.length>1&&!stop.has(t)).map(t=>t.length>4?t.replace(/(иями|ами|ого|ыми|ий|ый|ая|ое|ые|ие|ов|ом|ам|ах|ется|ются|ить|ать|ит|ет|а|я|ы|и|у|е)$/,''):t);
- const terms=t=>groups.find(g=>g.some(r=>t.startsWith(r)))||[t];
- function search(q){const ts=tokens(q);if(!ts.length)return q.trim()?[]:items;return items.map(item=>{const title=norm(item.heading),tags=norm((item.tags||[]).join(' ')+' '+(item.keywords||'')),body=norm((item.summary||'')+' '+(item.body||''));let hits=0,score=0;for(const t of ts){const has=s=>terms(t).some(r=>s.includes(r));if(has(title+' '+tags+' '+body)){hits++;score+=has(title)?9:has(tags)?5:1;}}return{item,score:hits>=Math.ceil(ts.length*.65)?score:0};}).filter(x=>x.score).sort((a,b)=>b.score-a.score).map(x=>x.item);}
- const labels={tool:'Калькулятор',service:'Услуга',practice:'Практика',analysis:'Разбор',tip:'Совет'};
+ const published=typeof publicSearchPages==='undefined'?[]:publicSearchPages;
+ const publishedByUrl=new Map(published.map(item=>[item.url,item]));
+ const searchItems=items.filter(item=>!published.length||publishedByUrl.has(item.url.split('#')[0]));
+ const listed=new Set(searchItems.map(item=>item.url));
+ searchItems.push(...published.filter(item=>!listed.has(item.url)));
+
+ const stop=new Set('а и в во на у к с со из под для по как что мне меня очень стал стала нужно надо'.split(' '));
+ const words=value=>String(value||'').toLowerCase().replace(/ё/g,'е').replace(/<[^>]*>/g,' ').match(/[\p{L}\p{N}]+/gu)||[];
+ const stem=word=>word.length>4&&/^[а-я]+$/.test(word)?word.replace(/(иями|ами|ями|ого|его|ому|ему|ыми|ими|ым|им|ых|их|ую|юю|ий|ый|ой|ая|яя|ое|ее|ые|ие|ов|ев|ом|ем|ам|ям|ах|ях|а|я|ы|и|у|ю|е)$/,''):word;
+ const synonyms=[
+  ['смесител','кран'],['раковин','мойк','умывальник'],['бойлер','водонагревател'],
+  ['насос','помп'],['теч','тек','протеч','кап','подтек'],['гуд','жужж','шум'],
+  ['напор','давлен'],['унитаз','горшок'],['сантехник','водопроводчик']
+ ];
+ const stems=new Map();
+ const prepare=value=>{
+  const ordered=words(value).filter(word=>!stop.has(word));
+  for(const word of ordered)if(!stems.has(word))stems.set(word,stem(word));
+  return {ordered,unique:[...new Set(ordered)]};
+ };
+ // Prepare fields once, so typing only runs matching and ranking.
+ let index;
+ function search(query){
+  const terms=words(query).filter(word=>!stop.has(word));
+  if(!terms.length)return query.trim()?[]:searchItems;
+  index??=searchItems.map(item=>{
+   const page=item.url.includes('#')?null:publishedByUrl.get(item.url);
+   return {item,fields:[
+    [prepare(item.heading),12],[prepare(page?.title||item.title),8],
+    [prepare(item.summary+' '+(page?.summary||'')),6],
+    [prepare([...(item.tags||[]),item.keywords].filter(Boolean).join(' ')),5],
+    [prepare(page?.body||item.body||''),2]
+   ]};
+  });
+  const matches=terms.map(term=>{
+   const root=stem(term);
+   const direct=word=>word===term||stems.get(word)===root||word.startsWith(term);
+   const group=synonyms.find(group=>group.some(alias=>root.startsWith(alias)));
+   return {direct,score:word=>word===term?3:direct(word)?2:group?.some(alias=>word.startsWith(alias))?1:0};
+  });
+  const ranked=[];
+  for(const {item,fields} of index){
+   let coverage=0,score=0;
+   for(const term of matches){
+    let best=0;
+    for(const [field,weight] of fields){
+     for(const word of field.unique){
+      best=Math.max(best,term.score(word)*weight);
+      if(best>=weight*3)break;
+     }
+    }
+    if(best){coverage++;score+=best;}
+   }
+   if(coverage!==terms.length)continue;
+   if(terms.length>1){
+    for(const [field,weight] of fields){
+     if(field.ordered.some((_,i)=>matches.every((term,offset)=>field.ordered[i+offset]&&term.direct(field.ordered[i+offset]))))score+=weight*3;
+    }
+   }
+   ranked.push({item,score});
+  }
+  return ranked.sort((a,b)=>b.score-a.score).map(result=>result.item);
+ }
+ const labels={tool:'Калькулятор',page:'Страница',service:'Услуга',practice:'Практика',analysis:'Разбор',tip:'Совет'};
  const cards=list=>list.map(x=>`<a class="discovery-card discovery-${x.type}" href="${esc(x.url)}"><span>${labels[x.type]||'Материал'}</span><strong>${esc(x.heading)}</strong><small>${esc(x.summary)}</small></a>`).join('');
  const resultRows=list=>list.map(x=>`<a class="search-row" href="${esc(x.url)}" title="${esc(x.heading)}"><strong>${esc(x.heading)}</strong><span aria-hidden="true">›</span></a>`).join('');
  const main=document.querySelector('main');if(!main)return;
@@ -21,7 +79,7 @@
  function render(){box.classList.add('finder-open');document.body.classList.add('site-search-open');box.querySelector('#close-site-search').hidden=false;syncViewport();const q=input.value.trim(),found=search(q);panel.hidden=false;let shown=found;if(!q&&!expanded){const fresh=[...materials].filter(x=>x.type==='practice').reverse().slice(0,2);shown=[...extras,...fresh];}else if(!expanded)shown=found.slice(0,6);status.textContent=q?'Найдено: '+found.length:expanded?'Все материалы':'Полезное и новое';list.innerHTML=shown.length?resultRows(shown):'<p>Похожих материалов пока нет. Попробуйте другие слова.</p><a class="text-link" href="/kontakty/">Написать мастеру</a>';more.hidden=!!q&&found.length<=shown.length;more.textContent=q?'Показать все результаты':'Все материалы';panel.scrollTop=0;}
  function syncViewport(){const v=window.visualViewport;box.style.setProperty('--search-height',(v?v.height:window.innerHeight)+'px');box.style.setProperty('--search-top',(v?v.offsetTop:0)+'px');}
  if(window.visualViewport){window.visualViewport.addEventListener('resize',syncViewport);window.visualViewport.addEventListener('scroll',syncViewport);}window.addEventListener('resize',syncViewport);
- input.addEventListener('focus',render);input.addEventListener('click',()=>{if(panel.hidden)render();});input.addEventListener('input',()=>{expanded=false;render();});more.addEventListener('click',()=>{expanded=true;render();});function close(){panel.hidden=true;box.classList.remove('finder-open');document.body.classList.remove('site-search-open');box.querySelector('#close-site-search').hidden=true;input.blur();}box.querySelector('#close-site-search').addEventListener('click',close);box.addEventListener('keydown',e=>{if(e.key==='Escape'){close();}});document.addEventListener('click',e=>{if(!box.contains(e.target))close();});
+ input.addEventListener('focus',render);input.addEventListener('click',()=>{if(panel.hidden)render();});input.addEventListener('input',()=>{expanded=false;render();});more.addEventListener('click',()=>{expanded=true;render();});function close(){panel.hidden=true;box.classList.remove('finder-open');document.body.classList.remove('site-search-open');box.querySelector('#close-site-search').hidden=true;input.blur();}box.querySelector('#close-site-search').addEventListener('click',close);box.addEventListener('keydown',e=>{if(e.key==='Escape'){close();}else if(!panel.hidden&&e.target===input&&e.key==='ArrowDown'){const first=list.querySelector('a');if(first){e.preventDefault();first.focus();}}});document.addEventListener('click',e=>{if(!box.contains(e.target))close();});
  // Promote the tool before service content, not after the footer.
  if(current==='/uslugi/5'){document.querySelectorAll('.pump-selector-link').forEach(el=>el.remove());box.insertAdjacentHTML('afterend','<section class="related-content pump-entry"><h2>Какой насос подойдёт вашему дому?</h2>'+cards(extras.filter(x=>['/podbor-nasosa/','/podbor-poverhnostnogo-nasosa/','/podbor-skvazhinnogo-nasosa/'].includes(x.url)))+'<p><a class="text-link" href="/podbor-generatora/">Отключают свет? Подберите генератор для дома и насоса</a></p></section>');}
  if(current==='/uslugi/7'){document.querySelectorAll('.pump-selector-link').forEach(el=>{if(el.querySelector('a[href="/podbor-vodonagrevatelya/"]'))el.remove();});box.insertAdjacentHTML('afterend','<section class="related-content heater-entry"><h2>Какой объём бойлера нужен?</h2>'+cards([extras.find(x=>x.url==='/podbor-vodonagrevatelya/')])+'</section>');}
@@ -39,5 +97,5 @@
  share.querySelector('.copy-link').addEventListener('click',copy);
  button.addEventListener('click',async()=>{message.textContent='';if(navigator.share){try{await navigator.share({title:document.title,url});return;}catch(e){if(e.name==='AbortError')return;}}fallback.hidden=false;await copy();});
  // Testable pure catalogue operations; no network calls or query logging.
- globalThis.SiteDiscovery={search,items};
+ globalThis.SiteDiscovery={search,items:searchItems};
 })();
