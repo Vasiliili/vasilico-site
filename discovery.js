@@ -5,7 +5,7 @@
  const serviceNames=['Смесители','Унитазы','Раковины и сифоны','Канализация: монтаж и подключение','Насосы и водоснабжение','Фильтры','Водонагреватели',null,'Закупка и доставка'];
  const services=serviceNames.flatMap((heading,i)=>heading?[{heading,url:'/uslugi/'+(i+1)+'/',summary:'Услуги мастера в Новотитаровской. Объём и стоимость согласуем до начала работы.',type:'service',tags:[heading],keywords:i===4?'насос слабый напор давление настройка':i===6?'бойлер горячая вода накопительный':i===2?'сифон прочистка течь под мойкой':''}]:[]);
  const materials=typeof knowledgeSearchItems!=='undefined'?knowledgeSearchItems:[];
- const items=[...extras,...materials,...services].map(x=>({...x,url:x.url||'/'+x.path+'/',heading:x.heading||x.title})).filter((x,i,all)=>all.findIndex(v=>v.url===x.url)===i);
+ const items=[...extras,...materials,...services,...(typeof staticKnowledgeItems==='undefined'?[]:staticKnowledgeItems)].map(x=>({...x,url:x.url||'/'+x.path+'/',heading:x.heading||x.title})).filter((x,i,all)=>all.findIndex(v=>v.url===x.url)===i);
  const groups=[['насос','помп','вило','wilo'],['слаб','напор','давлен'],['смесител','кран'],['унитаз','бачок','бачк'],['раковин','мойк','умывальник'],['теч','тек','кап','протеч','мокр','луж'],['бойлер','водонагревател'],['цен','стоим','стоит','прайс','сколько'],['щелк','част','включ','выключ']];
  const stop=new Set('и в на у с со из под для как что мне меня не вода воды очень стал стала нужно надо'.split(' '));
  const tokens=q=>norm(q).split(' ').filter(t=>t.length>1&&!stop.has(t)).map(t=>t.length>4?t.replace(/(иями|ами|ого|ыми|ий|ый|ая|ое|ые|ие|ов|ом|ам|ах|ется|ются|ить|ать|ит|ет|а|я|ы|и|у|е)$/,''):t);
