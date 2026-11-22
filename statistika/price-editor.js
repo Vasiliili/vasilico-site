@@ -96,7 +96,12 @@
      lock(false); status.textContent='Публикация отправлена, но цена на сайте отличается. Проверьте позицию перед следующей правкой.';return;
     }
    }
-   status.textContent='Правка сохранена. Публикация проверяется каждые 20 минут. Можно закрыть страницу.';
+   const change=row.patch.changes[0];
+   const saved=new Date(row.created_at).toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Moscow'});
+   const label='«'+change.name+'»'+(change.type==='remove'?' (удаление)': ' — '+(change.from?'от ':'')+priceMoney(change.amount));
+   const elapsed=Math.floor((Date.now()-Date.parse(row.created_at))/60000);
+   const phase=row.state==='submitted'?'Сайт обновляется.':elapsed>=25?'Публикация задерживается. Правка остаётся в очереди.':'Ожидает автоматической публикации.';
+   status.textContent=label+'. Сохранено в '+saved+' мск. '+phase+' Можно закрыть страницу.';
   } catch(error) {if(run!==session)return;status.textContent=error.message;}
   timer=setTimeout(()=>refresh(run),30000);
  }

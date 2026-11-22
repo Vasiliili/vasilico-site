@@ -29,7 +29,7 @@ Deno.serve(async req => {
    let claims;
    try { claims=(await jwtVerify((req.headers.get('authorization')||'').replace(/^Bearer /,''),keys,{issuer,audience,algorithms:['RS256']})).payload; }
    catch { return reply({},401); }
-   if(claims.workflow_ref!==workflow || claims.repository_id!=='1391323447' || claims.ref!=='refs/heads/main'||claims.event_name!=='schedule') return reply({},403);
+   if(claims.workflow_ref!==workflow || claims.repository_id!=='1391323447' || claims.ref!=='refs/heads/main'||!['schedule','push'].includes(claims.event_name)) return reply({},403);
    if(action==='next') return reply((await db(table+'?state=eq.pending&limit=1'))[0]||null);
   } else {
    const password=req.headers.get('x-stats-token')||'';
