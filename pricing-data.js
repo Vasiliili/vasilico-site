@@ -24,6 +24,7 @@ priceGroups.find(([name])=>name==='Водоснабжение и счётчик�
 priceGroups.push(['Онлайн-помощь', [['Онлайн-консультация сантехника по фото и видео',0]]]);
 priceJobNotes['Онлайн-консультация сантехника по фото и видео']='Если помощь пригодилась, об оплате договоримся после консультации.';
 priceGroups[4][1].push(["Замена конденсатора эл двигпюателя.",500,true]); // price-editor
+priceGroups[4][1][20]=[null,0]; // price-editor
 const allPriceJobs=priceGroups.flatMap(([,rows],group)=>rows.flatMap(([name,amount,from=true],index)=>name?[{id:`${group}-${index}`,name,amount,from,group}]:[]));
 const replacementJobs=replacementChoices.map(([name,parts],index)=>({id:`replacement-${index}`,name,jobs:parts.map(part=>allPriceJobs.find(job=>job.name===part).id)}));
 
