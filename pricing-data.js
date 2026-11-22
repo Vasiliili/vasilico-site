@@ -23,6 +23,7 @@ priceGroups.find(([name])=>name==='Насосы, фильтры и техник�
 priceGroups.find(([name])=>name==='Водоснабжение и счётчики')[1].push(['Замена шарового крана',500],['Перепаковка шарового крана',500],['Установка обратного клапана',500],['Замена обратного клапана',500],['Перепаковка обратного клапана',500],['Установка грязевого фильтра',500],['Замена грязевого фильтра',500],['Прочистка грязевого фильтра',500],['Перепаковка грязевого фильтра',500],['Установка американки',500],['Замена американки',500],['Сборка и перепаковка американки',500]);
 priceGroups.push(['Онлайн-помощь', [['Онлайн-консультация сантехника по фото и видео',0]]]);
 priceJobNotes['Онлайн-консультация сантехника по фото и видео']='Если помощь пригодилась, об оплате договоримся после консультации.';
+priceGroups[4][1].push(["Замена конденсатора эл двигпюателя.",500,true]); // price-editor
 const allPriceJobs=priceGroups.flatMap(([,rows],group)=>rows.flatMap(([name,amount,from=true],index)=>name?[{id:`${group}-${index}`,name,amount,from,group}]:[]));
 const replacementJobs=replacementChoices.map(([name,parts],index)=>({id:`replacement-${index}`,name,jobs:parts.map(part=>allPriceJobs.find(job=>job.name===part).id)}));
 
