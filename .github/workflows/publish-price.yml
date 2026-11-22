@@ -1,5 +1,7 @@
 name: Опубликовать правки прайса
 on:
+  schedule:
+    - cron: '7,27,47 * * * *'
   workflow_dispatch:
     inputs:
       edits:
@@ -7,6 +9,7 @@ on:
         required: true
         type: string
 permissions:
+  id-token: write
   contents: write
   pages: write
   actions: write
@@ -15,27 +18,48 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    if: github.ref == 'refs/heads/main' && github.actor == 'Vasiliili'
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.actor == 'Vasiliili')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Получить сохранённую правку
+        if: github.event_name == 'schedule'
+        id: queue
+        run: node scripts/price-queue.mjs next
       - uses: actions/setup-node@v4
+        if: github.event_name == 'workflow_dispatch' || steps.queue.outputs.id != ''
         with:
           node-version: '24'
           cache: npm
       - run: npm ci --ignore-scripts
+        if: github.event_name == 'workflow_dispatch' || steps.queue.outputs.id != ''
       - name: Применить и проверить правки
+        id: validate
+        if: github.event_name == 'workflow_dispatch' || steps.queue.outputs.id != ''
         env:
+          REQUEST_ID: ${{ steps.queue.outputs.id }}
           PRICE_EDITS: ${{ inputs.edits }}
         run: |
-          printf '%s' "$PRICE_EDITS" | node scripts/apply-price-edits.cjs
+          if [ -n "$REQUEST_ID" ]; then
+            if git log --fixed-strings --grep="Price-Request: $REQUEST_ID" -1 --format=%H | grep -q .; then exit 0; fi
+            node scripts/apply-price-edits.cjs "$RUNNER_TEMP/price-patch.json"
+          else
+            printf '%s' "$PRICE_EDITS" | node scripts/apply-price-edits.cjs
+          fi
           npm run build
           npm run check
           npm test
-      - name: Опубликовать проверенную версию
+      - name: Отметить отклонённую правку
+        if: failure() && steps.validate.outcome == 'failure' && steps.queue.outputs.id != ''
         env:
+          REQUEST_ID: ${{ steps.queue.outputs.id }}
+        run: node scripts/price-queue.mjs failed
+      - name: Опубликовать проверенную версию
+        if: github.event_name == 'workflow_dispatch' || steps.queue.outputs.id != ''
+        env:
+          REQUEST_ID: ${{ steps.queue.outputs.id }}
           GH_TOKEN: ${{ github.token }}
         run: |
           mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
@@ -43,11 +67,17 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -u
-          git diff --staged --quiet && exit 0
-          git commit -m 'Обновить прайс из технической страницы'
-          git push origin HEAD:main
+          if ! git diff --staged --quiet; then
+            git commit -m 'Обновить прайс из технической страницы' -m "Price-Request: $REQUEST_ID"
+            git push origin HEAD:main
+          fi
           if [ "$mode" = workflow ]; then
             gh workflow run site-quality.yml --ref main
           else
             gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
           fi
+      - name: Подтвердить передачу на публикацию
+        if: success() && steps.queue.outputs.id != ''
+        env:
+          REQUEST_ID: ${{ steps.queue.outputs.id }}
+        run: node scripts/price-queue.mjs submitted
