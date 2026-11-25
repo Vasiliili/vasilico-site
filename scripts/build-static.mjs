@@ -63,7 +63,7 @@ for(const file of walk(root)){
  page=page.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="Актуальные услуги сантехника в Новотитаровской представлены в разделе услуг.">');
  }
  if(/^uslugi\/[1-9]$/.test(route)&&route!=='uslugi/8'){
- const labels=['Смесители','Унитазы','Раковины и сифоны','Канализация','Насосы и водоснабжение','Фильтры','Водонагреватели','Отопление','Закупка и доставка'];const label=labels[Number(route.split('/')[1])-1];
+ const labels=['Смесители','Унитазы','Раковины и сифоны','Канализация','Насосы и водоснабжение','Фильтры','Водонагреватели (бойлеры)','Отопление','Закупка и доставка'];const label=labels[Number(route.split('/')[1])-1];
  page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>'+label+' в Новотитаровской — сантехник Василий Владимирович</title>');
  page=page.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+label+' в Новотитаровской. Работы частного сантехника Василия Владимировича, цены по прайсу, предварительный калькулятор и связь с мастером. Стоимость согласуем до начала работы.">');
  }

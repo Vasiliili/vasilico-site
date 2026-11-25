@@ -4,20 +4,20 @@
     "lastmod": "2026-11-02"
   },
   "/ceny/": {
-    "hash": "f07d33f66f405d9ad376635f899b4d898ae7562a29c2da965ff75c3ef5ea62f0",
-    "lastmod": "2026-11-22"
+    "hash": "f190fd4051f74363c65e38637d3f2fa31a551bec6721931a99c74221bbd2153b",
+    "lastmod": "2026-11-25"
   },
   "/gde-kupit-santehniku/": {
-    "hash": "b62a5e3b41fb511432f60ec343bc41256ca8c44ee33a71b89cbb564d5affe58d",
-    "lastmod": "2026-10-28"
+    "hash": "915e312ba65c698671453f2e9427c54bbb1aa465de673464331ff92f8975fee0",
+    "lastmod": "2026-11-25"
   },
   "/": {
-    "hash": "0f75255a2dde15d5f55dfb59e08752ea9f2897d088e302e6ea5c01e2d4668ab1",
-    "lastmod": "2026-11-19"
+    "hash": "8b546c0878ff85ceeca1582b0e0c903909dad680ee07b50788998e126c09cd7b",
+    "lastmod": "2026-11-25"
   },
   "/kalkulyator/": {
-    "hash": "f65b6027fe3787b63b5c29a9bd18588e34c3b669089a6312da724bddca9ee1ab",
-    "lastmod": "2026-11-02"
+    "hash": "731cbc44c97196ccc27d4fb30707eee3a53884b46ebf359d80902ce41470860f",
+    "lastmod": "2026-11-25"
   },
   "/kontakty/": {
     "hash": "e050307bdcead7c746e61bf3ec9aff4367261673b66f8c1ccbbde7ddb86c79f1",
@@ -44,8 +44,8 @@
     "lastmod": "2026-10-28"
   },
   "/podbor-vodonagrevatelya/": {
-    "hash": "c65f49d1784b20e0ad4c46048016843ed19311e1a28babf05e0ad6cf5c8ac296",
-    "lastmod": "2026-10-28"
+    "hash": "29e90daa084565d12117ce8bbaa8c84c76723c764cc224abf88b171c093dae12",
+    "lastmod": "2026-11-25"
   },
   "/raboty/": {
     "hash": "51596589084dcccdc42cf4b1294d4cd20bfbcb94f498fd2340a81665af113fbe",
@@ -112,8 +112,8 @@
     "lastmod": "2026-11-02"
   },
   "/sovety/hitrosti-mastera/ostudi-boyler-pered-slivom/": {
-    "hash": "ef0752df5a07dee10388fbbd326449fbd357d6a92487c69459638f65f254f39c",
-    "lastmod": "2026-11-02"
+    "hash": "4381f5ae582e7c53e0d80f75615b9ae588848709d5979eb2785407025bd349bc",
+    "lastmod": "2026-11-25"
   },
   "/sovety/hitrosti-mastera/paronit-zashchishchaet-prokladku/": {
     "hash": "940275361d558e5d0193d8ae69c4e21c341ad2776b3cb324b1424410dfcadd55",
@@ -164,16 +164,16 @@
     "lastmod": "2026-11-03"
   },
   "/sovety/": {
-    "hash": "b9541034e1c12cd882ccb099226b67a52933061202f5e65e32c3cf2a277bc995",
-    "lastmod": "2026-11-20"
+    "hash": "41a5a9259b0e9e6429cb5689f65792a904eec30ab512c862c11eaa03dd36ab40",
+    "lastmod": "2026-11-25"
   },
   "/sovety/instrumenty-mastera/": {
     "hash": "5d8118691d7b6cf15946e1ba533e1fda78808ef142a02088205c7fc559477983",
     "lastmod": "2026-11-03"
   },
   "/sovety/invertornaya-nasosnaya-stanciya-rabotaet-ryvkami/": {
-    "hash": "37e00d1b25afeea91198a7249473a7acb49e6541f8e2f3f32ff3dd1e87e76bd4",
-    "lastmod": "2026-10-28"
+    "hash": "0e9e501d9cdbb0508cc76eaf50097672c7434b9ab1894e1b5a0fea959aa93ad7",
+    "lastmod": "2026-11-25"
   },
   "/sovety/kak-samostoyatelno-zamenit-unitaz/": {
     "hash": "18650e260039a5246dff98b31794badb2652b2b96ac793511a494f5d7c1ad27e",
@@ -208,16 +208,16 @@
     "lastmod": "2026-11-06"
   },
   "/sovety/sliv-i-obsluzhivanie-boylera/": {
-    "hash": "a5a9ee033357429fce0f4dd075f40cdb3e265b8eab50cb3e6330412be3b099dc",
-    "lastmod": "2026-11-17"
+    "hash": "01a9c2e32bb2038793fc826095dab7167036b175c5114dd696541ab9c4aa087d",
+    "lastmod": "2026-11-25"
   },
   "/sovety/techet-probka-cirkulyacionnogo-nasosa/": {
     "hash": "d8a10d311a4737b30c43c07c1cb2464ec8305705cf9fd0f41916763253621b00",
     "lastmod": "2026-11-19"
   },
   "/sovety/temperatura-boylera-i-zapah-vody/": {
-    "hash": "30fde4acebff8dce30589073d828efeb381f3fd27821f4d0e74473a5efc9b51e",
-    "lastmod": "2026-11-02"
+    "hash": "6a2a0c426ddd81f1fe9483e9243c1016cf1c4ce3d895537ddc09f2133396da8d",
+    "lastmod": "2026-11-25"
   },
   "/sovety/tresnul-shlang-stiralnoy-mashiny/": {
     "hash": "b7299ebb649ad1c29a873afa14c66e9e9bbec2ed07d2d800d5a7a6f8975d500c",
@@ -252,8 +252,8 @@
     "lastmod": "2026-11-03"
   },
   "/sovety/zamena-smesitelya-v-vannoy/": {
-    "hash": "c77c0d5e3346b231f41ac32992a368a12e19ea7ba681cc5e5088973ebfb462d5",
-    "lastmod": "2026-11-03"
+    "hash": "75fcd38e61a034e48dcda0deb58a8973691c4017cf87e1c9c9275ec569a819ec",
+    "lastmod": "2026-11-25"
   },
   "/sovety/zamena-unitaza/": {
     "hash": "3955bdae76915ab93e97a78967aed2f709adc6f4aa6bfbe335bdd5b0b2780270",
@@ -288,15 +288,15 @@
     "lastmod": "2026-11-19"
   },
   "/uslugi/7/": {
-    "hash": "7ade422b279d2ab6068984777e04461bed42b0691fc99671a04d16caf65909d6",
-    "lastmod": "2026-11-19"
+    "hash": "4f0e2a54921319a3b9b7ab963abfb3154550cb8db753d0f27e8258a39dd94221",
+    "lastmod": "2026-11-25"
   },
   "/uslugi/9/": {
-    "hash": "bb3561a562329a580f46f4a49ac765c0df424b63618a6bf1163ccfc94c3e0251",
-    "lastmod": "2026-10-29"
+    "hash": "3bd0172f5a5dac89ae6e62c0a474271f19a80996dcdbc0ea8c2c28f8b4a7f104",
+    "lastmod": "2026-11-25"
   },
   "/uslugi/": {
-    "hash": "b5719802efe50ba47c891d8a0e5fa3778a939cb90446f2d39d565e65db848ce8",
-    "lastmod": "2026-11-19"
+    "hash": "e179a8f8b9b895c216d2225d87d16d0f339d6a9ea41eb47fbbe8992ff23375b8",
+    "lastmod": "2026-11-25"
   }
 }

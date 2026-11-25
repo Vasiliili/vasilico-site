@@ -10,7 +10,7 @@ const servicePresets={
  'zamena-smesitelya':['Демонтаж смесителя','Установка смесителя'],
  'nastroika-davleniya-nasosa':['Настройка рабочего давления станции водоснабжения / насоса повышения давления'],
  'prochistka-sifona':['Прочистка сифона'],
- 'ustanovka-vodonagrevatelya':['Установка водонагревателя'],
+ 'ustanovka-vodonagrevatelya':['Установка водонагревателя (бойлера)'],
  'ustanovka-nasosa':['Установка насоса']
 };
 function presetJobs(service){return (servicePresets[service]||[]).map(name=>allPriceJobs.find(j=>j.name===name)).filter(Boolean);}
