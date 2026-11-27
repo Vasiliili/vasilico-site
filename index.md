@@ -32,6 +32,8 @@
 
 [01 Онлайн-помощь по фото и видео ↗](https://vasilico.ru/sovety/distancionnaya-pomoshch-santehnika/)[02 Смесители ↗](https://vasilico.ru/uslugi/1/)[03 Унитазы ↗](https://vasilico.ru/uslugi/2/)[04 Раковины и сифоны ↗](https://vasilico.ru/uslugi/3/)[05 Канализация ↗](https://vasilico.ru/uslugi/4/)[06 Насосы и водоснабжение ↗](https://vasilico.ru/uslugi/5/)[07 Фильтры ↗](https://vasilico.ru/uslugi/6/)[08 Водонагреватели (бойлеры) ↗](https://vasilico.ru/uslugi/7/)[09 Закупка и доставка ↗](https://vasilico.ru/uslugi/9/)
 
+[Что случилось?](https://vasilico.ru/chto-sluchilos/)
+
 [Все услуги ↗](https://vasilico.ru/uslugi/)02 / 03
 
 Личное дело

@@ -1,0 +1,125 @@
+.problem-page {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 .875rem 2rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+body.problem-guide > .problem-page {
+  padding-top: calc(var(--header) + 1rem);
+}
+
+.problem-page h1 {
+  margin: 0 0 .75rem;
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
+  line-height: 1.12;
+}
+
+.problem-page h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+
+.problem-contact,
+.problem-groups section {
+  padding: .875rem;
+  border: 1px solid #aab5ae;
+  border-radius: .625rem;
+  background: #fff;
+}
+
+.problem-contact p,
+.problem-groups p {
+  margin: 0 0 .625rem;
+}
+
+.problem-call,
+.problem-messengers a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 .5rem;
+  min-height: 3rem;
+  padding: .375rem;
+  border-radius: .375rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.problem-call {
+  background: #24563c;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.problem-call span {
+  white-space: nowrap;
+}
+
+.problem-messengers,
+.problem-groups ul {
+  padding: 0;
+  list-style: none;
+}
+
+.problem-messengers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+  margin: .5rem 0 0;
+}
+
+.problem-messengers li {
+  flex: 1 0 auto;
+}
+
+.problem-messengers a {
+  border: 1px solid #365c7b;
+  background: #f1f6fb;
+  color: #193e59;
+  font-size: 1rem;
+}
+
+.problem-intro {
+  margin: 1.125rem 0;
+}
+
+.problem-groups {
+  display: grid;
+  gap: .75rem;
+  margin: 0 0 1rem;
+}
+
+.problem-groups ul {
+  margin: 0;
+}
+
+.problem-groups li {
+  border-top: 1px solid #dadfdc;
+}
+
+.problem-groups a {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: .375rem 0;
+  color: #193e59;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: .17em;
+}
+
+.problem-groups a:hover,
+.problem-messengers a:hover {
+  background: #e5eff7;
+}
+
+@media (min-width: 48rem) {
+  .problem-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
